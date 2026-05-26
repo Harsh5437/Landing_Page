@@ -1,100 +1,10 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Calendar, Clock, Search, Filter, Newspaper, ArrowRight, X } from "lucide-react";
+import newsFeedData from "../data/newsFeed.json";
 
-// Robust mock news feed database
-const newsArticles = [
-  {
-    id: 1,
-    title: "UrbanBuild™ Growth Conclave 1.0, held at Hotel Ramada, Dehradun",
-    category: "Event",
-    date: "Oct 12, 2025",
-    readTime: "3 min read",
-    summary: "Our inaugural Growth Conclave gathered engineering experts, infrastructure planners, and regional leaders to map the future of public works and sustainable development across Dehradun.",
-    content: "The UrbanBuild™ Growth Conclave 1.0 served as a highly successful collaborative hub for highlighting regional growth strategies and modern engineering trends. Er. G.K. Sahu and other notable dignitaries shared their extensive road construction knowledge and structural analysis insights, shaping the next era of development. Participants engaged in in-depth panels concerning next-generation project engineering and civil structural systems.",
-    img: "/images/projects/highway-render.jpg"
-  },
-  {
-    id: 3,
-    title: "Er. G.K. Sahu, Principal Scientist at CRRI, Visited URBANBUILD™ Office",
-    category: "Visit",
-    date: "Aug 15, 2025",
-    readTime: "2 min read",
-    summary: "Honored to host the senior structural scientist from the Central Road Research Institute (CRRI) to review our technical blueprints and highway junction systems.",
-    content: "During his technical visit, Er. G.K. Sahu evaluated UrbanBuild's digital road design solutions and public safety structures. His high-level feedback strengthens our ongoing integration of CRRI guidelines, ensuring state-of-the-art highway systems that exceed public safety benchmarks.",
-    img: "/images/projects/govt-building.jpg"
-  },
-  {
-    id: 4,
-    title: "National Highway Expansion Corridor Blueprint Finalized",
-    category: "Announcement",
-    date: "Jul 10, 2025",
-    readTime: "5 min read",
-    summary: "The master blueprints for the state highway corridor expansion have been finalized, leveraging our premium traffic-flow automation models.",
-    content: "Our civil drafting and high-capacity engineering teams have officially completed the technical blueprints for the highway expansion program. Utilizing modern 3D topographic mapping and traffic-flow simulation software, the corridor is fully optimized for maximum volume, seamless junction merging, and minimum environmental impact.",
-    img: "/images/projects/highway-render.jpg"
-  },
-  {
-    id: 5,
-    title: "Implementation of Sustainable Civil Structural Systems",
-    category: "Insights",
-    date: "Jun 05, 2025",
-    readTime: "6 min read",
-    summary: "A deep dive into how green architectural design and reduced carbon concrete formulations are driving sustainable government construction projects.",
-    content: "Sustainability is no longer an optional feature—it is the foundation of civil structural engineering. This analytical article details how green design, renewable energy integration, and state-of-the-art drainage networks are being integrated across our modern institutional developments, creating high-performance buildings with minimal structural footprints.",
-    img: "/images/projects/bridge-elevation.jpg"
-  },
-  {
-    id: 6,
-    title: "Civil Structural Survey Completed for Bageshwar Circuit House",
-    category: "Announcement",
-    date: "Nov 20, 2025",
-    readTime: "3 min read",
-    summary: "Our structural engineering team has finalized comprehensive soil mechanics audits and architectural drafting for the Bageshwar Circuit House development project.",
-    content: "Following intensive site selection reviews and geotechnical surveys, UrbanBuild has officially delivered the technical foundation designs and structural blueprints for the Bageshwar Circuit House. This eco-friendly administrative facility integrates local stone aesthetics with modern green concrete systems, ensuring a state-of-the-art structure designed for strategic public utility.",
-    img: "/images/projects/govt-building.jpg"
-  },
-  {
-    id: 7,
-    title: "Mudiyani Bridge Structural Safety Consultation & Load Modeling",
-    category: "Insights",
-    date: "Dec 05, 2025",
-    readTime: "4 min read",
-    summary: "UrbanBuild finishes static and dynamic load simulations for the Mudiyani Bridge superstructure, matching international structural reliability guidelines.",
-    content: "Leveraging finite element analysis models, our bridge engineering division successfully resolved complex pier foundation parameters for the Mudiyani Bridge. This major public works corridor is designed to sustain high traffic volume and extreme meteorological forces, establishing absolute safety benchmarks.",
-    img: "/images/projects/bridge-elevation.jpg"
-  },
-  {
-    id: 8,
-    title: "Pavement Distress Audit Delivered for Khatima Overlay Survey",
-    category: "Visit",
-    date: "Jan 12, 2026",
-    readTime: "3 min read",
-    summary: "Senior engineers visited the Khatima bypass segment to complete ultrasonic pavement thickness tests and inspect overlay design overlays.",
-    content: "Using ground-penetrating radar and modern distress index formulas, UrbanBuild's survey team executed a comprehensive road surface diagnostic scan. The resulting rehabilitation blueprint specifies a high-performance asphalt overlay, extending the bypass road's operational lifespan by another 15 years.",
-    img: "/images/projects/highway-render.jpg"
-  },
-  {
-    id: 9,
-    title: "Haldwani Traffic Management Drone Topography Mapping Completed",
-    category: "Event",
-    date: "Feb 18, 2026",
-    readTime: "4 min read",
-    summary: "Collaborative workshop highlights traffic-flow micro-simulation models and drone corridor mapping to eliminate Haldwani gridlocks.",
-    content: "UrbanBuild planners gathered municipal administrators and transportation engineers in Haldwani to present drone-mapped corridor models. The resulting junction redesign blueprint integrates signal synchronization algorithms with widened physical turning radius lines, easing daily commuter bottlenecks.",
-    img: "/images/projects/junction-plan.jpg"
-  },
-  {
-    id: 10,
-    title: "Dhunaghat Road Improvement Geogrid Reinforcement Installation",
-    category: "Announcement",
-    date: "Mar 02, 2026",
-    readTime: "5 min read",
-    summary: "Official commencement of landslide prevention geogrid placement and retaining wall engineering along the mountain pass route.",
-    content: "To guarantee long-term stability across mountainous terrain, UrbanBuild has begun structural geogrid slope reinforcement and custom masonry retaining wall works along Dhunaghat Road. Our engineering reports outline full environmental compliance and maximum regional safety standards.",
-    img: "/images/projects/highway-render.jpg"
-  }
-];
+// Dynamic news feed database
+const newsArticles = newsFeedData;
 
 const categories = ["All", "Event", "Visit", "Announcement", "Insights"];
 
@@ -107,7 +17,8 @@ const NewsEventsPage = () => {
         if (Array.isArray(parsed) && parsed.length > 0) {
           const hasOldData = parsed.some(art => art && art.date && art.date.includes("2024"));
           const hasDifferentCount = parsed.length <= 5;
-          if (!hasOldData && !hasDifferentCount) {
+          const hasUrrda = parsed.some(art => art && art.title === "URRDA Empanelment");
+          if (!hasOldData && !hasDifferentCount && hasUrrda) {
             return parsed;
           }
         }
@@ -155,7 +66,7 @@ const NewsEventsPage = () => {
   });
 
   return (
-    <div className="min-h-screen bg-background text-foreground pt-24 pb-16 transition-colors duration-300">
+    <div className="min-h-screen bg-background text-foreground pt-32 pb-16 transition-colors duration-300">
       
       {/* Container */}
       <div className="max-w-6xl mx-auto px-6">
@@ -205,20 +116,32 @@ const NewsEventsPage = () => {
                 const artDate = article.date || "Recent";
                 const artReadTime = article.readTime || "2 min read";
                 const artSummary = article.summary || artTitle;
+                const isHighlighted = artTitle === "URRDA Empanelment";
                 
                 return (
                   <motion.div
                     key={artId}
                     layoutId={`card-${artId}`}
                     onClick={() => setActiveArticle(article)}
-                    className="group w-full md:w-[90%] mx-auto py-8 border-t border-b border-border/60 transition-all duration-300 cursor-pointer flex flex-col justify-between relative"
+                    className={`group w-full md:w-[90%] mx-auto py-8 transition-all duration-300 cursor-pointer flex flex-col justify-between relative ${
+                      isHighlighted 
+                        ? "border-2 border-accent/60 bg-accent/[0.03] px-6 md:px-8 rounded-2xl shadow-[0_0_20px_rgba(212,175,55,0.1)] hover:border-accent hover:shadow-[0_0_25px_rgba(212,175,55,0.18)] my-4" 
+                        : "border-t border-b border-border/60 hover:bg-[#0c1631]/[0.01] dark:hover:bg-[#060c1d]/10"
+                    }`}
                   >
                     <div>
                       {/* Header: Category & Date */}
                       <div className="flex items-center justify-between mb-4">
-                        <span className="text-[8px] font-mono tracking-widest text-accent uppercase bg-accent/10 px-2 py-0.5 rounded font-bold">
-                          {artCategory}
-                        </span>
+                        <div className="flex items-center gap-2">
+                          <span className="text-[8px] font-mono tracking-widest text-accent uppercase bg-accent/10 px-2 py-0.5 rounded font-bold">
+                            {artCategory}
+                          </span>
+                          {isHighlighted && (
+                            <span className="text-[7.5px] font-mono tracking-widest text-[#D4AF37] uppercase bg-[#D4AF37]/15 border border-[#D4AF37]/30 px-1.5 py-0.5 rounded font-extrabold animate-pulse">
+                              ⭐ Highlighted Milestone
+                            </span>
+                          )}
+                        </div>
                         <div className="flex items-center gap-3 text-[9px] font-mono text-muted-foreground">
                           <span className="flex items-center gap-1 font-medium">
                             <Calendar className="w-3 h-3 text-accent/60" /> {artDate}
@@ -289,41 +212,27 @@ const NewsEventsPage = () => {
               const artReadTime = activeArticle.readTime || "2 min read";
               const artSummary = activeArticle.summary || artTitle;
               const artContent = activeArticle.content || artTitle;
-              const artImg = activeArticle.img || "/images/projects/highway-render.jpg";
               
               return (
                 <motion.div
                   layoutId={`card-${artId}`}
-                  className="relative bg-background border border-border/80 rounded-2xl w-full max-w-2xl overflow-hidden shadow-2xl z-10 flex flex-col"
+                  className="relative bg-background border border-border/80 rounded-2xl w-full max-w-2xl overflow-hidden shadow-2xl z-10 flex flex-col pt-12"
                   initial={{ scale: 0.95 }}
                   animate={{ scale: 1 }}
                   exit={{ scale: 0.95 }}
                   transition={{ type: "spring", damping: 25, stiffness: 250 }}
                 >
-                  {/* Image Preview Header (Simulated High Resolution Render) */}
-                  <div className="h-44 md:h-56 relative bg-secondary overflow-hidden">
-                    <img 
-                      src={artImg} 
-                      alt={artTitle} 
-                      className="w-full h-full object-cover opacity-90"
-                      onError={(e) => {
-                        (e.target as HTMLImageElement).src = "/images/projects/highway-render.jpg";
-                      }}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background via-background/10 to-transparent" />
-                    
-                    {/* Close Button */}
-                    <button
-                      onClick={() => setActiveArticle(null)}
-                      className="absolute top-4 right-4 p-2 rounded-xl bg-background/80 hover:bg-background text-foreground hover:scale-105 border border-border/40 transition-all cursor-pointer"
-                      aria-label="Close modal"
-                    >
-                      <X className="w-4 h-4" />
-                    </button>
-                  </div>
+                  {/* Close Button */}
+                  <button
+                    onClick={() => setActiveArticle(null)}
+                    className="absolute top-4 right-4 p-2 rounded-xl bg-background/80 hover:bg-background text-foreground hover:scale-105 border border-border/40 transition-all cursor-pointer z-20"
+                    aria-label="Close modal"
+                  >
+                    <X className="w-4 h-4" />
+                  </button>
 
                   {/* Text Area */}
-                  <div className="p-6 md:p-8 overflow-y-auto max-h-[50vh] custom-scrollbar">
+                  <div className="p-6 md:p-8 overflow-y-auto max-h-[65vh] custom-scrollbar">
                     
                     {/* Meta details */}
                     <div className="flex items-center gap-4 mb-4">

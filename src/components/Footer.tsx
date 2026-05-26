@@ -121,6 +121,7 @@ const Footer = () => {
                 <li key={link.name}>
                   <Link
                     to={link.path}
+                    onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
                     className="text-muted-foreground hover:text-foreground flex items-center gap-2 group transition-all duration-300"
                   >
                     <span className="h-[1px] w-0 bg-accent group-hover:w-3 transition-all duration-500" />
@@ -143,10 +144,10 @@ const Footer = () => {
             <ul className="space-y-2.5">
               {footerLinks.services.map((service) => (
                 <li key={service}>
-                  <a href="#" className="text-muted-foreground hover:text-foreground flex items-center gap-2 group transition-all duration-300">
-                    <span className="h-[1px] w-0 bg-accent group-hover:w-3 transition-all duration-500" />
+                  <div className="text-muted-foreground flex items-center gap-2 select-none">
+                    <span className="h-[1.5px] w-1.5 rounded-full bg-accent/50" />
                     <span className="text-xs font-medium">{service}</span>
-                  </a>
+                  </div>
                 </li>
               ))}
             </ul>

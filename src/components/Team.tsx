@@ -271,7 +271,7 @@ const Team = () => {
     const technical = teamMembers.slice(13);
 
     return (
-        <section id="team" className="relative bg-background min-h-screen w-full flex flex-col justify-center overflow-y-auto border-t border-border pt-20 md:pt-24 pb-12">
+        <section id="team" className="relative bg-background min-h-screen w-full flex flex-col justify-center overflow-y-auto border-t border-border pt-32 md:pt-36 pb-12">
             <div className="absolute inset-0 z-0 pointer-events-none">
                 {/* Technical Graph Lines - Primary Structural Background */}
                 <motion.div

@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import { ArrowRight, Calendar, ChevronRight, ChevronLeft, ZoomIn, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import sectorsData from "../data/sectors.json";
+import newsFeedData from "../data/newsFeed.json";
 
 const carouselImages = [
     {
@@ -52,13 +53,13 @@ const clients = [
         description: "Public Works Department of Uttarakhand, focusing on major road & infrastructure development."
     },
     {
-        name: "Uttar Pradesh PWD",
+        name: "PWD Uttar Pradesh",
         logo: "/images/clients/up_lok_nirman_logo.png",
         tagline: "GOVERNMENT DEPT",
         description: "Lok Nirman Vibhag UP, developing resilient interstate highway connections."
     },
     {
-        name: "Uttarakhand Government",
+        name: "Government Of Uttarakhand",
         logo: "/images/clients/Uttrakhand_sarkar.svg",
         tagline: "STATE AUTHORITY",
         description: "Urban planning authorities and civic infrastructural developments."
@@ -86,6 +87,12 @@ const clients = [
         logo: "/images/clients/gmvn_logo.png",
         tagline: "TOURISM BOARD",
         description: "Garhwal Mandal Vikas Nigam, building scenic transport facilities."
+    },
+    {
+        name: "URRDA",
+        logo: "/images/clients/URRDA_Logo.jpeg",
+        tagline: "RURAL ROADS",
+        description: "Uttarakhand Rural Road Development Agency, executing major connectivity networks."
     }
 ];
 
@@ -138,7 +145,8 @@ const Home = () => {
                 if (Array.isArray(parsed) && parsed.length > 0) {
                     const hasOldData = parsed.some(art => art && art.date && art.date.includes("2024"));
                     const hasDifferentCount = parsed.length <= 5;
-                    if (!hasOldData && !hasDifferentCount) {
+                    const hasUrrda = parsed.some(art => art && art.title === "URRDA Empanelment");
+                    if (!hasOldData && !hasDifferentCount && hasUrrda) {
                         return parsed;
                     }
                 }
@@ -146,98 +154,7 @@ const Home = () => {
                 console.error("Failed to parse saved news feed", e);
             }
         }
-        const initialNews = [
-            {
-                id: 1,
-                title: "UrbanBuild™ Growth Conclave 1.0, held at Hotel Ramada, Dehradun",
-                category: "Event",
-                date: "Oct 12, 2025",
-                readTime: "3 min read",
-                summary: "Our inaugural Growth Conclave gathered engineering experts, infrastructure planners, and regional leaders to map the future of public works and sustainable development across Dehradun.",
-                content: "The UrbanBuild™ Growth Conclave 1.0 served as a highly successful collaborative hub for highlighting regional growth strategies and modern engineering trends. Er. G.K. Sahu and other notable dignitaries shared their extensive road construction knowledge and structural analysis insights, shaping the next era of development. Participants engaged in in-depth panels concerning next-generation project engineering and civil structural systems.",
-                img: "/images/projects/highway-render.jpg"
-            },
-            {
-                id: 3,
-                title: "Er. G.K. Sahu, Principal Scientist at CRRI, Visited URBANBUILD™ Office",
-                category: "Visit",
-                date: "Aug 15, 2025",
-                readTime: "2 min read",
-                summary: "Honored to host the senior structural scientist from the Central Road Research Institute (CRRI) to review our technical blueprints and highway junction systems.",
-                content: "During his technical visit, Er. G.K. Sahu evaluated UrbanBuild's digital road design solutions and public safety structures. His high-level feedback strengthens our ongoing integration of CRRI guidelines, ensuring state-of-the-art highway systems that exceed public safety benchmarks.",
-                img: "/images/projects/govt-building.jpg"
-            },
-            {
-                id: 4,
-                title: "National Highway Expansion Corridor Blueprint Finalized",
-                category: "Announcement",
-                date: "Jul 10, 2025",
-                readTime: "5 min read",
-                summary: "The master blueprints for the state highway corridor expansion have been finalized, leveraging our premium traffic-flow automation models.",
-                content: "Our civil drafting and high-capacity engineering teams have officially completed the technical blueprints for the highway expansion program. Utilizing modern 3D topographic mapping and traffic-flow simulation software, the corridor is fully optimized for maximum volume, seamless junction merging, and minimum environmental impact.",
-                img: "/images/projects/highway-render.jpg"
-            },
-            {
-                id: 5,
-                title: "Implementation of Sustainable Civil Structural Systems",
-                category: "Insights",
-                date: "Jun 05, 2025",
-                readTime: "6 min read",
-                summary: "A deep dive into how green architectural design and reduced carbon concrete formulations are driving sustainable government construction projects.",
-                content: "Sustainability is no longer an optional feature—it is the foundation of civil structural engineering. This analytical article details how green design, renewable energy integration, and state-of-the-art drainage networks are being integrated across our modern institutional developments, creating high-performance buildings with minimal structural footprints.",
-                img: "/images/projects/bridge-elevation.jpg"
-            },
-            {
-                id: 6,
-                title: "Civil Structural Survey Completed for Bageshwar Circuit House",
-                category: "Announcement",
-                date: "Nov 20, 2025",
-                readTime: "3 min read",
-                summary: "Our structural engineering team has finalized comprehensive soil mechanics audits and architectural drafting for the Bageshwar Circuit House development project.",
-                content: "Following intensive site selection reviews and geotechnical surveys, UrbanBuild has officially delivered the technical foundation designs and structural blueprints for the Bageshwar Circuit House. This eco-friendly administrative facility integrates local stone aesthetics with modern green concrete systems, ensuring a state-of-the-art structure designed for strategic public utility.",
-                img: "/images/projects/govt-building.jpg"
-            },
-            {
-                id: 7,
-                title: "Mudiyani Bridge Structural Safety Consultation & Load Modeling",
-                category: "Insights",
-                date: "Dec 05, 2025",
-                readTime: "4 min read",
-                summary: "UrbanBuild finishes static and dynamic load simulations for the Mudiyani Bridge superstructure, matching international structural reliability guidelines.",
-                content: "Leveraging finite element analysis models, our bridge engineering division successfully resolved complex pier foundation parameters for the Mudiyani Bridge. This major public works corridor is designed to sustain high traffic volume and extreme meteorological forces, establishing absolute safety benchmarks.",
-                img: "/images/projects/bridge-elevation.jpg"
-            },
-            {
-                id: 8,
-                title: "Pavement Distress Audit Delivered for Khatima Overlay Survey",
-                category: "Visit",
-                date: "Jan 12, 2026",
-                readTime: "3 min read",
-                summary: "Senior engineers visited the Khatima bypass segment to complete ultrasonic pavement thickness tests and inspect overlay design overlays.",
-                content: "Using ground-penetrating radar and modern distress index formulas, UrbanBuild's survey team executed a comprehensive road surface diagnostic scan. The resulting rehabilitation blueprint specifies a high-performance asphalt overlay, extending the bypass road's operational lifespan by another 15 years.",
-                img: "/images/projects/highway-render.jpg"
-            },
-            {
-                id: 9,
-                title: "Haldwani Traffic Management Drone Topography Mapping Completed",
-                category: "Event",
-                date: "Feb 18, 2026",
-                readTime: "4 min read",
-                summary: "Collaborative workshop highlights traffic-flow micro-simulation models and drone corridor mapping to eliminate Haldwani gridlocks.",
-                content: "UrbanBuild planners gathered municipal administrators and transportation engineers in Haldwani to present drone-mapped corridor models. The resulting junction redesign blueprint integrates signal synchronization algorithms with widened physical turning radius lines, easing daily commuter bottlenecks.",
-                img: "/images/projects/junction-plan.jpg"
-            },
-            {
-                id: 10,
-                title: "Dhunaghat Road Improvement Geogrid Reinforcement Installation",
-                category: "Announcement",
-                date: "Mar 02, 2026",
-                readTime: "5 min read",
-                summary: "Official commencement of landslide prevention geogrid placement and retaining wall engineering along the mountain pass route.",
-                content: "To guarantee long-term stability across mountainous terrain, UrbanBuild has begun structural geogrid slope reinforcement and custom masonry retaining wall works along Dhunaghat Road. Our engineering reports outline full environmental compliance and maximum regional safety standards.",
-                img: "/images/projects/highway-render.jpg"
-            }
-        ];
+        const initialNews = newsFeedData;
         localStorage.setItem("urbanbuild_news_feed", JSON.stringify(initialNews));
         return initialNews;
     });
@@ -339,7 +256,7 @@ const Home = () => {
     };
 
     return (
-        <div className="min-h-screen bg-background selection:bg-accent selection:text-background pb-10 pt-16">
+        <div className="min-h-screen bg-background selection:bg-accent selection:text-background pb-10 pt-24">
 
             {/* Split Hero Section: 70% Image Carousel & 30% Split News & Gallery */}
             <div className="relative grid grid-cols-1 lg:grid-cols-10 w-full border-b border-border/50 overflow-hidden">
@@ -449,10 +366,10 @@ const Home = () => {
                 </div>
 
                 {/* Right Side: 30% Split Column containing Broadcast Feed (top 50%) & Gallery Carousel (bottom 50%) */}
-                <div className="col-span-1 lg:col-span-3 h-[64vh] md:h-[72vh] lg:h-[80vh] flex flex-col gap-3 p-3">
+                <div className="col-span-1 lg:col-span-3 h-auto lg:h-[80vh] flex flex-col gap-3 p-3">
 
                     {/* Top 50%: Broadcast Feed / News & Events (PERMANENTLY DARK) */}
-                    <div className="h-1/2 flex flex-col overflow-hidden bg-zinc-950 border-2 border-[#1A7EFF]/50 rounded-2xl shadow-[0_0_20px_rgba(26,126,255,0.1)] relative">
+                    <div className="h-[380px] lg:h-1/2 flex flex-col overflow-hidden bg-zinc-950 border-2 border-[#1A7EFF]/50 rounded-2xl shadow-[0_0_20px_rgba(26,126,255,0.1)] relative">
                         {/* Header */}
                         <div className="py-2.5 px-4 border-b border-[#1A7EFF]/20 bg-zinc-900/60 flex items-center justify-between shrink-0">
                             <div>
@@ -467,6 +384,36 @@ const Home = () => {
                                 </span>
                             </div>
                         </div>
+
+                        {/* Static Pinned Featured Update */}
+                        {(() => {
+                            const featuredArticle = newsFeed.find(item => item.title === "URRDA Empanelment");
+                            return featuredArticle && (
+                                <div className="p-3.5 border-b border-accent/20 bg-accent/[0.04] dark:bg-accent/[0.02] relative overflow-hidden select-none shrink-0 shadow-sm">
+                                    <div className="flex items-center justify-between gap-2 mb-2">
+                                        <div className="flex items-center gap-1.5">
+                                            <span className="text-[8px] font-bold tracking-wider text-accent uppercase bg-accent/15 px-1.5 py-0.5 rounded">
+                                                {featuredArticle.category || "Announcement"}
+                                            </span>
+                                            <span className="text-[7.5px] font-extrabold text-[#D4AF37] tracking-wider bg-[#D4AF37]/15 border border-[#D4AF37]/30 px-1.5 py-0.5 rounded animate-pulse">
+                                                ⭐ FEATURED UPDATE
+                                            </span>
+                                        </div>
+                                        <span className="text-[9px] font-mono text-zinc-400 flex items-center gap-1">
+                                            <Calendar className="w-2.5 h-2.5 text-accent/60" /> {featuredArticle.date}
+                                        </span>
+                                    </div>
+                                    <Link to="/news" className="block group">
+                                        <h4 className="text-[12px] md:text-[13px] font-space font-black text-white group-hover:text-accent transition-colors duration-300 leading-snug uppercase tracking-tight line-clamp-1 mb-1">
+                                            {featuredArticle.title}
+                                        </h4>
+                                        <p className="text-[9.5px] text-zinc-400 leading-relaxed font-light line-clamp-2">
+                                            {featuredArticle.summary}
+                                        </p>
+                                    </Link>
+                                </div>
+                            );
+                        })()}
 
                         {/* Scrollable list of news */}
                         <div className="flex-1 relative overflow-hidden bg-gradient-to-b from-zinc-950 to-black">
@@ -489,29 +436,33 @@ const Home = () => {
 
                             <Link to="/news" className="absolute inset-0 p-4 overflow-hidden block">
                                 <div className="flex flex-col gap-3 animate-home-news-scroll hover:[animation-play-state:paused] cursor-pointer">
-                                    {[...newsFeed, ...newsFeed, ...newsFeed, ...newsFeed].map((item, idx) => {
-                                        const artCategory = item.category || "News";
-                                        const artDate = item.date || "Recent";
-                                        const artTitle = item.title || "News Update";
-                                        return (
-                                            <div
-                                                key={idx}
-                                                className="group flex flex-col gap-2 p-3.5 rounded-xl border border-white/5 hover:border-accent/30 bg-white/[0.02] hover:bg-white/[0.04] transition-all duration-300 shadow-sm"
-                                            >
-                                                <div className="flex items-center justify-between gap-2">
-                                                    <span className="text-[9px] md:text-[10px] font-bold tracking-wider text-accent uppercase bg-accent/10 px-2 py-0.5 rounded">
-                                                        {artCategory}
-                                                    </span>
-                                                    <span className="text-[10px] md:text-[11px] font-mono text-zinc-400 flex items-center gap-1">
-                                                        <Calendar className="w-2.5 h-2.5 text-accent/60" /> {artDate}
-                                                    </span>
+                                    {(() => {
+                                        const otherNews = newsFeed.filter(item => item.title !== "URRDA Empanelment");
+                                        const loopList = otherNews.length > 0 ? otherNews : newsFeed;
+                                        return [...loopList, ...loopList, ...loopList, ...loopList].map((item, idx) => {
+                                            const artCategory = item.category || "News";
+                                            const artDate = item.date || "Recent";
+                                            const artTitle = item.title || "News Update";
+                                            return (
+                                                <div
+                                                    key={idx}
+                                                    className="group flex flex-col gap-2 p-3.5 rounded-xl border border-white/5 hover:border-accent/30 bg-white/[0.02] hover:bg-white/[0.04] transition-all duration-300 shadow-sm"
+                                                >
+                                                    <div className="flex items-center justify-between gap-2">
+                                                        <span className="text-[9px] md:text-[10px] font-bold tracking-wider text-accent uppercase bg-accent/10 px-2 py-0.5 rounded">
+                                                            {artCategory}
+                                                        </span>
+                                                        <span className="text-[10px] md:text-[11px] font-mono text-zinc-400 flex items-center gap-1">
+                                                            <Calendar className="w-2.5 h-2.5 text-accent/60" /> {artDate}
+                                                        </span>
+                                                    </div>
+                                                    <h4 className="text-[13px] md:text-[14px] font-space font-bold text-white/95 group-hover:text-accent transition-colors duration-300 leading-normal line-clamp-2">
+                                                        {artTitle}
+                                                    </h4>
                                                 </div>
-                                                <h4 className="text-[13px] md:text-[14px] font-space font-bold text-white/95 group-hover:text-accent transition-colors duration-300 leading-normal">
-                                                    {artTitle}
-                                                </h4>
-                                            </div>
-                                        );
-                                    })}
+                                            );
+                                        });
+                                    })()}
                                 </div>
                             </Link>
                         </div>
@@ -529,7 +480,7 @@ const Home = () => {
                     </div>
 
                     {/* Bottom 50%: Gallery Carousel (PERMANENTLY DARK ROYAL BLUEPRINT THEME) */}
-                    <div className="h-1/2 flex flex-col bg-[#060c1d] border-2 border-[#1A7EFF]/50 rounded-2xl overflow-hidden shadow-[0_0_20px_rgba(26,126,255,0.1)] relative">
+                    <div className="h-[320px] lg:h-1/2 flex flex-col bg-[#060c1d] border-2 border-[#1A7EFF]/50 rounded-2xl overflow-hidden shadow-[0_0_20px_rgba(26,126,255,0.1)] relative">
                         {/* Header */}
                         <div className="py-2.5 px-4 border-b border-[#1A7EFF]/20 bg-[#0c1631]/60 flex items-center justify-between shrink-0">
                             <div>

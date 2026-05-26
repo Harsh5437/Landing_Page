@@ -38,6 +38,11 @@ const clients = [
         logo: "/images/clients/gmvn_logo.png",
         color: "#dc2626",
     },
+    {
+        name: "URRDA",
+        logo: "/images/clients/URRDA_Logo.jpeg",
+        color: "#059669",
+    },
 ];
 
 const ClientLogo = ({ client }: { client: typeof clients[0] }) => {

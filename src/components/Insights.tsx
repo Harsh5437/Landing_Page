@@ -23,7 +23,7 @@ const Insights = () => {
   const waveCount = 10;
 
   return (
-    <div className="min-h-screen bg-background text-foreground pt-24 pb-16 relative overflow-hidden transition-colors duration-300 select-none">
+    <div className="min-h-screen bg-background text-foreground pt-32 pb-16 relative overflow-hidden transition-colors duration-300 select-none">
       
       {/* Mathematical Undulating Ripple Wave Background */}
       <div className="absolute inset-0 pointer-events-none select-none z-0">

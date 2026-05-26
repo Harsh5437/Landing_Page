@@ -40,7 +40,7 @@ const Contact = () => {
             icon: MapPin,
             title: "HEADQUARTERS",
             value: "Bhaniyawala Tiraha, Jolly Grant, Dehradun 248401, UK, India",
-            link: "https://maps.google.com/?q=Bhaniyawala+Tiraha,+Jolly+Grant,+Dehradun+248401",
+            link: "https://maps.app.goo.gl/rrQ7azSvNZwMTVeE6",
             color: "from-blue-500 to-indigo-600",
         },
         {
@@ -78,7 +78,7 @@ const Contact = () => {
     };
 
     return (
-        <section className="relative bg-background min-h-screen w-full flex flex-col justify-center overflow-y-auto pt-24 md:pt-28 pb-16 selection:bg-accent selection:text-background">
+        <section className="relative bg-background min-h-screen w-full flex flex-col justify-center overflow-y-auto pt-32 md:pt-36 pb-16 selection:bg-accent selection:text-background">
             <div className="absolute inset-0 z-0 pointer-events-none">
                 {/* Technical Grid Background */}
                 <motion.div
@@ -181,7 +181,7 @@ const Contact = () => {
                         >
                             <iframe
                                 title="UrbanBuild Location Map"
-                                src="https://maps.google.com/maps?q=Bhaniyawala%20Tiraha,%20Jolly%20Grant,%20Dehradun%20248401&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                                src="https://maps.google.com/maps?q=30.184395,78.144316&t=&z=15&ie=UTF8&iwloc=&output=embed"
                                 className="absolute inset-0 w-full h-full border-0 grayscale dark:invert dark:opacity-85 group-hover:grayscale-0 dark:group-hover:invert-0 transition-all duration-700"
                                 allowFullScreen={true}
                                 loading="lazy"

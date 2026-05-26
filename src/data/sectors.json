@@ -300,7 +300,95 @@
     "id": "environment",
     "num": "04",
     "title": "Environment and sustainability",
-    "projects": []
+    "projects": [
+      {
+        "title": "Champawat Bridge Upgradation",
+        "category": "Environmental Assessment / Bridge Infrastructure Consultancy",
+        "location": "Champawat, Uttarakhand",
+        "image": "/images/projects/Environment/Champawat/E1.jpeg",
+        "carouselImages": [
+          "/images/projects/Environment/Champawat/E1.jpeg",
+          "/images/projects/Environment/Champawat/WhatsApp Image 2026-05-26 at 4.48.04 PM.jpeg",
+          "/images/projects/Environment/Champawat/WhatsApp Image 2026-05-26 at 4.48.04 PM (1).jpeg",
+          "/images/projects/Environment/Champawat/WhatsApp Image 2026-05-26 at 4.48.04 PM (3).jpeg",
+          "/images/projects/Environment/Champawat/WhatsApp Image 2026-05-26 at 4.48.04 PM (4).jpeg"
+        ],
+        "ubqn": "UBON 336",
+        "client": "District Champawat",
+        "scope": "Consultancy services for conducting Rapid Environmental Assessment (REA), stakeholder consultations, and technical evaluation for the proposed upgradation of bridges along SH-64 and SH-108 in District Champawat. The scope included environmental and social impact assessment, stakeholder interaction and consultations, field investigations, identification of environmental concerns, documentation of existing bridge conditions, preparation of assessment reports, and recommendations for sustainable and environmentally responsible bridge infrastructure development."
+      },
+      {
+        "title": "Bridge REA Consultancy",
+        "category": "Environmental Assessment / Bridge Infrastructure Consultancy",
+        "location": "Uttarkashi, Uttarakhand",
+        "image": "/images/projects/Environment/REA Bridge/R1.jpeg",
+        "carouselImages": [
+          "/images/projects/Environment/REA Bridge/R1.jpeg",
+          "/images/projects/Environment/REA Bridge/WhatsApp Image 2026-05-26 at 5.00.27 PM (1).jpeg",
+          "/images/projects/Environment/REA Bridge/WhatsApp Image 2026-05-26 at 5.00.27 PM (2).jpeg",
+          "/images/projects/Environment/REA Bridge/WhatsApp Image 2026-05-26 at 5.00.28 PM.jpeg",
+          "/images/projects/Environment/REA Bridge/WhatsApp Image 2026-05-26 at 5.00.28 PM (1).jpeg"
+        ],
+        "ubqn": "UBON 341",
+        "client": "PWD Uttarkashi",
+        "scope": "Consultancy services for preparation of Rapid Environmental Assessment (REA) including public consultations for the proposed upgradation of existing bridges on Badethi–Banchaura–Badrigaad (BBB Motor Road, SH-16) and Silkyara–Bangawn–Chapda–Sarot Motor Road at multiple chainages in Uttarkashi district. The scope included environmental and social impact assessment, stakeholder and public consultations, field investigations, bridge condition documentation, identification of environmental concerns, preparation of REA reports, and development of recommendations for sustainable and environmentally responsible bridge infrastructure improvement."
+      },
+      {
+        "title": "Kosi Kausani Bridge REA",
+        "category": "Environmental Assessment / Bridge Infrastructure Consultancy",
+        "location": "Almora, Uttarakhand",
+        "image": "/images/projects/Environment/Kausani/K1.jpeg",
+        "carouselImages": [
+          "/images/projects/Environment/Kausani/K1.jpeg",
+          "/images/projects/Environment/Kausani/K3.jpeg",
+          "/images/projects/Environment/Kausani/WhatsApp Image 2026-05-26 at 5.14.27 PM.jpeg",
+          "/images/projects/Environment/Kausani/WhatsApp Image 2026-05-26 at 5.14.27 PM (1).jpeg",
+          "/images/projects/Environment/Kausani/WhatsApp Image 2026-05-26 at 5.14.27 PM (2).jpeg",
+          "/images/projects/Environment/Kausani/WhatsApp Image 2026-05-26 at 5.14.28 PM.jpeg",
+          "/images/projects/Environment/Kausani/WhatsApp Image 2026-05-26 at 5.14.28 PM (1).jpeg"
+        ],
+        "ubqn": "UBON 346",
+        "client": "PWD Almora",
+        "scope": "Consultancy services for preparation of Rapid Environmental Assessment (REA) including public consultations for the proposed upgradation of bridges on Kosi to Kausani Road (SH-11) in District Almora. The scope included environmental and social impact assessment, stakeholder consultations, field investigations, bridge condition assessment, identification of environmental concerns, preparation of REA reports, and development of recommendations for sustainable and environmentally responsible bridge infrastructure improvement."
+      },
+      {
+        "title": "Rudraprayag Bridge REA",
+        "category": "Environmental Assessment / Bridge Infrastructure Consultancy",
+        "location": "Rudraprayag & Chamoli, Uttarakhand",
+        "image": "/images/projects/Environment/Rudraprayag/R1.jpeg",
+        "carouselImages": [
+          "/images/projects/Environment/Rudraprayag/R1.jpeg",
+          "/images/projects/Environment/Rudraprayag/WhatsApp Image 2026-05-26 at 5.18.43 PM.jpeg",
+          "/images/projects/Environment/Rudraprayag/WhatsApp Image 2026-05-26 at 5.18.43 PM (1).jpeg",
+          "/images/projects/Environment/Rudraprayag/WhatsApp Image 2026-05-26 at 5.18.43 PM (4).jpeg",
+          "/images/projects/Environment/Rudraprayag/WhatsApp Image 2026-05-26 at 5.18.43 PM (5).jpeg",
+          "/images/projects/Environment/Rudraprayag/WhatsApp Image 2026-05-26 at 5.18.43 PM (6).jpeg",
+          "/images/projects/Environment/Rudraprayag/WhatsApp Image 2026-05-26 at 5.18.43 PM (7).jpeg"
+        ],
+        "ubqn": "UBON 352",
+        "client": "PWD Rudraprayag",
+        "scope": "Consultancy services for preparation of Rapid Environmental Assessment (REA) including public consultations for the proposed upgradation of bridges on the Rudraprayag–Pokhri–Gopeshwar Road at multiple chainages and Pokhri–Karnaprayag Motor Road at Chainage 25.375. The scope included environmental and social impact assessment, stakeholder and public consultations, field investigations, bridge condition documentation, identification of environmental concerns, preparation of REA reports, and development of recommendations for sustainable and environmentally responsible bridge infrastructure improvement."
+      },
+      {
+        "title": "SH-9 Bridge REA",
+        "category": "Environmental Assessment / Bridge Infrastructure Consultancy",
+        "location": "Uttarakhand",
+        "image": "/images/projects/Environment/SH-9/S1.jpeg",
+        "carouselImages": [
+          "/images/projects/Environment/SH-9/S1.jpeg",
+          "/images/projects/Environment/SH-9/S3.jpeg",
+          "/images/projects/Environment/SH-9/WhatsApp Image 2026-05-26 at 5.29.23 PM.jpeg",
+          "/images/projects/Environment/SH-9/WhatsApp Image 2026-05-26 at 5.29.23 PM (1).jpeg",
+          "/images/projects/Environment/SH-9/WhatsApp Image 2026-05-26 at 5.29.23 PM (3).jpeg",
+          "/images/projects/Environment/SH-9/WhatsApp Image 2026-05-26 at 5.29.23 PM (4).jpeg",
+          "/images/projects/Environment/SH-9/WhatsApp Image 2026-05-26 at 5.29.23 PM (6).jpeg",
+          "/images/projects/Environment/SH-9/WhatsApp Image 2026-05-26 at 5.29.24 PM.jpeg"
+        ],
+        "ubqn": "UBON 358",
+        "client": "PWD Uttarakhand",
+        "scope": "Consultancy services for preparation of Rapid Environmental Assessment (REA) including public consultations for the proposed conversion of existing B-loading bridges to Class-A loading standards on Late Shri Jagmohan Singh Negi (SH-9) Motor Road at multiple chainages. The scope included environmental and social impact assessment, stakeholder and public consultations, bridge condition documentation, field investigations, identification of environmental concerns, preparation of REA reports, and development of recommendations for sustainable bridge strengthening and infrastructure upgradation."
+      }
+    ]
   },
   {
     "id": "water-waste",

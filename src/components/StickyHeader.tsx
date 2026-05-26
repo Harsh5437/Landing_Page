@@ -309,6 +309,53 @@ const StickyHeader = () => {
                     )}
                 </div>
             </div>
+            
+            {/* Full-width Running Announcement Strip (Hidden on Landing page to prevent overlap) */}
+            {!isLandingPage && (
+                <div className="w-full bg-[#0a122c] dark:bg-[#02050c] border-t border-b border-[#1A7EFF]/15 py-1.5 px-4 flex items-center justify-between text-xs overflow-hidden relative select-none">
+                    <style>{`
+                        @keyframes marquee-scroll {
+                            0% { transform: translateX(0); }
+                            100% { transform: translateX(-50%); }
+                        }
+                        .animate-marquee-scroll {
+                            display: inline-flex;
+                            white-space: nowrap;
+                            animation: marquee-scroll 25s linear infinite;
+                        }
+                        @keyframes text-blink {
+                            0%, 100% { opacity: 1; }
+                            50% { opacity: 0.3; }
+                        }
+                        .animate-text-blink {
+                            animation: text-blink 1s infinite ease-in-out;
+                        }
+                    `}</style>
+                    {/* Blinking Head */}
+                    <div className="z-10 bg-[#0a122c] dark:bg-[#02050c] pr-3 flex items-center gap-1.5 font-bold uppercase tracking-wider text-accent border-r border-[#1A7EFF]/20 shrink-0">
+                        <span className="inline-block w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+                        <span className="animate-text-blink text-[#D4AF37] text-[9.5px] tracking-widest font-extrabold">NEW</span>
+                    </div>
+                    
+                    {/* Running Ticker Content */}
+                    <Link to="/news" className="flex-1 overflow-hidden relative flex items-center px-3">
+                        <div className="animate-marquee-scroll hover:[animation-play-state:paused] flex items-center gap-12 font-mono text-[10px] text-zinc-300 dark:text-zinc-200">
+                            <span>
+                                UrbanBuild is proud to announce its empanelment with the Uttarakhand Rural Road Development Agency (URRDA) — strengthening our commitment to delivering quality infrastructure consultancy across Uttarakhand.
+                            </span>
+                            <span>
+                                UrbanBuild is proud to announce its empanelment with the Uttarakhand Rural Road Development Agency (URRDA) — strengthening our commitment to delivering quality infrastructure consultancy across Uttarakhand.
+                            </span>
+                        </div>
+                    </Link>
+
+                    {/* Right Side static projects badge */}
+                    <Link to="/projects" className="z-10 bg-[#0a122c] dark:bg-[#02050c] pl-3 flex items-center gap-1.5 font-bold uppercase tracking-wider text-accent border-l border-[#1A7EFF]/20 shrink-0 hover:text-white transition-colors duration-300">
+                        <span className="text-[10px] md:text-[10.5px] font-space font-black text-[#D4AF37] tracking-tight">336+</span>
+                        <span className="text-[7.5px] font-mono text-zinc-300 tracking-wider">Projects Handled</span>
+                    </Link>
+                </div>
+            )}
         </motion.header>
     );
 };

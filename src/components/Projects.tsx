@@ -162,12 +162,12 @@ const Projects = () => {
     }, [sectors]);
 
     return (
-        <div id="projects" className="min-h-screen bg-background selection:bg-accent selection:text-background pt-16">
+        <div id="projects" className="min-h-screen bg-background selection:bg-accent selection:text-background pt-24">
             {/* Split Screen Container */}
-            <div className="flex flex-col lg:flex-row w-full min-h-[calc(100vh-4rem)] border-b border-accent/30 dark:border-accent/20">
+            <div className="flex flex-col lg:flex-row w-full min-h-[calc(100vh-6rem)] border-b border-accent/30 dark:border-accent/20">
 
                 {/* Left Sidebar Navigation (Reduced width, compact margins, and sticky) */}
-                <div className="w-full lg:w-[20%] dark bg-[#060c1d] lg:border-r border-b lg:border-b-0 border-accent/20 dark:border-accent/15 flex flex-col p-4 md:p-6 lg:px-4 lg:py-8 shrink-0 lg:sticky lg:top-16 lg:h-[calc(100vh-4rem)] overflow-y-auto custom-scrollbar">
+                <div className="w-full lg:w-[20%] dark bg-[#060c1d] lg:border-r border-b lg:border-b-0 border-accent/20 dark:border-accent/15 flex flex-col p-4 md:p-6 lg:px-4 lg:py-8 shrink-0 lg:sticky lg:top-24 lg:h-[calc(100vh-6rem)] overflow-y-auto custom-scrollbar">
                     <div className="mb-8">
                         <h2 className="text-2xl md:text-3xl font-space font-black tracking-tight text-foreground uppercase">
                             PORTFOLIO

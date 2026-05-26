@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "title": "UrbanBuild™ Growth Conclave 1.0, held at Hotel Ramada, Dehradun",
+    "category": "Event",
+    "date": "Oct 12, 2025",
+    "readTime": "3 min read",
+    "summary": "Our inaugural Growth Conclave gathered engineering experts, infrastructure planners, and regional leaders to map the future of public works and sustainable development across Dehradun.",
+    "content": "The UrbanBuild™ Growth Conclave 1.0 served as a highly successful collaborative hub for highlighting regional growth strategies and modern engineering trends. Er. G.K. Sahu and other notable dignitaries shared their extensive road construction knowledge and structural analysis insights, shaping the next era of development. Participants engaged in in-depth panels concerning next-generation project engineering and civil structural systems.",
+    "img": "/images/projects/highway-render.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Er. G.K. Sahu, Principal Scientist at CRRI, Visited URBANBUILD™ Office",
+    "category": "Visit",
+    "date": "Aug 15, 2025",
+    "readTime": "2 min read",
+    "summary": "Honored to host the senior structural scientist from the Central Road Research Institute (CRRI) to review our technical blueprints and highway junction systems.",
+    "content": "During his technical visit, Er. G.K. Sahu evaluated UrbanBuild's digital road design solutions and public safety structures. His high-level feedback strengthens our ongoing integration of CRRI guidelines, ensuring state-of-the-art highway systems that exceed public safety benchmarks.",
+    "img": "/images/projects/govt-building.jpg"
+  },
+  {
+    "id": 4,
+    "title": "National Highway Expansion Corridor Blueprint Finalized",
+    "category": "Announcement",
+    "date": "Jul 10, 2025",
+    "readTime": "5 min read",
+    "summary": "The master blueprints for the state highway corridor expansion have been finalized, leveraging our premium traffic-flow automation models.",
+    "content": "Our civil drafting and high-capacity engineering teams have officially completed the technical blueprints for the highway expansion program. Utilizing modern 3D topographic mapping and traffic-flow simulation software, the corridor is fully optimized for maximum volume, seamless junction merging, and minimum environmental impact.",
+    "img": "/images/projects/highway-render.jpg"
+  },
+  {
+    "id": 5,
+    "title": "Implementation of Sustainable Civil Structural Systems",
+    "category": "Insights",
+    "date": "Jun 05, 2025",
+    "readTime": "6 min read",
+    "summary": "A deep dive into how green architectural design and reduced carbon concrete formulations are driving sustainable government construction projects.",
+    "content": "Sustainability is no longer an optional feature—it is the foundation of civil structural engineering. This analytical article details how green design, renewable energy integration, and state-of-the-art drainage networks are being integrated across our modern institutional developments, creating high-performance buildings with minimal structural footprints.",
+    "img": "/images/projects/bridge-elevation.jpg"
+  },
+  {
+    "id": 6,
+    "title": "Civil Structural Survey Completed for Bageshwar Circuit House",
+    "category": "Announcement",
+    "date": "Nov 20, 2025",
+    "readTime": "3 min read",
+    "summary": "Our structural engineering team has finalized comprehensive soil mechanics audits and architectural drafting for the Bageshwar Circuit House development project.",
+    "content": "Following intensive site selection reviews and geotechnical surveys, UrbanBuild has officially delivered the technical foundation designs and structural blueprints for the Bageshwar Circuit House. This eco-friendly administrative facility integrates local stone aesthetics with modern green concrete systems, ensuring a state-of-the-art structure designed for strategic public utility.",
+    "img": "/images/projects/govt-building.jpg"
+  },
+  {
+    "id": 7,
+    "title": "Mudiyani Bridge Structural Safety Consultation & Load Modeling",
+    "category": "Insights",
+    "date": "Dec 05, 2025",
+    "readTime": "4 min read",
+    "summary": "UrbanBuild finishes static and dynamic load simulations for the Mudiyani Bridge superstructure, matching international structural reliability guidelines.",
+    "content": "Leveraging finite element analysis models, our bridge engineering division successfully resolved complex pier foundation parameters for the Mudiyani Bridge. This major public works corridor is designed to sustain high traffic volume and extreme meteorological forces, establishing absolute safety benchmarks.",
+    "img": "/images/projects/bridge-elevation.jpg"
+  },
+  {
+    "id": 8,
+    "title": "Pavement Distress Audit Delivered for Khatima Overlay Survey",
+    "category": "Visit",
+    "date": "Jan 12, 2026",
+    "readTime": "3 min read",
+    "summary": "Senior engineers visited the Khatima bypass segment to complete ultrasonic pavement thickness tests and inspect overlay design overlays.",
+    "content": "Using ground-penetrating radar and modern distress index formulas, UrbanBuild's survey team executed a comprehensive road surface diagnostic scan. The resulting rehabilitation blueprint specifies a high-performance asphalt overlay, extending the bypass road's operational lifespan by another 15 years.",
+    "img": "/images/projects/highway-render.jpg"
+  },
+  {
+    "id": 9,
+    "title": "Haldwani Traffic Management Drone Topography Mapping Completed",
+    "category": "Event",
+    "date": "Feb 18, 2026",
+    "readTime": "4 min read",
+    "summary": "Collaborative workshop highlights traffic-flow micro-simulation models and drone corridor mapping to eliminate Haldwani gridlocks.",
+    "content": "UrbanBuild planners gathered municipal administrators and transportation engineers in Haldwani to present drone-mapped corridor models. The resulting junction redesign blueprint integrates signal synchronization algorithms with widened physical turning radius lines, easing daily commuter bottlenecks.",
+    "img": "/images/projects/junction-plan.jpg"
+  },
+  {
+    "id": 10,
+    "title": "Dhunaghat Road Improvement Geogrid Reinforcement Installation",
+    "category": "Announcement",
+    "date": "Mar 02, 2026",
+    "readTime": "5 min read",
+    "summary": "Official commencement of landslide prevention geogrid placement and retaining wall engineering along the mountain pass route.",
+    "content": "To guarantee long-term stability across mountainous terrain, UrbanBuild has begun structural geogrid slope reinforcement and custom masonry retaining wall works along Dhunaghat Road. Our engineering reports outline full environmental compliance and maximum regional safety standards.",
+    "img": "/images/projects/highway-render.jpg"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "src": "/images/projects/highway-render.jpg",
+    "title": "National Highway Expansion",
+    "desc": "Premium highway engineering and corridor design."
+  },
+  {
+    "id": 2,
+    "src": "/images/projects/junction-plan.jpg",
+    "title": "Junction Design & Planning",
+    "desc": "High-capacity urban junctions and roundabouts."
+  },
+  {
+    "id": 3,
+    "src": "/images/projects/govt-building.jpg",
+    "title": "Government Guest House",
+    "desc": "Modern, sustainable architectural construction."
+  },
+  {
+    "id": 4,
+    "src": "/images/projects/bridge-elevation.jpg",
+    "title": "River Bridge Foundation",
+    "desc": "Heavy civil structural engineering."
+  }
+]

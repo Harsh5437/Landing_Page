@@ -1,0 +1,361 @@
+[
+  {
+    "id": "transportation",
+    "num": "01",
+    "title": "Transportation and urban mobility",
+    "projects": [
+      {
+        "title": "2-Lane To 4-Lane Expansion",
+        "category": "Road Infrastructure / Highway Widening",
+        "location": "Roorkee, Uttarakhand",
+        "image": "/images/projects/Transport/2-Lane/L1.jpeg",
+        "carouselImages": [
+          "/images/projects/Transport/2-Lane/L1.jpeg",
+          "/images/projects/Transport/2-Lane/WhatsApp Image 2026-05-23 at 4.38.28 PM.jpeg",
+          "/images/projects/Transport/2-Lane/WhatsApp Image 2026-05-23 at 4.40.17 PM.jpeg",
+          "/images/projects/Transport/2-Lane/WhatsApp Image 2026-05-23 at 4.42.08 PM.jpeg",
+          "/images/projects/Transport/2-Lane/WhatsApp Image 2026-05-23 at 4.42.09 PM.jpeg",
+          "/images/projects/Transport/2-Lane/WhatsApp Image 2026-05-23 at 4.44.36 PM.jpeg"
+        ],
+        "ubqn": "UBON T3",
+        "client": "CD Roorkee",
+        "scope": "Preparation of Detailed Project Report (DPR), engineering design, traffic assessment, pavement design, and widening proposal for conversion of the existing double-lane roadway into a four-lane corridor from Reliance Petrol Pump to COER College Road (Old NH-58), Km 0.000 to Km 13.800. The scope included alignment studies, geometric improvement planning, drainage design, pavement strengthening recommendations, and preparation of engineering drawings and technical specifications for enhanced traffic capacity and road safety."
+      },
+      {
+        "title": "Dhunaghat Road Improvement",
+        "category": "Road Infrastructure / Road Widening",
+        "location": "Champawat, Uttarakhand",
+        "image": "/images/projects/Transport/Dhunaghat/D1.jpeg",
+        "carouselImages": [
+          "/images/projects/Transport/Dhunaghat/D1.jpeg",
+          "/images/projects/Transport/Dhunaghat/D2.jpeg",
+          "/images/projects/Transport/Dhunaghat/D3.jpeg",
+          "/images/projects/Transport/Dhunaghat/D4.jpeg",
+          "/images/projects/Transport/Dhunaghat/D5.jpeg",
+          "/images/projects/Transport/Dhunaghat/D6.jpeg"
+        ],
+        "ubqn": "UBON 260",
+        "client": "PD Champawat",
+        "scope": "Survey, pavement crust design, and preparation of Detailed Project Report (DPR) for widening of Dhunaghat–Bhingrada–Reetha Prabhag Motor Road (SH-64, Km 142–180) to intermediate lane configuration along with Reetha–Dolhigaon Motor Road (Km 1–5). The scope included traffic assessment, alignment evaluation, geometric improvement planning, drainage proposals, pavement strengthening recommendations, and preparation of engineering drawings and technical specifications for improved road connectivity and safety."
+      },
+      {
+        "title": "Mathiyabagh Road Alignment",
+        "category": "Road Planning / Alignment Engineering",
+        "location": "Champawat, Uttarakhand",
+        "image": "/images/projects/Transport/Maythibagh/M1.jpeg",
+        "carouselImages": [
+          "/images/projects/Transport/Maythibagh/M1.jpeg",
+          "/images/projects/Transport/Maythibagh/WhatsApp Image 2026-05-23 at 4.49.52 PM (1).jpeg",
+          "/images/projects/Transport/Maythibagh/WhatsApp Image 2026-05-23 at 4.49.52 PM (2).jpeg",
+          "/images/projects/Transport/Maythibagh/WhatsApp Image 2026-05-23 at 4.49.52 PM (3).jpeg",
+          "/images/projects/Transport/Maythibagh/WhatsApp Image 2026-05-23 at 4.49.52 PM (4).jpeg",
+          "/images/projects/Transport/Maythibagh/WhatsApp Image 2026-05-23 at 4.49.52 PM (5).jpeg"
+        ],
+        "ubqn": "UBON 295",
+        "client": "PD Champawat",
+        "scope": "Survey, route assessment, and alignment planning for the proposed road connectivity from Village Mathiyabagh to Kothal Pul in Champawat. The scope included topographical investigation, alignment optimization, geometric planning, preliminary engineering studies, preparation of alignment drawings, and technical recommendations for safe and efficient road development in hilly terrain conditions."
+      },
+      {
+        "title": "Haldwani Traffic Management",
+        "category": "Traffic Engineering / Urban Traffic Management",
+        "location": "Haldwani, Uttarakhand",
+        "image": "/images/projects/Transport/Haldwani_Traffic/H1.jpeg",
+        "carouselImages": [
+          "/images/projects/Transport/Haldwani_Traffic/H1.jpeg",
+          "/images/projects/Transport/Haldwani_Traffic/H2.jpeg",
+          "/images/projects/Transport/Haldwani_Traffic/H3.jpeg",
+          "/images/projects/Transport/Haldwani_Traffic/H4.jpeg",
+          "/images/projects/Transport/Haldwani_Traffic/H5.jpeg",
+          "/images/projects/Transport/Haldwani_Traffic/H6.jpeg"
+        ],
+        "ubqn": "UBON 182",
+        "client": "CD Haldwani",
+        "scope": "Preparation of traffic management and intersection improvement design for Lal Danth Tiraha, Devalhaur, and Panchayat areas in Haldwani. The scope included traffic flow analysis, junction improvement planning, geometric design modifications, road safety enhancement measures, signage and marking proposals, circulation improvement strategies, and preparation of engineering drawings and technical recommendations for efficient urban traffic movement and congestion reduction."
+      },
+      {
+        "title": "Kotabagh Road Widening",
+        "category": "Road Infrastructure / Flexible Pavement Design",
+        "location": "Ramnagar, Uttarakhand",
+        "image": "/images/projects/Transport/Kotabagh/K1.jpeg",
+        "carouselImages": [
+          "/images/projects/Transport/Kotabagh/K1.jpeg",
+          "/images/projects/Transport/Kotabagh/WhatsApp Image 2026-05-23 at 4.55.06 PM.jpeg",
+          "/images/projects/Transport/Kotabagh/WhatsApp Image 2026-05-23 at 4.55.06 PM (1).jpeg",
+          "/images/projects/Transport/Kotabagh/WhatsApp Image 2026-05-23 at 4.56.21 PM.jpeg"
+        ],
+        "ubqn": "UBON 322",
+        "client": "CD Ramnagar",
+        "scope": "Consultancy services for road widening along SH-61 at Kotabagh Bazaar, Ramnagar, including utility shifting planning, canal covering design, and flexible pavement design. The scope included traffic assessment, geometric improvement planning, pavement engineering, drainage and canal integration studies, preparation of engineering drawings, technical specifications, and Detailed Project Report (DPR) for improved urban road infrastructure and traffic movement."
+      },
+
+      {
+        "title": "Khatima Overlay Survey",
+        "category": "Pavement Evaluation / Overlay Design",
+        "location": "Khatima, Uttarakhand",
+        "image": "/images/projects/Transport/Town6/T1.jpeg",
+        "carouselImages": [
+          "/images/projects/Transport/Town6/T1.jpeg",
+          "/images/projects/Transport/Town6/WhatsApp Image 2026-05-25 at 3.01.58 PM.jpeg",
+          "/images/projects/Transport/Town6/WhatsApp Image 2026-05-25 at 3.01.58 PM (2).jpeg",
+          "/images/projects/Transport/Town6/WhatsApp Image 2026-05-25 at 3.01.58 PM (3).jpeg"
+        ],
+        "ubqn": "UBON 284",
+        "client": "CD Khatima",
+        "scope": "Conducting Falling Weight Deflectometer (FWD) survey and preparation of overlay design for roadway strengthening and pavement rehabilitation. The scope included pavement deflection testing, structural evaluation of existing pavement, traffic assessment, analysis of pavement performance, overlay thickness design, preparation of technical recommendations, and development of engineering reports for improving road durability and riding quality."
+      }
+    ]
+  },
+  {
+    "id": "bridges",
+    "num": "02",
+    "title": "Bridge and structures",
+    "projects": [
+      {
+        "title": "Salawala Bridge Consultancy",
+        "category": "Bridge Infrastructure / DPR & Structural Design",
+        "location": "Dehradun, Uttarakhand",
+        "image": "/images/projects/BridgenStructure/Salawala/B1.jpeg",
+        "carouselImages": [
+          "/images/projects/BridgenStructure/Salawala/B1.jpeg",
+          "/images/projects/BridgenStructure/Salawala/WhatsApp Image 2026-05-23 at 5.13.14 PM (1).jpeg",
+          "/images/projects/BridgenStructure/Salawala/WhatsApp Image 2026-05-23 at 5.13.14 PM (2).jpeg",
+          "/images/projects/BridgenStructure/Salawala/WhatsApp Image 2026-05-23 at 5.13.14 PM (3).jpeg",
+          "/images/projects/BridgenStructure/Salawala/WhatsApp Image 2026-05-23 at 5.13.14 PM (4).jpeg",
+          "/images/projects/BridgenStructure/Salawala/WhatsApp Image 2026-05-23 at 5.13.14 PM (5).jpeg",
+          "/images/projects/BridgenStructure/Salawala/WhatsApp Image 2026-05-23 at 5.13.14 PM (6).jpeg",
+          "/images/projects/BridgenStructure/Salawala/WhatsApp Image 2026-05-23 at 5.13.15 PM.jpeg"
+        ],
+        "ubqn": "UBON 186",
+        "client": "CD Dehradun",
+        "scope": "Consultancy services for design and Detailed Project Report (DPR) preparation of a 20 m span two-lane motor bridge at Salawala, Dehradun. The scope included topographical survey, geotechnical and hydrological investigations, structural analysis and bridge design, preparation of detailed engineering drawings, technical specifications, cost estimation, design vetting coordination, and DPR documentation for safe and efficient bridge infrastructure development."
+      },
+      {
+        "title": "Mudiyani Bridge Consultancy",
+        "category": "Bridge Infrastructure / DPR & Structural Design",
+        "location": "Champawat, Uttarakhand",
+        "image": "/images/projects/BridgenStructure/Bridge2/B1.jpeg",
+        "carouselImages": [
+          "/images/projects/BridgenStructure/Bridge2/B1.jpeg",
+          "/images/projects/BridgenStructure/Bridge2/WhatsApp Image 2026-05-23 at 5.15.07 PM.jpeg",
+          "/images/projects/BridgenStructure/Bridge2/WhatsApp Image 2026-05-23 at 5.15.07 PM (1).jpeg",
+          "/images/projects/BridgenStructure/Bridge2/WhatsApp Image 2026-05-23 at 5.15.08 PM.jpeg",
+          "/images/projects/BridgenStructure/Bridge2/WhatsApp Image 2026-05-23 at 5.17.58 PM.jpeg",
+          "/images/projects/BridgenStructure/Bridge2/WhatsApp Image 2026-05-23 at 5.17.58 PM (1).jpeg"
+        ],
+        "ubqn": "UBON 219",
+        "client": "PD Champawat",
+        "scope": "Consultancy services for design and Detailed Project Report (DPR) preparation of an 18 m span motor bridge on the Mudiyani–Chhidapani Link Road in Champawat. The scope included topographical survey, geotechnical and hydrological investigations, structural analysis and bridge design, preparation of detailed engineering drawings, technical specifications, cost estimation, vetting coordination, and DPR documentation for safe and sustainable bridge connectivity development."
+      },
+      {
+        "title": "Steel Bridge Monitoring",
+        "category": "Bridge Health Monitoring / Structural Assessment",
+        "location": "Bageshwar, Uttarakhand",
+        "image": "/images/projects/BridgenStructure/Bridge3/B1.jpeg",
+        "carouselImages": [
+          "/images/projects/BridgenStructure/Bridge3/B1.jpeg",
+          "/images/projects/BridgenStructure/Bridge3/WhatsApp Image 2026-05-23 at 5.24.06 PM.jpeg",
+          "/images/projects/BridgenStructure/Bridge3/WhatsApp Image 2026-05-23 at 5.24.06 PM (2).jpeg",
+          "/images/projects/BridgenStructure/Bridge3/WhatsApp Image 2026-05-23 at 5.24.06 PM (3).jpeg",
+          "/images/projects/BridgenStructure/Bridge3/WhatsApp Image 2026-05-23 at 5.24.06 PM (4).jpeg",
+          "/images/projects/BridgenStructure/Bridge3/WhatsApp Image 2026-05-23 at 5.24.07 PM.jpeg",
+          "/images/projects/BridgenStructure/Bridge3/WhatsApp Image 2026-05-23 at 5.24.07 PM (1).jpeg"
+        ],
+        "ubqn": "UBON 313",
+        "client": "NH Ranikhet",
+        "scope": "Detailed inspection, bridge health monitoring, and structural assessment of three steel bridges located on NH-109 over the Ramganga River and NH-309A over the Gomati and Saryu Rivers. The scope included condition assessment, structural evaluation, performance analysis, defect identification, monitoring of bridge components, load carrying assessment, preparation of technical observations, and development of detailed assessment and monitoring reports for ensuring structural safety, durability, and maintenance planning of the bridges."
+      },
+      {
+        "title": "Bhimbali Bridge Monitoring",
+        "category": "Bridge Health Monitoring / Strengthening Consultancy",
+        "location": "Kedarnath Route, Uttarakhand",
+        "image": "/images/projects/BridgenStructure/Bridge4/B1.jpeg",
+        "carouselImages": [
+          "/images/projects/BridgenStructure/Bridge4/B1.jpeg",
+          "/images/projects/BridgenStructure/Bridge4/WhatsApp Image 2026-05-25 at 1.48.04 PM.jpeg",
+          "/images/projects/BridgenStructure/Bridge4/WhatsApp Image 2026-05-25 at 1.48.04 PM (1).jpeg",
+          "/images/projects/BridgenStructure/Bridge4/WhatsApp Image 2026-05-25 at 1.48.05 PM.jpeg",
+          "/images/projects/BridgenStructure/Bridge4/WhatsApp Image 2026-05-25 at 1.48.05 PM (1).jpeg",
+          "/images/projects/BridgenStructure/Bridge4/WhatsApp Image 2026-05-25 at 1.48.05 PM (2).jpeg",
+          "/images/projects/BridgenStructure/Bridge4/WhatsApp Image 2026-05-25 at 1.48.05 PM (4).jpeg",
+          "/images/projects/BridgenStructure/Bridge4/WhatsApp Image 2026-05-25 at 1.48.05 PM (5).jpeg"
+        ],
+        "ubqn": "UBON 311",
+        "client": "CD Guptkashi",
+        "scope": "Consultancy services for bridge health monitoring, structural assessment, strengthening design, and Detailed Project Report (DPR) preparation for the 36 m span steel girder foot bridge at Bhimbali on the Shri Kedarnath Yatra Route. The scope included detailed condition assessment, structural analysis, identification of distressed bridge components, strengthening and rehabilitation planning, maintenance strategy development, preparation of technical observations, and comprehensive DPR documentation for improving structural safety, durability, and operational reliability of the bridge infrastructure."
+      },
+      {
+        "title": "Bridge Site Selection Consultancy",
+        "category": "Bridge Infrastructure / Site Selection",
+        "location": "Chakrata, Uttarakhand",
+        "image": "/images/projects/BridgenStructure/Bridge5/B1.jpeg",
+        "carouselImages": [
+          "/images/projects/BridgenStructure/Bridge5/B1.jpeg",
+          "/images/projects/BridgenStructure/Bridge5/WhatsApp Image 2026-05-25 at 2.12.37 PM.jpeg",
+          "/images/projects/BridgenStructure/Bridge5/WhatsApp Image 2026-05-25 at 2.12.37 PM (1).jpeg",
+          "/images/projects/BridgenStructure/Bridge5/WhatsApp Image 2026-05-25 at 2.12.37 PM (2).jpeg",
+          "/images/projects/BridgenStructure/Bridge5/WhatsApp Image 2026-05-25 at 2.12.37 PM (4).jpeg",
+          "/images/projects/BridgenStructure/Bridge5/WhatsApp Image 2026-05-25 at 2.12.37 PM (5).jpeg",
+          "/images/projects/BridgenStructure/Bridge5/WhatsApp Image 2026-05-25 at 2.12.38 PM.jpeg"
+        ],
+        "ubqn": "UBON 280",
+        "client": "CD Chakrata",
+        "scope": "Site reconnaissance, feasibility assessment, bridge site selection, topographical evaluation, and preparation of technical recommendations and reports for the proposed 80 m span motor bridge on the Chanjoyi–Headsu Motor Road in Chakrata."
+      }
+    ]
+  },
+  {
+    "id": "town-planning",
+    "num": "03",
+    "title": "Town planning and building design",
+    "projects": [
+      {
+        "title": "N.H P.W.D Office",
+        "category": "Infrastructure",
+        "location": "Dehradun, U.K",
+        "image": "/images/projects/Townplanning/NH.PWD/N1.jpeg",
+        "carouselImages": [
+          "/images/projects/Townplanning/NH.PWD/N1.jpeg",
+          "/images/projects/Townplanning/NH.PWD/N2.jpeg",
+          "/images/projects/Townplanning/NH.PWD/N3.jpeg",
+          "/images/projects/Townplanning/NH.PWD/N4.jpeg",
+          "/images/projects/Townplanning/NH.PWD/N5.jpeg"
+        ]
+      },
+      {
+        "title": "Bageshwar Circuit House",
+        "category": " Rest House/ Government Infrastructure",
+        "location": "Bageshwar, Uttarakhand",
+        "image": "/images/projects/Townplanning/Bageshwar_circuit/WhatsApp Image 2026-05-23 at 12.01.48 PM.jpeg",
+        "carouselImages": [
+          "/images/projects/Townplanning/Bageshwar_circuit/WhatsApp Image 2026-05-23 at 12.01.48 PM.jpeg",
+          "/images/projects/Townplanning/Bageshwar_circuit/WhatsApp Image 2026-05-23 at 12.01.48 PM (1).jpeg",
+          "/images/projects/Townplanning/Bageshwar_circuit/WhatsApp Image 2026-05-23 at 12.01.48 PM (2).jpeg",
+          "/images/projects/Townplanning/Bageshwar_circuit/WhatsApp Image 2026-05-23 at 12.01.48 PM (3).jpeg",
+          "/images/projects/Townplanning/Bageshwar_circuit/WhatsApp Image 2026-05-23 at 12.01.48 PM (4).jpeg",
+          "/images/projects/Townplanning/Bageshwar_circuit/WhatsApp Image 2026-05-23 at 12.01.48 PM (5).jpeg",
+          "/images/projects/Townplanning/Bageshwar_circuit/WhatsApp Image 2026-05-23 at 12.01.48 PM (6).jpeg"
+        ],
+        "ubqn": "UBON T2",
+        "client": "PD Bageshwar",
+        "scope": "Planning, architectural design, preparation of Detailed Project Report (DPR), conceptual sketches, cost estimation, soil investigation, structural detailing, technical specifications, and detailed working drawings for the proposed VVIP Circuit House / Guest House at Bageshwar. The project includes comprehensive infrastructure planning with modern architectural and functional requirements for government hospitality facilities."
+      },
+      {
+        "title": "Dakpatthar Resort ",
+        "category": "Hospitality / Resort Development",
+        "location": "Dakpatthar, Uttarakhand",
+        "image": "/images/projects/Townplanning/dakpatthar/Dak1.jpeg",
+        "carouselImages": [
+          "/images/projects/Townplanning/dakpatthar/Dak1.jpeg",
+          "/images/projects/Townplanning/dakpatthar/Dak2.jpeg",
+          "/images/projects/Townplanning/dakpatthar/Dak3.jpeg",
+          "/images/projects/Townplanning/dakpatthar/Dak4.jpeg",
+          "/images/projects/Townplanning/dakpatthar/Dak5.jpeg",
+          "/images/projects/Townplanning/dakpatthar/Dak6.jpeg",
+          "/images/projects/Townplanning/dakpatthar/Dak7.jpeg",
+          "/images/projects/Townplanning/dakpatthar/Dak8.jpeg",
+          "/images/projects/Townplanning/dakpatthar/Dak9.jpeg"
+        ],
+        "ubqn": "UBON 185",
+        "client": "GMVN",
+        "scope": "Preparation of conceptual architectural planning, design sketches, cost estimation, drawings, technical specifications, and presentation materials for the proposed resort development at Dakpatthar. The project focused on functional resort planning, aesthetic development, tourism-oriented infrastructure, and integrated hospitality design concepts suitable for the surrounding natural environment."
+      },
+      {
+        "title": "Cultural Complex",
+        "category": "Public Infrastructure / Amphitheatre Development",
+        "location": "Lohaghat, Uttarakhand",
+        "image": "/images/projects/Townplanning/Cultural/C1.jpeg",
+        "carouselImages": [
+          "/images/projects/Townplanning/Cultural/C1.jpeg",
+          "/images/projects/Townplanning/Cultural/C2.jpeg",
+          "/images/projects/Townplanning/Cultural/C3.jpeg",
+          "/images/projects/Townplanning/Cultural/C4.jpeg",
+          "/images/projects/Townplanning/Cultural/C5.jpeg",
+          "/images/projects/Townplanning/Cultural/C6.jpeg",
+          "/images/projects/Townplanning/Cultural/C7.jpeg"
+        ],
+        "ubqn": "UBON 333",
+        "client": "PWD Uttarakhand",
+        "scope": "Survey, soil investigation, architectural planning, structural design, cost estimation, preparation of drawings, and Detailed Project Report (DPR) for the proposed Cultural Complex and Amphitheatre at Lohaghat. The consultancy includes detailed engineering design, technical specifications, project planning, and vetting support for development of a modern cultural and public gathering facility with functional and aesthetic infrastructure components."
+      },
+      {
+        "title": "Devprayag Parking ",
+        "category": "Parking Infrastructure / Urban Facility Development",
+        "location": "PWD, Uttarakhand",
+        "image": "/images/projects/Townplanning/Jamikhal/J1.jpeg",
+        "carouselImages": [
+          "/images/projects/Townplanning/Jamikhal/J1.jpeg",
+          "/images/projects/Townplanning/Jamikhal/J2.jpeg",
+          "/images/projects/Townplanning/Jamikhal/J3.jpeg",
+          "/images/projects/Townplanning/Jamikhal/J4.jpeg",
+          "/images/projects/Townplanning/Jamikhal/J5.jpeg",
+          "/images/projects/Townplanning/Jamikhal/J6.jpeg"
+        ],
+        "ubqn": "UBON 226",
+        "client": "TD Kirti Nagar",
+        "scope": "Preparation of design and Detailed Project Report (DPR) for a proposed parking facility at Jamnikhal, Kirtinagar, covering an approximate area of 300 sqm. The scope included site assessment, parking layout planning, architectural and structural design considerations, circulation planning, cost estimation, preparation of detailed drawings, and technical specifications for efficient vehicular management and optimized land utilization."
+      }
+    ]
+  },
+  {
+    "id": "environment",
+    "num": "04",
+    "title": "Environment and sustainability",
+    "projects": []
+  },
+  {
+    "id": "water-waste",
+    "num": "05",
+    "title": "Water Resources & Engineering",
+    "projects": [
+      {
+        "title": "BHEL Drain Design",
+        "category": "Drainage Infrastructure / Storm Water Management",
+        "location": "Haridwar, Uttarakhand",
+        "image": "/images/projects/Water/BHEL/B1.jpeg",
+        "carouselImages": [
+          "/images/projects/Water/BHEL/B1.jpeg",
+          "/images/projects/Water/BHEL/WhatsApp Image 2026-05-26 at 11.49.11 AM.jpeg",
+          "/images/projects/Water/BHEL/WhatsApp Image 2026-05-26 at 11.49.11 AM (1).jpeg",
+          "/images/projects/Water/BHEL/WhatsApp Image 2026-05-26 at 11.49.11 AM (2).jpeg",
+          "/images/projects/Water/BHEL/WhatsApp Image 2026-05-26 at 11.53.41 AM.jpeg"
+        ],
+        "ubqn": "UBON 178",
+        "client": "PWD Haridwar",
+        "scope": "Design consultancy services for the proposed drainage system from Durga Chowk to Kassawan in BHEL Ranipur. The scope included site assessment, hydrological analysis, storm water flow evaluation, drain alignment planning, hydraulic design, preparation of engineering drawings, technical specifications, and cost estimation for efficient storm water management and improved urban drainage infrastructure."
+      },
+      {
+        "title": "Langha Road Drainage",
+        "category": "Drainage Infrastructure / RCC Drain Design",
+        "location": "Dehradun, Uttarakhand",
+        "image": "/images/projects/Water/Langha/L1.jpeg",
+        "carouselImages": [
+          "/images/projects/Water/Langha/L1.jpeg",
+          "/images/projects/Water/Langha/WhatsApp Image 2026-05-26 at 11.58.00 AM.jpeg",
+          "/images/projects/Water/Langha/WhatsApp Image 2026-05-26 at 11.58.00 AM (1).jpeg",
+          "/images/projects/Water/Langha/WhatsApp Image 2026-05-26 at 11.58.00 AM (2).jpeg",
+          "/images/projects/Water/Langha/WhatsApp Image 2026-05-26 at 11.58.00 AM (4).jpeg",
+          "/images/projects/Water/Langha/WhatsApp Image 2026-05-26 at 11.58.00 AM (5).jpeg",
+          "/images/projects/Water/Langha/WhatsApp Image 2026-05-26 at 11.58.01 AM.jpeg"
+        ],
+        "ubqn": "UBON 244",
+        "client": "CD Dehradun",
+        "scope": "Design consultancy services for RCC drain construction and storm water management on the road stretch from Raidapur towards the Industrial Area on Langha Road. The scope included hydrological analysis, drainage assessment, storm water flow calculations, hydraulic design of RCC drains, alignment planning, preparation of hydrology reports, engineering drawings, technical specifications, and cost estimation for effective water drainage and flood mitigation along the roadway corridor."
+      },
+      {
+        "title": "Lehman Road Drainage",
+        "category": "Drainage Infrastructure / Storm Water Management",
+        "location": "Vikasnagar, Dehradun, Uttarakhand",
+        "image": "/images/projects/Water/Lehman/L1.jpeg",
+        "carouselImages": [
+          "/images/projects/Water/Lehman/L1.jpeg",
+          "/images/projects/Water/Lehman/WhatsApp Image 2026-05-26 at 12.25.07 PM.jpeg",
+          "/images/projects/Water/Lehman/WhatsApp Image 2026-05-26 at 12.25.07 PM (1).jpeg",
+          "/images/projects/Water/Lehman/WhatsApp Image 2026-05-26 at 12.25.07 PM (2).jpeg"
+        ],
+        "ubqn": "UBON 329",
+        "client": "CD Dehradun",
+        "scope": "Preparation of survey and drainage design for the Lehman Hospital Motor Road connecting to NH-507 in Vikasnagar. The scope included topographical survey, hydrological assessment, storm water flow analysis, drain alignment planning, hydraulic design, preparation of engineering drawings, technical specifications, and cost estimation for effective roadside drainage and improved water management along the roadway corridor."
+      }
+    ]
+  }
+]

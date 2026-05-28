@@ -8,23 +8,27 @@ import newsFeedData from "../data/newsFeed.json";
 const carouselImages = [
     {
         src: "/images/HomeMainCrousel/P1.JPG",
-        title: "Team URBANBUILD™",
-        desc: "Our highly experienced management and structural engineering teams collaborating at the corporate headquarters."
+        title: "Team URBANBUILD™"
     },
     {
         src: "/images/HomeMainCrousel/P2.jpeg",
-        title: "Featured Project",
-        desc: "Type 5 Judgee Building - Modern structural engineering and sustainable institutional architecture."
+        title: "Dignitary Presence",
+        desc: "Chief Guest, Ayaz Ahmed, along with AD Naveen Kumar from URBANBUILD™"
     },
     {
         src: "/images/HomeMainCrousel/P3.jpeg",
         title: "Er. G.K. Sahu Visit",
-        desc: "Principal Scientist at CRRI (Central Road Research Institute) reviewing structural blueprints at our corporate office."
+        desc: "Retired Chief Scientist at CRRI (Central Road Research Institute) at our office."
     },
     {
         src: "/images/HomeMainCrousel/P4.png",
         title: "Dignitary Visit",
-        desc: "Honored to host Shri Kundan Singh (IES, Retd.), Advisor – Engineering (Planning Commission, Uttarakhand), Former Jt. Director General (Defence Ministry), Ex-MD BRIDCUL, and Chief Inspector of Ropeways, Uttarakhand, at the UrbanBuild office."
+        desc: "Honored to host Shri Kundan Singh (IES, Retd.), Advisor – Engineering (Uttarakhand), Former Jt. Director General, Ex-MD BRIDCUL"
+    },
+    {
+        src: "/images/HomeMainCrousel/P5.JPG",
+        title: "Growth Conclave 1.0",
+        desc: " Mr. Ayaz Ahmed,Retired Engineer-in-Chief (EnC), PWD Uttarakhand"
     }
 ];
 const getPortfolioGalleryImages = () => {
@@ -186,8 +190,8 @@ const Home = () => {
                 }
             } else {
                 setNewsFeed([
-                    { title: "UrbanBuild™ Growth Conclave 1.0, held at Hotel Ramada, Dehradun", category: "Event", date: "Oct 12, 2025", img: "/images/projects/highway-render.jpg" },
-                    { title: "Er. G.K. Sahu, Principal Scientist at CRRI, Visited URBANBUILD™ Office", category: "Visit", date: "Aug 15, 2025", img: "/images/projects/govt-building.jpg" },
+                    { title: "November in Review", category: "Event", date: "Nov 12, 2025", img: "/images/HomeMainCrousel/P5.JPG" },
+                    { title: "Er. G.K. Sahu Sir, Chief Project Coordinator (Bridges), Visited URBANBUILD™ Office", category: "Visit", date: "Aug 15, 2025", img: "/images/HomeMainCrousel/P3.jpeg" },
                     { title: "Civil Structural Survey Completed for Bageshwar Circuit House", category: "Announcement", date: "Nov 20, 2025", img: "/images/projects/govt-building.jpg" },
                 ]);
             }

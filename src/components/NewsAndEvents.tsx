@@ -6,19 +6,19 @@ import { Link } from "react-router-dom";
 const newsItems = [
     {
         id: 1,
-        title: "UrbanBuild™ Growth Conclave 1.0, held at Hotel Ramada, Dehradun",
+        title: "November in Review",
         category: "Event",
-        date: "May 2026",
+        date: "Nov 2025",
     },
     {
         id: 2,
-        title: "UrbanBuild™ Growth Conclave 1.0, highlighting Strategic Resilience",
-        category: "Event",
+        title: "URRDA Empanelment",
+        category: "Announcement",
         date: "May 2026",
     },
     {
         id: 3,
-        title: "Er. G.K. Sahu, Principal Scientist at CRRI, Visited URBANBUILD™ Office",
+        title: "Er. G.K. Sahu Sir, Chief Project Coordinator (Bridges), Visited URBANBUILD™ Office",
         category: "Visit",
         date: "April 2026",
     },

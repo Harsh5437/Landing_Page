@@ -124,7 +124,7 @@ const Insights = () => {
               <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
               <h3 className="text-xs md:text-sm font-space font-black tracking-widest text-foreground uppercase">LIFECYCLE DISTRIBUTION</h3>
             </div>
-            <span className="text-[10px] md:text-xs font-mono text-accent">231 WORKS ACTIVE // 69% DONE</span>
+            <span className="text-[10px] md:text-xs font-mono text-accent">336 WORKS ACTIVE // 69% DONE</span>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-10 gap-8 items-center">
@@ -206,7 +206,7 @@ const Insights = () => {
 
                 {/* Central Stats readout */}
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none">
-                  <span className="text-2xl font-space font-black text-foreground leading-none">231</span>
+                  <span className="text-2xl font-space font-black text-foreground leading-none">336</span>
                   <span className="text-[7.5px] font-mono tracking-widest text-muted-foreground uppercase mt-1">TOTAL WORKS</span>
                 </div>
               </div>
@@ -223,7 +223,7 @@ const Insights = () => {
                     <span className="font-space font-bold uppercase tracking-wider">Completed</span>
                   </div>
                   <div className="font-mono font-bold">
-                    <span className="text-foreground">160 Works</span>
+                    <span className="text-foreground">232 Works</span>
                     <span className="text-emerald-500 ml-2">69%</span>
                   </div>
                 </div>
@@ -245,7 +245,7 @@ const Insights = () => {
                     <span className="font-space font-bold uppercase tracking-wider">Running</span>
                   </div>
                   <div className="font-mono font-bold">
-                    <span className="text-foreground">53 Works</span>
+                    <span className="text-foreground">77 Works</span>
                     <span className="text-[#1A7EFF] ml-2">23%</span>
                   </div>
                 </div>
@@ -267,7 +267,7 @@ const Insights = () => {
                     <span className="font-space font-bold uppercase tracking-wider">Pipeline</span>
                   </div>
                   <div className="font-mono font-bold">
-                    <span className="text-foreground">18 Works</span>
+                    <span className="text-foreground">27 Works</span>
                     <span className="text-[#D4AF37] ml-2">8%</span>
                   </div>
                 </div>

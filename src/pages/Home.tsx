@@ -11,9 +11,9 @@ const carouselImages = [
         title: "Team URBANBUILD™"
     },
     {
-        src: "/images/HomeMainCrousel/P2.jpeg",
-        title: "Dignitary Presence",
-        desc: "Chief Guest, Ayaz Ahmed, along with AD Naveen Kumar from URBANBUILD™"
+        src: "/images/HomeMainCrousel/P1(i).png",
+        title: "World environment day Celebration",
+        desc: "UrbanBuild™ celebrates World Environment Day with the Directors of CIPET Dehradun and URBANBUILD™"
     },
     {
         src: "/images/HomeMainCrousel/P3.jpeg",

@@ -351,7 +351,7 @@ const StickyHeader = () => {
 
                     {/* Right Side static projects badge */}
                     <Link to="/projects" className="z-10 bg-[#0a122c] dark:bg-[#02050c] pl-3 flex items-center gap-1.5 font-bold uppercase tracking-wider text-accent border-l border-[#1A7EFF]/20 shrink-0 hover:text-white transition-colors duration-300">
-                        <span className="text-[10px] md:text-[10.5px] font-space font-black text-[#D4AF37] tracking-tight">336+</span>
+                        <span className="text-[10px] md:text-[10.5px] font-space font-black text-[#D4AF37] tracking-tight">365+</span>
                         <span className="text-[7.5px] font-mono text-zinc-300 tracking-wider">Projects Handled</span>
                     </Link>
                 </div>

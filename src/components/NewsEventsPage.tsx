@@ -9,6 +9,19 @@ const newsArticles = newsFeedData;
 const categories = ["All", "Event", "Visit", "Announcement", "Insights"];
 
 const NewsEventsPage = () => {
+  const ensureUrrdaFirst = (list: any[]) => {
+    if (!Array.isArray(list)) return list;
+    const urrdaIndex = list.findIndex(item => item && item.title === "URRDA Empanelment");
+    if (urrdaIndex > 0) {
+      const urrdaItem = list[urrdaIndex];
+      const newList = [...list];
+      newList.splice(urrdaIndex, 1);
+      newList.unshift(urrdaItem);
+      return newList;
+    }
+    return list;
+  };
+
   const [newsArticlesState, setNewsArticles] = useState<any[]>(() => {
     const saved = localStorage.getItem("urbanbuild_news_feed");
     if (saved) {
@@ -19,15 +32,16 @@ const NewsEventsPage = () => {
           const hasDifferentCount = parsed.length <= 5;
           const hasUrrda = parsed.some(art => art && art.title === "URRDA Empanelment");
           if (!hasOldData && !hasDifferentCount && hasUrrda) {
-            return parsed;
+            return ensureUrrdaFirst(parsed);
           }
         }
       } catch (e) {
         console.error("Failed to parse news articles", e);
       }
     }
-    localStorage.setItem("urbanbuild_news_feed", JSON.stringify(newsArticles));
-    return newsArticles;
+    const initialArticles = ensureUrrdaFirst(newsArticles);
+    localStorage.setItem("urbanbuild_news_feed", JSON.stringify(initialArticles));
+    return initialArticles;
   });
 
   const [searchQuery, setSearchQuery] = useState("");
@@ -42,14 +56,14 @@ const NewsEventsPage = () => {
         try {
           const parsed = JSON.parse(saved);
           if (Array.isArray(parsed)) {
-            setNewsArticles(parsed);
+            setNewsArticles(ensureUrrdaFirst(parsed));
             return;
           }
         } catch (e) {
           console.error(e);
         }
       }
-      setNewsArticles(newsArticles);
+      setNewsArticles(ensureUrrdaFirst(newsArticles));
     };
     window.addEventListener("urbanbuild-news-updated", handleUpdate);
     return () => window.removeEventListener("urbanbuild-news-updated", handleUpdate);

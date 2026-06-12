@@ -1,15 +1,15 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { 
-  BarChart3, 
-  Award, 
-  Zap, 
-  Activity, 
-  TrendingUp, 
-  Building2, 
-  Calendar, 
-  ChevronRight, 
-  X, 
+import {
+  BarChart3,
+  Award,
+  Zap,
+  Activity,
+  TrendingUp,
+  Building2,
+  Calendar,
+  ChevronRight,
+  X,
   Info,
   Layers,
   MapPin
@@ -24,7 +24,7 @@ const Insights = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground pt-32 pb-16 relative overflow-hidden transition-colors duration-300 select-none">
-      
+
       {/* Mathematical Undulating Ripple Wave Background */}
       <div className="absolute inset-0 pointer-events-none select-none z-0">
         <svg className="w-full h-full opacity-40 dark:opacity-20" xmlns="http://www.w3.org/2000/svg">
@@ -52,7 +52,7 @@ const Insights = () => {
       </div>
 
       <div className="max-w-6xl w-full mx-auto px-6 relative z-10 flex flex-col items-center">
-        
+
         {/* Main Section Header (Matches Team Page Style) */}
         <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16 flex flex-col items-center">
           <motion.h2
@@ -79,8 +79,8 @@ const Insights = () => {
         {/* 1. Sleek HUD Statistics Panel */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 w-full max-w-5xl mx-auto mb-8">
           {[
-            { value: "336+", label: "Projects Handled", icon: BarChart3, color: "from-[#1A7EFF] to-[#1A7EFF]/60", bg: "rgba(26,126,255,0.03)", border: "border-[#1A7EFF]/25" },
-            { value: "5Cr+", label: "Total Cost", icon: Award, color: "from-accent to-accent/60", bg: "rgba(212,175,55,0.03)", border: "border-accent/25" },
+            { value: "365+", label: "Projects Handled", icon: BarChart3, color: "from-[#1A7EFF] to-[#1A7EFF]/60", bg: "rgba(26,126,255,0.03)", border: "border-[#1A7EFF]/25" },
+            { value: "7Cr+", label: "Total Cost", icon: Award, color: "from-accent to-accent/60", bg: "rgba(212,175,55,0.03)", border: "border-accent/25" },
             { value: "40+", label: "Expert Engineers", icon: Zap, color: "from-emerald-500 to-emerald-500/60", bg: "rgba(16,185,129,0.03)", border: "border-emerald-500/25" }
           ].map((stat, index) => {
             const Icon = stat.icon;
@@ -108,7 +108,7 @@ const Insights = () => {
                 <span className="text-4xl md:text-5xl font-space font-black tracking-tight text-foreground mb-1 group-hover:text-accent transition-colors duration-300">
                   {stat.value}
                 </span>
-                
+
                 <span className="text-[9px] md:text-[10px] font-mono font-bold tracking-[0.22em] text-muted-foreground uppercase">
                   {stat.label}
                 </span>
@@ -124,7 +124,7 @@ const Insights = () => {
               <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
               <h3 className="text-xs md:text-sm font-space font-black tracking-widest text-foreground uppercase">LIFECYCLE DISTRIBUTION</h3>
             </div>
-            <span className="text-[10px] md:text-xs font-mono text-accent">336 WORKS ACTIVE // 69% DONE</span>
+
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-10 gap-8 items-center">
@@ -206,7 +206,7 @@ const Insights = () => {
 
                 {/* Central Stats readout */}
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none">
-                  <span className="text-2xl font-space font-black text-foreground leading-none">336</span>
+                  <span className="text-2xl font-space font-black text-foreground leading-none">365</span>
                   <span className="text-[7.5px] font-mono tracking-widest text-muted-foreground uppercase mt-1">TOTAL WORKS</span>
                 </div>
               </div>
@@ -214,7 +214,7 @@ const Insights = () => {
 
             {/* Right Side: Process bars & Detailed break-down (6 Columns) */}
             <div className="col-span-1 md:col-span-6 flex flex-col gap-5">
-              
+
               {/* Category: Completed */}
               <div className="flex flex-col gap-1.5 bg-gray-50/50 dark:bg-[#0c1631]/40 border border-gray-200/50 dark:border-[#1A7EFF]/10 p-4 rounded-2xl">
                 <div className="flex justify-between items-center text-xs">
@@ -223,7 +223,7 @@ const Insights = () => {
                     <span className="font-space font-bold uppercase tracking-wider">Completed</span>
                   </div>
                   <div className="font-mono font-bold">
-                    <span className="text-foreground">232 Works</span>
+                    <span className="text-foreground">252 Works</span>
                     <span className="text-emerald-500 ml-2">69%</span>
                   </div>
                 </div>
@@ -245,7 +245,7 @@ const Insights = () => {
                     <span className="font-space font-bold uppercase tracking-wider">Running</span>
                   </div>
                   <div className="font-mono font-bold">
-                    <span className="text-foreground">77 Works</span>
+                    <span className="text-foreground">84 Works</span>
                     <span className="text-[#1A7EFF] ml-2">23%</span>
                   </div>
                 </div>
@@ -267,7 +267,7 @@ const Insights = () => {
                     <span className="font-space font-bold uppercase tracking-wider">Pipeline</span>
                   </div>
                   <div className="font-mono font-bold">
-                    <span className="text-foreground">27 Works</span>
+                    <span className="text-foreground">29 Works</span>
                     <span className="text-[#D4AF37] ml-2">8%</span>
                   </div>
                 </div>

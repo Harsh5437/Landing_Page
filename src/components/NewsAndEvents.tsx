@@ -5,16 +5,16 @@ import { Link } from "react-router-dom";
 
 const newsItems = [
     {
-        id: 1,
-        title: "November in Review",
-        category: "Event",
-        date: "Nov 2025",
-    },
-    {
         id: 2,
         title: "URRDA Empanelment",
         category: "Announcement",
         date: "May 2026",
+    },
+    {
+        id: 1,
+        title: "November in Review",
+        category: "Event",
+        date: "Nov 2025",
     },
     {
         id: 3,

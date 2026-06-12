@@ -7,13 +7,13 @@ import newsFeedData from "../data/newsFeed.json";
 
 const carouselImages = [
     {
-        src: "/images/HomeMainCrousel/P1.JPG",
-        title: "Team URBANBUILD™"
+        src: "/images/HomeMainCrousel/P1(i).png",
+        title: "World Environment Day",
+        desc: "UrbanBuild™ celebrates World Environment Day with CIPET Dehradun."
     },
     {
-        src: "/images/HomeMainCrousel/P1(i).png",
-        title: "World environment day Celebration",
-        desc: "UrbanBuild™ celebrates World Environment Day with the Directors of CIPET Dehradun and URBANBUILD™"
+        src: "/images/HomeMainCrousel/P1.JPG",
+        title: "Team URBANBUILD™"
     },
     {
         src: "/images/HomeMainCrousel/P3.jpeg",
@@ -129,7 +129,7 @@ const ProjectCounter = () => {
                 <div className="absolute bottom-0.5 right-0.5 w-1.5 h-1.5 border-b border-r border-accent/75" />
 
                 <span className="text-[20px] md:text-[23px] lg:text-[25px] font-space font-black text-accent tracking-tighter leading-none drop-shadow-[0_0_5px_rgba(212,175,55,0.4)]">
-                    336+
+                    365+
                 </span>
                 <span className="text-[7.5px] md:text-[8.5px] lg:text-[9.5px] font-mono font-black text-white/90 tracking-[0.18em] leading-none uppercase">
                     Projects Handled
@@ -140,6 +140,19 @@ const ProjectCounter = () => {
 };
 
 const Home = () => {
+    const ensureUrrdaFirst = (list: any[]) => {
+        if (!Array.isArray(list)) return list;
+        const urrdaIndex = list.findIndex(item => item && item.title === "URRDA Empanelment");
+        if (urrdaIndex > 0) {
+            const urrdaItem = list[urrdaIndex];
+            const newList = [...list];
+            newList.splice(urrdaIndex, 1);
+            newList.unshift(urrdaItem);
+            return newList;
+        }
+        return list;
+    };
+
     // Dynamic database-free states for News and Gallery
     const [newsFeed, setNewsFeed] = useState<any[]>(() => {
         const saved = localStorage.getItem("urbanbuild_news_feed");
@@ -151,14 +164,14 @@ const Home = () => {
                     const hasDifferentCount = parsed.length <= 5;
                     const hasUrrda = parsed.some(art => art && art.title === "URRDA Empanelment");
                     if (!hasOldData && !hasDifferentCount && hasUrrda) {
-                        return parsed;
+                        return ensureUrrdaFirst(parsed);
                     }
                 }
             } catch (e) {
                 console.error("Failed to parse saved news feed", e);
             }
         }
-        const initialNews = newsFeedData;
+        const initialNews = ensureUrrdaFirst(newsFeedData);
         localStorage.setItem("urbanbuild_news_feed", JSON.stringify(initialNews));
         return initialNews;
     });
@@ -184,12 +197,13 @@ const Home = () => {
             const saved = localStorage.getItem("urbanbuild_news_feed");
             if (saved) {
                 try {
-                    setNewsFeed(JSON.parse(saved));
+                    setNewsFeed(ensureUrrdaFirst(JSON.parse(saved)));
                 } catch (e) {
                     console.error(e);
                 }
             } else {
                 setNewsFeed([
+                    { title: "URRDA Empanelment", category: "Announcement", date: "May 26, 2026", img: "/images/projects/road-section.jpg", summary: "UrbanBuild is proud to announce its empanelment with the Uttarakhand Rural Road Development Agency (URRDA)." },
                     { title: "November in Review", category: "Event", date: "Nov 12, 2025", img: "/images/HomeMainCrousel/P5.JPG" },
                     { title: "Er. G.K. Sahu Sir, Chief Project Coordinator (Bridges), Visited URBANBUILD™ Office", category: "Visit", date: "Aug 15, 2025", img: "/images/HomeMainCrousel/P3.jpeg" },
                     { title: "Civil Structural Survey Completed for Bageshwar Circuit House", category: "Announcement", date: "Nov 20, 2025", img: "/images/projects/govt-building.jpg" },
@@ -389,36 +403,6 @@ const Home = () => {
                             </div>
                         </div>
 
-                        {/* Static Pinned Featured Update */}
-                        {(() => {
-                            const featuredArticle = newsFeed.find(item => item.title === "URRDA Empanelment");
-                            return featuredArticle && (
-                                <div className="p-3.5 border-b border-accent/20 bg-accent/[0.04] dark:bg-accent/[0.02] relative overflow-hidden select-none shrink-0 shadow-sm">
-                                    <div className="flex items-center justify-between gap-2 mb-2">
-                                        <div className="flex items-center gap-1.5">
-                                            <span className="text-[8px] font-bold tracking-wider text-accent uppercase bg-accent/15 px-1.5 py-0.5 rounded">
-                                                {featuredArticle.category || "Announcement"}
-                                            </span>
-                                            <span className="text-[7.5px] font-extrabold text-[#D4AF37] tracking-wider bg-[#D4AF37]/15 border border-[#D4AF37]/30 px-1.5 py-0.5 rounded animate-pulse">
-                                                ⭐ FEATURED UPDATE
-                                            </span>
-                                        </div>
-                                        <span className="text-[9px] font-mono text-zinc-400 flex items-center gap-1">
-                                            <Calendar className="w-2.5 h-2.5 text-accent/60" /> {featuredArticle.date}
-                                        </span>
-                                    </div>
-                                    <Link to="/news" className="block group">
-                                        <h4 className="text-[12px] md:text-[13px] font-space font-black text-white group-hover:text-accent transition-colors duration-300 leading-snug uppercase tracking-tight line-clamp-1 mb-1">
-                                            {featuredArticle.title}
-                                        </h4>
-                                        <p className="text-[9.5px] text-zinc-400 leading-relaxed font-light line-clamp-2">
-                                            {featuredArticle.summary}
-                                        </p>
-                                    </Link>
-                                </div>
-                            );
-                        })()}
-
                         {/* Scrollable list of news */}
                         <div className="flex-1 relative overflow-hidden bg-gradient-to-b from-zinc-950 to-black">
                             <style>{`
@@ -441,8 +425,7 @@ const Home = () => {
                             <Link to="/news" className="absolute inset-0 p-4 overflow-hidden block">
                                 <div className="flex flex-col gap-3 animate-home-news-scroll hover:[animation-play-state:paused] cursor-pointer">
                                     {(() => {
-                                        const otherNews = newsFeed.filter(item => item.title !== "URRDA Empanelment");
-                                        const loopList = otherNews.length > 0 ? otherNews : newsFeed;
+                                        const loopList = newsFeed;
                                         return [...loopList, ...loopList, ...loopList, ...loopList].map((item, idx) => {
                                             const artCategory = item.category || "News";
                                             const artDate = item.date || "Recent";

@@ -2,7 +2,7 @@ import { motion, useScroll, useMotionValueEvent, AnimatePresence } from "framer-
 import { useState, useEffect } from "react";
 import { ModeToggle } from "@/components/mode-toggle";
 import logo from "@/assets/logo-optimized.png";
-import { Menu, ChevronDown } from "lucide-react";
+import { Menu, ChevronDown, Linkedin } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Link, useLocation } from "react-router-dom";
 
@@ -196,6 +196,19 @@ const StickyHeader = () => {
 
                     {/* Actions */}
                     <div className="hidden md:flex items-center gap-4">
+                        <a
+                            href="https://www.linkedin.com/company/urbanbuild%E2%84%A2/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={`p-1.5 rounded-full transition-all duration-300 hover:scale-[1.05] active:scale-[0.95] border flex items-center justify-center ${
+                                isScrolled
+                                    ? "border-gray-200 dark:border-[#1A7EFF]/15 text-charcoal dark:text-white hover:text-accent dark:hover:text-accent hover:bg-gray-50 dark:hover:bg-white/[0.04]"
+                                    : "border-white/20 text-white hover:bg-white/10 backdrop-blur-sm"
+                            }`}
+                            aria-label="LinkedIn"
+                        >
+                            <Linkedin className="w-3.5 h-3.5" />
+                        </a>
                         <Link
                             to="/contact"
                             className={`px-6 py-2.5 text-xs font-bold tracking-[0.15em] rounded-full transition-all duration-300 shadow-sm hover:scale-[1.02] active:scale-[0.98] border ${isScrolled

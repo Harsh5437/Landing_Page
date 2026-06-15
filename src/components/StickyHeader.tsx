@@ -116,7 +116,10 @@ const StickyHeader = () => {
                                             key={link.href}
                                             className="relative group flex items-center h-16"
                                         >
-                                            <div className="flex items-center gap-1 cursor-pointer py-2">
+                                            <Link
+                                                to={link.href}
+                                                className="flex items-center gap-1 cursor-pointer py-2"
+                                            >
                                                 <span
                                                     className={`text-xs font-bold tracking-widest transition-all duration-200 flex items-center gap-1 uppercase ${isActive
                                                         ? isScrolled
@@ -141,7 +144,7 @@ const StickyHeader = () => {
                                                         }}
                                                     />
                                                 )}
-                                            </div>
+                                            </Link>
 
                                             {/* Premium Hover Dropdown */}
                                             <div className="absolute top-[80%] left-1/2 -translate-x-1/2 mt-2 w-max min-w-[260px] rounded-2xl bg-[#0c1631]/95 dark:bg-[#060c1d]/95 backdrop-blur-xl border border-[#1A7EFF]/20 dark:border-[#1A7EFF]/35 p-2 shadow-[0_20px_50px_rgba(26,126,255,0.12)] dark:shadow-[0_20px_50px_rgba(26,126,255,0.25)] opacity-0 pointer-events-none scale-95 origin-top group-hover:opacity-100 group-hover:pointer-events-auto group-hover:scale-100 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] z-50">

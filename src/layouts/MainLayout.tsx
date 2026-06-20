@@ -28,7 +28,7 @@ const MainLayout = () => {
   }, [pathname, hash]);
 
   return (
-    <div className="flex flex-col min-h-screen overflow-x-hidden w-full relative">
+    <div className="flex flex-col min-h-screen overflow-x-clip w-full relative">
       <StickyHeader />
       <main className="flex-1">
         <Outlet />

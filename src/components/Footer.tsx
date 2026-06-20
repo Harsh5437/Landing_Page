@@ -34,7 +34,13 @@ const Footer = () => {
       { name: "Insights", path: "/insights" },
       { name: "News & Events", path: "/news" },
     ],
-    services: ["Road & Bridge Design", "Building Design", "Environmental Assesment", "Economic Valuation", "Surveying & Mapping", "Civil Engineering Lab"]
+    services: ["Road & Bridge Design", "Building Design", "Environmental Assesment", "Economic Valuation", "Surveying & Mapping", "Civil Engineering Lab"],
+    otherVerticals: [
+      { name: "Beavers" },
+      { name: "UB-Quest" },
+      { name: "UB-Laboratory" },
+      { name: "UB-IT & Automation" }
+    ]
   };
 
   return (
@@ -62,7 +68,7 @@ const Footer = () => {
       </div>
 
       <div className="container mx-auto px-6 relative z-10" ref={ref}>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-4 md:mb-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 md:gap-12 mb-4 md:mb-6">
 
           {/* Brand Identity */}
           <motion.div
@@ -148,6 +154,32 @@ const Footer = () => {
                     <span className="h-[1.5px] w-1.5 rounded-full bg-accent/50" />
                     <span className="text-xs font-medium">{service}</span>
                   </div>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Other Verticals */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.35 }}
+            className="space-y-4 md:space-y-6"
+          >
+            <h4 className="text-[10px] font-black tracking-[0.2em] text-accent uppercase">Other Verticals</h4>
+            <ul className="space-y-2.5">
+              {footerLinks.otherVerticals.map((vertical) => (
+                <li key={vertical.name}>
+                  <a
+                    href={vertical.path}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-foreground flex items-center gap-2 group transition-all duration-300"
+                  >
+                    <span className="h-[1.5px] w-1.5 rounded-full bg-accent/50 group-hover:bg-accent transition-colors" />
+                    <span className="text-xs font-medium">{vertical.name}</span>
+                    <ArrowUpRight className="h-3 w-3 opacity-0 group-hover:opacity-100 -translate-y-0.5 transition-all duration-300 text-accent" />
+                  </a>
                 </li>
               ))}
             </ul>

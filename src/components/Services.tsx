@@ -207,7 +207,7 @@ const Services = () => {
             <div className="flex flex-col lg:flex-row w-full min-h-[calc(100vh-6rem)] border-b border-accent/30 dark:border-accent/20">
 
                 {/* Left Sidebar Navigation (Reduced width, compact margins, and sticky) */}
-                <div className="w-full lg:w-[20%] dark bg-[#060c1d] lg:border-r border-b lg:border-b-0 border-accent/20 dark:border-accent/15 flex flex-col p-4 md:p-6 lg:px-4 lg:py-8 shrink-0 lg:sticky lg:top-24 lg:h-[calc(100vh-6rem)] overflow-y-auto custom-scrollbar">
+                <div className="w-full lg:w-[20%] dark bg-[#060c1d] lg:border-r border-b lg:border-b-0 border-accent/20 dark:border-accent/15 flex flex-col p-4 md:p-6 lg:px-4 lg:py-8 shrink-0 lg:sticky lg:top-24 lg:h-[calc(100vh-6rem)] overflow-y-auto custom-scrollbar lg:self-start">
                     <div className="mb-8">
                         <span className="text-[10px] md:text-xs font-mono tracking-[0.3em] text-muted-foreground uppercase block mb-1">
                             SERVICES LIST

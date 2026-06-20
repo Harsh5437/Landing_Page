@@ -35,7 +35,7 @@ const About = () => {
     const [enlargedImage, setEnlargedImage] = useState<string | null>(null);
 
     return (
-        <div className="min-h-screen bg-background selection:bg-accent selection:text-background pt-28 overflow-y-auto">
+        <div className="min-h-screen bg-background selection:bg-accent selection:text-background pt-28">
 
             {/* Stacked Layout with High-Contrast Golden Blueprint Lines - One by One, Full Width */}
             <div className="flex flex-col w-full border-y border-accent/30 dark:border-accent/20 bg-background overflow-hidden divide-y divide-accent/30 dark:divide-accent/20">

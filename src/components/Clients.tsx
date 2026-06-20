@@ -43,6 +43,11 @@ const clients = [
         logo: "/images/clients/URRDA_Logo.jpeg",
         color: "#059669",
     },
+    {
+        name: "RWD Details",
+        logo: "/images/clients/RWD_logo.jpeg",
+        color: "#1e40af",
+    },
 ];
 
 const ClientLogo = ({ client }: { client: typeof clients[0] }) => {

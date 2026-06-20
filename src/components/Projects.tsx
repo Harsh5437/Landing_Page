@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { MapPin, ArrowRight, ArrowUpRight, X, Briefcase, Ruler, Award, Settings, Plus, Trash2, Edit, RefreshCw, Upload, ZoomIn } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
+import { MapPin, ArrowRight, ArrowUpRight, X, Briefcase, Ruler, Award, Settings, Plus, Trash2, Edit, RefreshCw, Upload, ZoomIn, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 import sectorsData from "../data/sectors.json";
@@ -67,20 +67,25 @@ const getProjectDetails = (project: any) => {
 const Projects = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [selectedProject, setSelectedProject] = useState<any | null>(null);
-    const [enlargedImage, setEnlargedImage] = useState<string | null>(null);
+    const [enlargedImageData, setEnlargedImageData] = useState<{ index: number, images: string[] } | null>(null);
+    const carouselRef = useRef<HTMLDivElement>(null);
 
-    // Escape listener for premium lightbox closes
+    // Escape and Arrow listener for premium lightbox closes and navigation
     useEffect(() => {
         const handleKeyDown = (e: KeyboardEvent) => {
             if (e.key === "Escape") {
-                setEnlargedImage(null);
+                setEnlargedImageData(null);
+            } else if (e.key === "ArrowRight") {
+                setEnlargedImageData(prev => prev ? { ...prev, index: (prev.index + 1) % prev.images.length } : null);
+            } else if (e.key === "ArrowLeft") {
+                setEnlargedImageData(prev => prev ? { ...prev, index: (prev.index - 1 + prev.images.length) % prev.images.length } : null);
             }
         };
-        if (enlargedImage) {
+        if (enlargedImageData) {
             window.addEventListener("keydown", handleKeyDown);
         }
         return () => window.removeEventListener("keydown", handleKeyDown);
-    }, [enlargedImage]);
+    }, [enlargedImageData]);
 
 
     // Dynamic database-free project storage state
@@ -127,6 +132,23 @@ const Projects = () => {
         }
     };
 
+    // Auto-scroll the carousel
+    useEffect(() => {
+        if (!selectedProject) return;
+        const interval = setInterval(() => {
+            if (carouselRef.current) {
+                const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
+                // If we reached the end, scroll back to start
+                if (scrollLeft >= scrollWidth - clientWidth - 10) {
+                    carouselRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+                } else {
+                    carouselRef.current.scrollBy({ left: 300, behavior: 'smooth' });
+                }
+            }
+        }, 3000);
+        return () => clearInterval(interval);
+    }, [selectedProject]);
+
     useEffect(() => {
         const observerOptions = {
             root: null,
@@ -167,7 +189,7 @@ const Projects = () => {
             <div className="flex flex-col lg:flex-row w-full min-h-[calc(100vh-6rem)] border-b border-accent/30 dark:border-accent/20">
 
                 {/* Left Sidebar Navigation (Reduced width, compact margins, and sticky) */}
-                <div className="w-full lg:w-[20%] dark bg-[#060c1d] lg:border-r border-b lg:border-b-0 border-accent/20 dark:border-accent/15 flex flex-col p-4 md:p-6 lg:px-4 lg:py-8 shrink-0 lg:sticky lg:top-24 lg:h-[calc(100vh-6rem)] overflow-y-auto custom-scrollbar">
+                <div className="w-full lg:w-[20%] dark bg-[#060c1d] lg:border-r border-b lg:border-b-0 border-accent/20 dark:border-accent/15 flex flex-col p-4 md:p-6 lg:px-4 lg:py-8 shrink-0 lg:sticky lg:top-24 lg:h-[calc(100vh-6rem)] overflow-y-auto custom-scrollbar lg:self-start">
                     <div className="mb-8">
                         <h2 className="text-2xl md:text-3xl font-space font-black tracking-tight text-foreground uppercase">
                             PORTFOLIO
@@ -404,35 +426,47 @@ const Projects = () => {
                                     </span>
 
                                     <div className="relative w-full h-36 md:h-44 rounded-2xl overflow-hidden bg-background border border-accent/20 shadow-inner group/carousel">
-                                        {/* Infinite running marquee wrapper */}
-                                        <div className="flex overflow-hidden h-full w-full">
-                                            <div className="flex animate-infinite-marquee-images h-full hover:[animation-play-state:paused] cursor-pointer">
-                                                {[...details.carouselImages, ...details.carouselImages, ...details.carouselImages].map((imgSrc, index) => (
-                                                    <div
-                                                        key={index}
-                                                        className="flex-shrink-0 w-56 md:w-72 h-full pr-4 relative group/img cursor-zoom-in"
-                                                        onClick={() => setEnlargedImage(imgSrc)}
-                                                    >
-                                                        <img
-                                                            src={imgSrc}
-                                                            alt={`Running Slide ${index + 1}`}
-                                                            className="w-full h-full object-cover rounded-xl transition-transform duration-500 group-hover/img:scale-105"
-                                                        />
-                                                        {/* Click to Enlarge premium overlay */}
-                                                        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-xl mr-4">
-                                                            <span className="text-[9px] font-mono tracking-widest text-white font-bold bg-accent/90 border border-accent/25 px-3 py-1.5 rounded-lg uppercase flex items-center gap-1.5 shadow-lg backdrop-blur-sm animate-in fade-in zoom-in-90 duration-200">
-                                                                <ZoomIn className="w-3.5 h-3.5 text-background animate-pulse" />
-                                                                Click to Enlarge
-                                                            </span>
-                                                        </div>
-                                                        {/* Fine corner marks inside each image */}
-                                                        <div className="absolute top-2 left-2 w-2 h-2 border-t border-l border-accent/40" />
-                                                        <div className="absolute top-2 right-6 w-2 h-2 border-t border-r border-accent/40" />
-                                                        <div className="absolute bottom-2 left-2 w-2 h-2 border-b border-l border-accent/40" />
-                                                        <div className="absolute bottom-2 right-6 w-2 h-2 border-b border-r border-accent/40" />
+                                        {/* Carousel Navigation Controls */}
+                                        <button 
+                                            onClick={() => carouselRef.current?.scrollBy({ left: -300, behavior: 'smooth' })}
+                                            className="absolute left-2 top-1/2 -translate-y-1/2 z-20 h-8 w-8 rounded-full bg-background/80 backdrop-blur border border-accent/30 text-accent flex items-center justify-center hover:bg-accent hover:text-background transition-colors"
+                                        >
+                                            <ChevronLeft className="w-4 h-4" />
+                                        </button>
+                                        <button 
+                                            onClick={() => carouselRef.current?.scrollBy({ left: 300, behavior: 'smooth' })}
+                                            className="absolute right-2 top-1/2 -translate-y-1/2 z-20 h-8 w-8 rounded-full bg-background/80 backdrop-blur border border-accent/30 text-accent flex items-center justify-center hover:bg-accent hover:text-background transition-colors"
+                                        >
+                                            <ChevronRight className="w-4 h-4" />
+                                        </button>
+
+                                        {/* Scrollable Container */}
+                                        <div ref={carouselRef} className="flex overflow-x-auto h-full w-full scrollbar-none snap-x snap-mandatory scroll-smooth relative z-10">
+                                            {details.carouselImages.map((imgSrc: string, index: number) => (
+                                                <div
+                                                    key={index}
+                                                    className="flex-shrink-0 w-64 md:w-80 h-full pr-4 relative group/img cursor-zoom-in snap-center"
+                                                    onClick={() => setEnlargedImageData({ index, images: details.carouselImages })}
+                                                >
+                                                    <img
+                                                        src={imgSrc}
+                                                        alt={`Slide ${index + 1}`}
+                                                        className="w-full h-full object-cover rounded-xl transition-transform duration-500 group-hover/img:scale-105"
+                                                    />
+                                                    {/* Click to Enlarge premium overlay */}
+                                                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-xl mr-4">
+                                                        <span className="text-[9px] font-mono tracking-widest text-white font-bold bg-accent/90 border border-accent/25 px-3 py-1.5 rounded-lg uppercase flex items-center gap-1.5 shadow-lg backdrop-blur-sm animate-in fade-in zoom-in-90 duration-200">
+                                                            <ZoomIn className="w-3.5 h-3.5 text-background animate-pulse" />
+                                                            Click to Enlarge
+                                                        </span>
                                                     </div>
-                                                ))}
-                                            </div>
+                                                    {/* Fine corner marks inside each image */}
+                                                    <div className="absolute top-2 left-2 w-2 h-2 border-t border-l border-accent/40" />
+                                                    <div className="absolute top-2 right-6 w-2 h-2 border-t border-r border-accent/40" />
+                                                    <div className="absolute bottom-2 left-2 w-2 h-2 border-b border-l border-accent/40" />
+                                                    <div className="absolute bottom-2 right-6 w-2 h-2 border-b border-r border-accent/40" />
+                                                </div>
+                                            ))}
                                         </div>
 
                                         {/* Technical alignment grids overlay */}
@@ -460,18 +494,7 @@ const Projects = () => {
                                         </div>
                                     </div>
 
-                                    {/* Inline CSS styling block for infinite running marquee of images */}
-                                    <style>{`
-                                        @keyframes infinite-marquee-images {
-                                            0% { transform: translateX(0); }
-                                            100% { transform: translateX(-33.33%); }
-                                        }
-                                        .animate-infinite-marquee-images {
-                                            animation: infinite-marquee-images 15s linear infinite;
-                                            width: max-content;
-                                            display: flex;
-                                        }
-                                    `}</style>
+
                                 </div>
 
 
@@ -483,10 +506,10 @@ const Projects = () => {
 
             {/* Enlarged Image Lightbox Overlay Modal */}
             <AnimatePresence>
-                {enlargedImage && (
+                {enlargedImageData && (
                     <div
                         className="fixed inset-0 z-[70] flex items-center justify-center p-4 md:p-6 bg-background/95 backdrop-blur-xl"
-                        onClick={() => setEnlargedImage(null)}
+                        onClick={() => setEnlargedImageData(null)}
                     >
                         <div
                             className="relative w-full max-w-5xl max-h-[90vh] bg-card border border-accent/30 rounded-[2.5rem] overflow-hidden shadow-2xl p-6 flex flex-col items-center justify-center animate-in fade-in zoom-in-95 duration-300"
@@ -497,19 +520,42 @@ const Projects = () => {
 
                             {/* Lightbox Close Button */}
                             <button
-                                onClick={() => setEnlargedImage(null)}
-                                className="absolute top-4 right-4 z-10 h-10 w-10 rounded-full border border-accent/30 bg-background text-muted-foreground flex items-center justify-center hover:bg-accent hover:text-background hover:border-accent transition-all duration-300 shadow-md group"
+                                onClick={() => setEnlargedImageData(null)}
+                                className="absolute top-4 right-4 z-20 h-10 w-10 rounded-full border border-accent/30 bg-background text-muted-foreground flex items-center justify-center hover:bg-accent hover:text-background hover:border-accent transition-all duration-300 shadow-md group"
                                 title="Close Enlarged Image"
                             >
                                 <X className="w-4 h-4 transition-transform duration-300 group-hover:rotate-90" />
                             </button>
 
+                            {/* Previous Button */}
+                            <button
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    setEnlargedImageData(prev => prev ? { ...prev, index: (prev.index - 1 + prev.images.length) % prev.images.length } : null);
+                                }}
+                                className="absolute left-4 top-1/2 -translate-y-1/2 z-20 h-12 w-12 rounded-full border border-accent/30 bg-background/50 backdrop-blur-md text-accent flex items-center justify-center hover:bg-accent hover:text-background transition-all duration-300 opacity-0 group-hover:opacity-100 md:opacity-100"
+                            >
+                                <ChevronLeft className="w-6 h-6" />
+                            </button>
+
+                            {/* Next Button */}
+                            <button
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    setEnlargedImageData(prev => prev ? { ...prev, index: (prev.index + 1) % prev.images.length } : null);
+                                }}
+                                className="absolute right-4 top-1/2 -translate-y-1/2 z-20 h-12 w-12 rounded-full border border-accent/30 bg-background/50 backdrop-blur-md text-accent flex items-center justify-center hover:bg-accent hover:text-background transition-all duration-300 opacity-0 group-hover:opacity-100 md:opacity-100"
+                            >
+                                <ChevronRight className="w-6 h-6" />
+                            </button>
+
                             {/* Image Container */}
                             <div className="relative w-full h-full max-h-[78vh] rounded-2xl overflow-hidden border border-accent/15 flex items-center justify-center bg-background/50">
                                 <img
-                                    src={enlargedImage}
+                                    key={enlargedImageData.index}
+                                    src={enlargedImageData.images[enlargedImageData.index]}
                                     alt="Enlarged Blueprint Specification"
-                                    className="w-auto h-auto max-w-full max-h-[78vh] object-contain rounded-2xl"
+                                    className="w-auto h-auto max-w-full max-h-[78vh] object-contain rounded-2xl animate-in fade-in zoom-in-95 duration-300"
                                 />
 
                                 {/* Fine corner marks around the photo */}

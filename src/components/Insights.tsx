@@ -79,8 +79,8 @@ const Insights = () => {
         {/* 1. Sleek HUD Statistics Panel */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 w-full max-w-5xl mx-auto mb-8">
           {[
-            { value: "365+", label: "Projects Handled", icon: BarChart3, color: "from-[#1A7EFF] to-[#1A7EFF]/60", bg: "rgba(26,126,255,0.03)", border: "border-[#1A7EFF]/25" },
-            { value: "7Cr+", label: "Total Cost", icon: Award, color: "from-accent to-accent/60", bg: "rgba(212,175,55,0.03)", border: "border-accent/25" },
+            { value: "381+", label: "Projects Handled", icon: BarChart3, color: "from-[#1A7EFF] to-[#1A7EFF]/60", bg: "rgba(26,126,255,0.03)", border: "border-[#1A7EFF]/25" },
+            { value: "7Cr+", label: "Total Consultancy Cost", icon: Award, color: "from-accent to-accent/60", bg: "rgba(212,175,55,0.03)", border: "border-accent/25" },
             { value: "40+", label: "Expert Engineers", icon: Zap, color: "from-emerald-500 to-emerald-500/60", bg: "rgba(16,185,129,0.03)", border: "border-emerald-500/25" }
           ].map((stat, index) => {
             const Icon = stat.icon;
@@ -206,7 +206,7 @@ const Insights = () => {
 
                 {/* Central Stats readout */}
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none">
-                  <span className="text-2xl font-space font-black text-foreground leading-none">365</span>
+                  <span className="text-2xl font-space font-black text-foreground leading-none">381</span>
                   <span className="text-[7.5px] font-mono tracking-widest text-muted-foreground uppercase mt-1">TOTAL WORKS</span>
                 </div>
               </div>
@@ -245,7 +245,7 @@ const Insights = () => {
                     <span className="font-space font-bold uppercase tracking-wider">Running</span>
                   </div>
                   <div className="font-mono font-bold">
-                    <span className="text-foreground">84 Works</span>
+                    <span className="text-foreground">85 Works</span>
                     <span className="text-[#1A7EFF] ml-2">23%</span>
                   </div>
                 </div>
@@ -267,7 +267,7 @@ const Insights = () => {
                     <span className="font-space font-bold uppercase tracking-wider">Pipeline</span>
                   </div>
                   <div className="font-mono font-bold">
-                    <span className="text-foreground">29 Works</span>
+                    <span className="text-foreground">34 Works</span>
                     <span className="text-[#D4AF37] ml-2">8%</span>
                   </div>
                 </div>

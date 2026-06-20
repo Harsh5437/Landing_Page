@@ -293,6 +293,23 @@
         "ubqn": "UBON 226",
         "client": "TD Kirti Nagar",
         "scope": "Preparation of design and Detailed Project Report (DPR) for a proposed parking facility at Jamnikhal, Kirtinagar, covering an approximate area of 300 sqm. The scope included site assessment, parking layout planning, architectural and structural design considerations, circulation planning, cost estimation, preparation of detailed drawings, and technical specifications for efficient vehicular management and optimized land utilization."
+      },
+      {
+        "title": "Planning & Interior Design of Library Building at Shrikot",
+        "category": "Public Infrastructure / Interior Design",
+        "location": "Shrikot, Pauri Garhwal",
+        "image": "/images/projects/Townplanning/zLibrary/1.jpeg",
+        "carouselImages": [
+          "/images/projects/Townplanning/zLibrary/1.jpeg",
+          "/images/projects/Townplanning/zLibrary/0197ba54-20d8-4a1a-bf8c-6773e269dab6.jpg",
+          "/images/projects/Townplanning/zLibrary/10501531-b932-4134-9190-cf91458882b2.jpg",
+          "/images/projects/Townplanning/zLibrary/4fcb2c67-d1a4-4a92-87c9-414a0b55b0fe.jpg",
+          "/images/projects/Townplanning/zLibrary/c222c70f-9e9d-4b5e-b3a3-f2839e439f34.jpg",
+          "/images/projects/Townplanning/zLibrary/df29b080-f147-4dcb-9b7f-73077841f6d2.jpg"
+        ],
+        "ubqn": "UBQn 369",
+        "client": "CD Pauri",
+        "scope": "Planning, architectural layout, interior design, and preparation of detailed cost estimate for conversion of the existing building into a functional library at Shrikot, Pauri Garhwal, including renovation works, furniture planning, and service requirements."
       }
     ]
   },

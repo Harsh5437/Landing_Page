@@ -328,7 +328,7 @@ const StickyHeader = () => {
             
             {/* Full-width Running Announcement Strip (Hidden on Landing page to prevent overlap) */}
             {!isLandingPage && (
-                <div className="w-full bg-[#0a122c] dark:bg-[#02050c] border-t border-b border-[#1A7EFF]/15 py-1.5 px-4 flex items-center justify-between text-xs overflow-hidden relative select-none">
+                <div className="w-full bg-[#0a122c] dark:bg-[#02050c] border-t border-b border-[#1A7EFF]/15 py-2.5 px-4 flex items-center justify-between text-xs overflow-hidden relative select-none">
                     <style>{`
                         @keyframes marquee-scroll {
                             0% { transform: translateX(0); }
@@ -367,8 +367,8 @@ const StickyHeader = () => {
 
                     {/* Right Side static projects badge */}
                     <Link to="/projects" className="z-10 bg-[#0a122c] dark:bg-[#02050c] pl-3 flex items-center gap-1.5 font-bold uppercase tracking-wider text-accent border-l border-[#1A7EFF]/20 shrink-0 hover:text-white transition-colors duration-300">
-                        <span className="text-[10px] md:text-[10.5px] font-space font-black text-[#D4AF37] tracking-tight">365+</span>
-                        <span className="text-[7.5px] font-mono text-zinc-300 tracking-wider">Projects Handled</span>
+                        <span className="text-[10px] md:text-[11.5px] font-space font-black text-[#D4AF37] tracking-tight">381+</span>
+                        <span className="text-[7.5px] md:text-[8.5px] font-mono text-zinc-300 tracking-wider">Projects Handled</span>
                     </Link>
                 </div>
             )}

@@ -357,9 +357,15 @@ const StickyHeader = () => {
                     <Link to="/news" className="flex-1 overflow-hidden relative flex items-center px-3">
                         <div className="animate-marquee-scroll hover:[animation-play-state:paused] flex items-center gap-12 font-mono text-[10px] text-zinc-300 dark:text-zinc-200">
                             <span>
+                                <span className="text-[#D4AF37] font-extrabold animate-pulse drop-shadow-[0_0_8px_rgba(212,175,55,0.8)] mr-2">NEW</span>
+                                The Indian Building Congress Uttarakhand Chapter, sponsored by Urbanbuild, organized a webinar on "Multi-Hazard Resistant Construction in Hilly Regions" delivered by Dr Ajay Chourasia, Chief Scientist CSIR-CBRI.
+                                &nbsp;&nbsp;&bull;&nbsp;&nbsp;
                                 UrbanBuild is proud to announce its empanelment with the Uttarakhand Rural Road Development Agency (URRDA) — strengthening our commitment to delivering quality infrastructure consultancy across Uttarakhand.
                             </span>
                             <span>
+                                <span className="text-[#D4AF37] font-extrabold animate-pulse drop-shadow-[0_0_8px_rgba(212,175,55,0.8)] mr-2">NEW</span>
+                                The Indian Building Congress Uttarakhand Chapter, sponsored by Urbanbuild, organized a webinar on "Multi-Hazard Resistant Construction in Hilly Regions" delivered by Dr Ajay Chourasia, Chief Scientist CSIR-CBRI.
+                                &nbsp;&nbsp;&bull;&nbsp;&nbsp;
                                 UrbanBuild is proud to announce its empanelment with the Uttarakhand Rural Road Development Agency (URRDA) — strengthening our commitment to delivering quality infrastructure consultancy across Uttarakhand.
                             </span>
                         </div>

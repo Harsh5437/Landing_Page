@@ -161,7 +161,7 @@ const Home = () => {
                 const parsed = JSON.parse(saved);
                 if (Array.isArray(parsed) && parsed.length > 0) {
                     const hasOldData = parsed.some(art => art && art.date && art.date.includes("2024"));
-                    const hasDifferentCount = parsed.length <= 5;
+                    const hasDifferentCount = parsed.length !== newsFeedData.length;
                     const hasUrrda = parsed.some(art => art && art.title === "URRDA Empanelment");
                     if (!hasOldData && !hasDifferentCount && hasUrrda) {
                         return ensureUrrdaFirst(parsed);

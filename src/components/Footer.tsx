@@ -36,10 +36,10 @@ const Footer = () => {
     ],
     services: ["Road & Bridge Design", "Building Design", "Environmental Assesment", "Economic Valuation", "Surveying & Mapping", "Civil Engineering Lab"],
     otherVerticals: [
-      { name: "Beavers" },
-      { name: "UB-Quest" },
-      { name: "UB-Laboratory" },
-      { name: "UB-IT & Automation" }
+      { name: "Beavers", path: "#" },
+      { name: "UB-Quest", path: "#" },
+      { name: "UB-Laboratory", path: "#" },
+      { name: "UB-IT & Automation", path: "#" }
     ]
   };
 

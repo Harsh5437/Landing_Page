@@ -146,19 +146,37 @@ const StickyHeader = () => {
                                                 )}
                                             </Link>
 
-                                            {/* Premium Hover Dropdown */}
-                                            <div className="absolute top-[80%] left-1/2 -translate-x-1/2 mt-2 w-max min-w-[260px] rounded-2xl bg-[#0c1631]/95 dark:bg-[#060c1d]/95 backdrop-blur-xl border border-[#1A7EFF]/20 dark:border-[#1A7EFF]/35 p-2 shadow-[0_20px_50px_rgba(26,126,255,0.12)] dark:shadow-[0_20px_50px_rgba(26,126,255,0.25)] opacity-0 pointer-events-none scale-95 origin-top group-hover:opacity-100 group-hover:pointer-events-auto group-hover:scale-100 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] z-50">
-                                                <div className="flex flex-col gap-1">
-                                                    {link.subLinks.map((sub) => (
-                                                        <Link
-                                                            key={sub.href}
-                                                            to={sub.href}
-                                                            className="flex items-center justify-between gap-6 rounded-xl px-3.5 py-2.5 text-xs font-bold tracking-wider text-white/80 dark:text-white/90 hover:text-accent dark:hover:text-accent hover:bg-white/[0.04] dark:hover:bg-white/[0.04] transition-all duration-200 group/item uppercase whitespace-nowrap"
-                                                        >
-                                                            <span>{sub.label}</span>
-                                                            <span className="h-1.5 w-1.5 rounded-full bg-accent scale-0 opacity-0 group-hover/item:scale-100 group-hover/item:opacity-100 transition-all duration-300 shadow-[0_0_8px_rgba(212,175,55,0.6)]" />
-                                                        </Link>
-                                                    ))}
+                                            {/* Premium Hover Dropdown Container (Invisible Bridge) */}
+                                            <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-max min-w-[280px] opacity-0 pointer-events-none translate-y-2 group-hover:opacity-100 group-hover:pointer-events-auto group-hover:translate-y-0 transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] z-50">
+                                                
+                                                {/* Visible Dropdown Box */}
+                                                <div className="rounded-2xl bg-white/95 dark:bg-[#060c1d]/95 backdrop-blur-2xl border border-gray-200/50 dark:border-[#1A7EFF]/20 p-2.5 shadow-2xl shadow-black/10 dark:shadow-[0_20px_50px_rgba(26,126,255,0.15)]">
+                                                    <div className="flex flex-col gap-1 relative z-10">
+                                                        {link.subLinks.map((sub, idx) => (
+                                                            <Link
+                                                                key={sub.href}
+                                                                to={sub.href}
+                                                                className="group/item relative flex items-center justify-between gap-6 rounded-xl px-4 py-3 overflow-hidden transition-all duration-300"
+                                                                style={{ transitionDelay: `${idx * 15}ms` }}
+                                                            >
+                                                                {/* Sliding Hover Background */}
+                                                                <div className="absolute inset-0 bg-gray-100/80 dark:bg-white/[0.04] translate-x-[-100%] group-hover/item:translate-x-0 transition-transform duration-300 ease-out rounded-xl" />
+                                                                
+                                                                {/* Left Accent Bar */}
+                                                                <div className="absolute left-0 top-1/2 -translate-y-1/2 h-1/2 w-1 bg-accent rounded-r-full scale-y-0 group-hover/item:scale-y-100 transition-transform duration-300 origin-center" />
+
+                                                                <span className="relative z-10 text-[11px] font-bold tracking-wider text-charcoal/80 dark:text-white/80 group-hover/item:text-accent dark:group-hover/item:text-accent transition-colors duration-200 uppercase whitespace-nowrap">
+                                                                    {sub.label}
+                                                                </span>
+                                                                
+                                                                {/* Glowing Dot Indicator */}
+                                                                <span className="relative z-10 flex h-2 w-2 items-center justify-center">
+                                                                    <span className="absolute inline-flex h-full w-full rounded-full bg-accent opacity-0 group-hover/item:opacity-40 group-hover/item:animate-ping transition-all duration-300" />
+                                                                    <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-accent scale-0 opacity-0 group-hover/item:scale-100 group-hover/item:opacity-100 transition-all duration-300 shadow-[0_0_8px_rgba(212,175,55,0.6)]" />
+                                                                </span>
+                                                            </Link>
+                                                        ))}
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>

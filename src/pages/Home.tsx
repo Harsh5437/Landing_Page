@@ -44,6 +44,13 @@ const getPortfolioGalleryImages = () => {
             });
         }
     });
+
+    // Add webinar to the small gallery at the top
+    images.unshift({
+        src: "/images/HomeMainCrousel/P1.jpeg",
+        title: "Webinar on Multi-Hazard Resistant Construction in Hilly Regions",
+        desc: "The Indian Building Congress Uttarakhand Chapter, sponsored by Urbanbuild, organized a webinar on \"Multi-Hazard Resistant Construction in Hilly Regions\" delivered by Dr Ajay Chourasia, Chief Scientist CSIR-CBRI."
+    });
     return images.length > 0 ? images : [
         { src: "/images/projects/highway-render.jpg", title: "National Highway Expansion", desc: "Premium highway engineering and corridor design." }
     ];
@@ -153,6 +160,31 @@ const Home = () => {
         return list;
     };
 
+    const ensureWebinarInGallery = (list: any[]) => {
+        if (!Array.isArray(list)) return list;
+        const webinarIndex = list.findIndex(item => item && item.title && item.title.includes("Multi-Hazard"));
+        
+        const webinarData = {
+            src: "/images/ibc.jpeg",
+            title: "Webinar on Multi-Hazard Resistant Construction in Hilly Regions",
+            desc: "The Indian Building Congress Uttarakhand Chapter, sponsored by Urbanbuild, organized a webinar on \"Multi-Hazard Resistant Construction in Hilly Regions\" delivered by Dr Ajay Chourasia, Chief Scientist CSIR-CBRI."
+        };
+
+        const newList = [...list];
+        
+        if (webinarIndex >= 0) {
+            newList[webinarIndex] = { ...newList[webinarIndex], ...webinarData };
+            if (webinarIndex > 0) {
+                const webinarItem = newList.splice(webinarIndex, 1)[0];
+                newList.unshift(webinarItem);
+            }
+            return newList;
+        } else {
+            newList.unshift(webinarData);
+            return newList;
+        }
+    };
+
     // Dynamic database-free states for News and Gallery
     const [newsFeed, setNewsFeed] = useState<any[]>(() => {
         const saved = localStorage.getItem("urbanbuild_news_feed");
@@ -180,12 +212,12 @@ const Home = () => {
         const saved = localStorage.getItem("urbanbuild_gallery_images");
         if (saved) {
             try {
-                return JSON.parse(saved);
+                return ensureWebinarInGallery(JSON.parse(saved));
             } catch (e) {
                 console.error("Failed to parse saved gallery images", e);
             }
         }
-        return getPortfolioGalleryImages();
+        return ensureWebinarInGallery(getPortfolioGalleryImages());
     });
 
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -215,12 +247,12 @@ const Home = () => {
             const saved = localStorage.getItem("urbanbuild_gallery_images");
             if (saved) {
                 try {
-                    setGalleryImages(JSON.parse(saved));
+                    setGalleryImages(ensureWebinarInGallery(JSON.parse(saved)));
                 } catch (e) {
                     console.error(e);
                 }
             } else {
-                setGalleryImages(getPortfolioGalleryImages());
+                setGalleryImages(ensureWebinarInGallery(getPortfolioGalleryImages()));
             }
         };
 

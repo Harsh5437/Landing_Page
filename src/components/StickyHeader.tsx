@@ -346,7 +346,7 @@ const StickyHeader = () => {
             
             {/* Full-width Running Announcement Strip (Hidden on Landing page to prevent overlap) */}
             {!isLandingPage && (
-                <div className="w-full bg-[#0a122c] dark:bg-[#02050c] border-t border-b border-[#1A7EFF]/15 py-2.5 px-4 flex items-center justify-between text-xs overflow-hidden relative select-none">
+                <div className="w-full bg-gradient-to-r from-[#060c1d] via-[#0a122c] to-[#060c1d] dark:from-[#02050c] dark:via-[#060c1d] dark:to-[#02050c] border-t border-b border-accent/20 py-1.5 px-4 flex items-center justify-between text-xs overflow-hidden relative select-none shadow-[inset_0_0_20px_rgba(0,0,0,0.5)]">
                     <style>{`
                         @keyframes marquee-scroll {
                             0% { transform: translateX(0); }
@@ -355,7 +355,7 @@ const StickyHeader = () => {
                         .animate-marquee-scroll {
                             display: inline-flex;
                             white-space: nowrap;
-                            animation: marquee-scroll 25s linear infinite;
+                            animation: marquee-scroll 45s linear infinite;
                         }
                         @keyframes text-blink {
                             0%, 100% { opacity: 1; }
@@ -366,22 +366,32 @@ const StickyHeader = () => {
                         }
                     `}</style>
                     {/* Blinking Head */}
-                    <div className="z-10 bg-[#0a122c] dark:bg-[#02050c] pr-3 flex items-center gap-1.5 font-bold uppercase tracking-wider text-accent border-r border-[#1A7EFF]/20 shrink-0">
-                        <span className="inline-block w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-                        <span className="animate-text-blink text-[#D4AF37] text-[9.5px] tracking-widest font-extrabold">NEW</span>
+                    <div className="z-10 bg-[#060c1d] dark:bg-[#02050c] pr-4 flex items-center gap-2 font-bold uppercase tracking-wider text-accent shrink-0 relative shadow-[10px_0_15px_-5px_rgba(6,12,29,1)] dark:shadow-[10px_0_15px_-5px_rgba(2,5,12,1)]">
+                        <span className="relative flex h-2 w-2">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+                        </span>
+                        <span className="animate-text-blink text-accent text-[10px] tracking-[0.2em] font-black drop-shadow-[0_0_5px_rgba(212,175,55,0.5)]">LATEST</span>
                     </div>
                     
                     {/* Running Ticker Content */}
-                    <Link to="/news" className="flex-1 overflow-hidden relative flex items-center px-3">
-                        <div className="animate-marquee-scroll hover:[animation-play-state:paused] flex items-center gap-12 font-mono text-[10px] text-zinc-300 dark:text-zinc-200">
+                    <Link to="/news" className="flex-1 overflow-hidden relative flex items-center px-2">
+                        {/* Soft edge fades */}
+                        <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-[#060c1d] dark:from-[#02050c] to-transparent z-10 pointer-events-none" />
+                        <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-[#060c1d] dark:from-[#02050c] to-transparent z-10 pointer-events-none" />
+                        <div className="animate-marquee-scroll hover:[animation-play-state:paused] flex items-center gap-12 font-sans font-medium text-[10.5px] text-zinc-300 dark:text-zinc-200">
                             <span>
                                 <span className="text-[#D4AF37] font-extrabold animate-pulse drop-shadow-[0_0_8px_rgba(212,175,55,0.8)] mr-2">NEW</span>
+                                UrbanBuild™ and Graphic Era Hill University: Partnering to strengthen engineering through material testing, consultancy, research and industry–academia collaboration.
+                                &nbsp;&nbsp;&bull;&nbsp;&nbsp;
                                 The Indian Building Congress Uttarakhand Chapter, sponsored by Urbanbuild, organized a webinar on "Multi-Hazard Resistant Construction in Hilly Regions" delivered by Dr Ajay Chourasia, Chief Scientist CSIR-CBRI.
                                 &nbsp;&nbsp;&bull;&nbsp;&nbsp;
                                 UrbanBuild is proud to announce its empanelment with the Uttarakhand Rural Road Development Agency (URRDA) — strengthening our commitment to delivering quality infrastructure consultancy across Uttarakhand.
                             </span>
                             <span>
                                 <span className="text-[#D4AF37] font-extrabold animate-pulse drop-shadow-[0_0_8px_rgba(212,175,55,0.8)] mr-2">NEW</span>
+                                UrbanBuild™ and Graphic Era Hill University: Partnering to strengthen engineering through material testing, consultancy, research and industry–academia collaboration.
+                                &nbsp;&nbsp;&bull;&nbsp;&nbsp;
                                 The Indian Building Congress Uttarakhand Chapter, sponsored by Urbanbuild, organized a webinar on "Multi-Hazard Resistant Construction in Hilly Regions" delivered by Dr Ajay Chourasia, Chief Scientist CSIR-CBRI.
                                 &nbsp;&nbsp;&bull;&nbsp;&nbsp;
                                 UrbanBuild is proud to announce its empanelment with the Uttarakhand Rural Road Development Agency (URRDA) — strengthening our commitment to delivering quality infrastructure consultancy across Uttarakhand.
@@ -390,7 +400,7 @@ const StickyHeader = () => {
                     </Link>
 
                     {/* Right Side static projects badge */}
-                    <Link to="/projects" className="z-10 bg-[#0a122c] dark:bg-[#02050c] pl-3 flex items-center gap-1.5 font-bold uppercase tracking-wider text-accent border-l border-[#1A7EFF]/20 shrink-0 hover:text-white transition-colors duration-300">
+                    <Link to="/projects" className="z-10 bg-[#060c1d] dark:bg-[#02050c] pl-4 flex items-center gap-2 font-bold uppercase tracking-wider text-accent shrink-0 hover:text-white transition-colors duration-300 shadow-[-10px_0_15px_-5px_rgba(6,12,29,1)] dark:shadow-[-10px_0_15px_-5px_rgba(2,5,12,1)]">
                         <span className="text-[10px] md:text-[11.5px] font-space font-black text-[#D4AF37] tracking-tight">381+</span>
                         <span className="text-[7.5px] md:text-[8.5px] font-mono text-zinc-300 tracking-wider">Projects Handled</span>
                     </Link>

@@ -7,6 +7,11 @@ import newsFeedData from "../data/newsFeed.json";
 
 const carouselImages = [
     {
+        src: "/images/HomeMainCrousel/GEHU.jpeg",
+        title: "UrbanBuild Signs MoU with Graphic Era Hill University",
+        desc: "UrbanBuild™ and Graphic Era Hill University: Partnering to strengthen engineering through material testing, consultancy, research and industry–academia collaboration."
+    },
+    {
         src: "/images/HomeMainCrousel/P1(i).png",
         title: "World Environment Day",
         desc: "UrbanBuild™ celebrates World Environment Day with CIPET Dehradun."
@@ -146,24 +151,33 @@ const ProjectCounter = () => {
     );
 };
 
+const getClientTaglineStyle = (tagline: string) => {
+    switch (tagline?.toUpperCase()) {
+        case "GOVERNMENT DEPT":
+            return "bg-blue-500/10 text-blue-600 border-blue-500/20 dark:bg-blue-400/5 dark:text-blue-400 dark:border-blue-400/15";
+        case "STATE AUTHORITY":
+            return "bg-emerald-500/10 text-emerald-600 border-emerald-500/20 dark:bg-emerald-400/5 dark:text-emerald-400 dark:border-emerald-400/15";
+        case "POWER SECTOR":
+            return "bg-yellow-500/10 text-yellow-600 border-yellow-500/20 dark:bg-yellow-400/5 dark:text-yellow-400 dark:border-yellow-400/15";
+        case "MUNICIPAL BOARD":
+            return "bg-purple-500/10 text-purple-600 border-purple-500/20 dark:bg-purple-400/5 dark:text-purple-400 dark:border-purple-400/15";
+        case "INFRASTRUCTURE CO":
+            return "bg-amber-500/10 text-accent border-accent/20 dark:bg-amber-400/5 dark:text-accent dark:border-accent/15";
+        case "TOURISM BOARD":
+        default:
+            return "bg-cyan-500/10 text-cyan-600 border-cyan-500/20 dark:bg-cyan-400/5 dark:text-cyan-400 dark:border-cyan-400/15";
+    }
+};
+
 const Home = () => {
     const ensureUrrdaFirst = (list: any[]) => {
-        if (!Array.isArray(list)) return list;
-        const urrdaIndex = list.findIndex(item => item && item.title === "URRDA Empanelment");
-        if (urrdaIndex > 0) {
-            const urrdaItem = list[urrdaIndex];
-            const newList = [...list];
-            newList.splice(urrdaIndex, 1);
-            newList.unshift(urrdaItem);
-            return newList;
-        }
         return list;
     };
 
     const ensureWebinarInGallery = (list: any[]) => {
         if (!Array.isArray(list)) return list;
         const webinarIndex = list.findIndex(item => item && item.title && item.title.includes("Multi-Hazard"));
-        
+
         const webinarData = {
             src: "/images/ibc.jpeg",
             title: "Webinar on Multi-Hazard Resistant Construction in Hilly Regions",
@@ -171,7 +185,7 @@ const Home = () => {
         };
 
         const newList = [...list];
-        
+
         if (webinarIndex >= 0) {
             newList[webinarIndex] = { ...newList[webinarIndex], ...webinarData };
             if (webinarIndex > 0) {
@@ -194,8 +208,9 @@ const Home = () => {
                 if (Array.isArray(parsed) && parsed.length > 0) {
                     const hasOldData = parsed.some(art => art && art.date && art.date.includes("2024"));
                     const hasDifferentCount = parsed.length !== newsFeedData.length;
+                    const hasDifferentFirst = parsed[0]?.title !== newsFeedData[0]?.title;
                     const hasUrrda = parsed.some(art => art && art.title === "URRDA Empanelment");
-                    if (!hasOldData && !hasDifferentCount && hasUrrda) {
+                    if (!hasOldData && !hasDifferentCount && !hasDifferentFirst && hasUrrda) {
                         return ensureUrrdaFirst(parsed);
                     }
                 }
@@ -263,6 +278,15 @@ const Home = () => {
             window.removeEventListener("urbanbuild-gallery-updated", loadGallery);
         };
     }, []);
+
+    // Force sync cache on mount or state changes if the first item differs
+    useEffect(() => {
+        if (newsFeed[0]?.title !== newsFeedData[0]?.title) {
+            const initialNews = ensureUrrdaFirst(newsFeedData);
+            localStorage.setItem("urbanbuild_news_feed", JSON.stringify(initialNews));
+            setNewsFeed(initialNews);
+        }
+    }, [newsFeed]);
     const [isHovered, setIsHovered] = useState(false);
     const [enlargedImage, setEnlargedImage] = useState<string | null>(null);
 
@@ -459,23 +483,32 @@ const Home = () => {
                                     {(() => {
                                         const loopList = newsFeed;
                                         return [...loopList, ...loopList, ...loopList, ...loopList].map((item, idx) => {
-                                            const artCategory = item.category || "News";
+                                            const isLatest = idx % loopList.length === 0;
+                                            const artCategory = isLatest ? "HIGHLIGHTED MILESTONE" : (item.category || "News");
                                             const artDate = item.date || "Recent";
                                             const artTitle = item.title || "News Update";
                                             return (
                                                 <div
                                                     key={idx}
-                                                    className="group flex flex-col gap-2 p-3.5 rounded-xl border border-white/5 hover:border-accent/30 bg-white/[0.02] hover:bg-white/[0.04] transition-all duration-300 shadow-sm"
+                                                    className={`group flex flex-col gap-2 p-3.5 rounded-xl border transition-all duration-300 shadow-sm ${
+                                                        isLatest 
+                                                        ? "border-accent bg-accent/10 shadow-[0_0_15px_rgba(212,175,55,0.2)] hover:bg-accent/20" 
+                                                        : "border-white/5 hover:border-accent/30 bg-white/[0.02] hover:bg-white/[0.04]"
+                                                    }`}
                                                 >
                                                     <div className="flex items-center justify-between gap-2">
-                                                        <span className="text-[9px] md:text-[10px] font-bold tracking-wider text-accent uppercase bg-accent/10 px-2 py-0.5 rounded">
+                                                        <span className={`text-[9px] md:text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 rounded ${
+                                                            isLatest ? "bg-accent text-background animate-pulse shadow-[0_0_8px_rgba(212,175,55,0.3)]" : "bg-accent/10 text-accent"
+                                                        }`}>
                                                             {artCategory}
                                                         </span>
-                                                        <span className="text-[10px] md:text-[11px] font-mono text-zinc-400 flex items-center gap-1">
-                                                            <Calendar className="w-2.5 h-2.5 text-accent/60" /> {artDate}
+                                                        <span className={`text-[10px] md:text-[11px] font-mono flex items-center gap-1 ${isLatest ? "text-accent/90" : "text-zinc-400"}`}>
+                                                            <Calendar className={`w-2.5 h-2.5 ${isLatest ? "text-accent" : "text-accent/60"}`} /> {artDate}
                                                         </span>
                                                     </div>
-                                                    <h4 className="text-[13px] md:text-[14px] font-space font-bold text-white/95 group-hover:text-accent transition-colors duration-300 leading-normal line-clamp-2">
+                                                    <h4 className={`text-[13px] md:text-[14px] font-space font-bold transition-colors duration-300 leading-normal line-clamp-2 ${
+                                                        isLatest ? "text-accent" : "text-white/95 group-hover:text-accent"
+                                                    }`}>
                                                         {artTitle}
                                                     </h4>
                                                 </div>
@@ -769,19 +802,27 @@ const Home = () => {
                                 {[...clients, ...clients, ...clients, ...clients].map((item, index) => (
                                     <div
                                         key={`${item.name}-${index}`}
-                                        className="flex-shrink-0 w-[290px] md:w-[350px] lg:w-[380px] mx-4 p-6 rounded-2xl border border-border/50 dark:border-accent/10 bg-card/40 backdrop-blur-md hover:border-accent/40 dark:hover:border-accent/30 hover:bg-card/85 dark:hover:bg-[#0c0c0e]/80 flex flex-col justify-between group transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-0.5"
+                                        className="flex-shrink-0 w-[290px] md:w-[350px] lg:w-[380px] mx-4 p-7 rounded-2xl border border-border/60 dark:border-[#1A7EFF]/15 bg-card/45 backdrop-blur-md hover:border-accent/40 dark:hover:border-accent/30 hover:bg-card/90 dark:hover:bg-[#0c0c0e]/90 flex flex-col justify-between group transition-all duration-500 shadow-md hover:shadow-xl hover:-translate-y-1 relative overflow-hidden"
                                     >
-                                        {/* Title Header with minimal monochrome logo that lights up on hover */}
+                                        {/* Technical Corner crosshair decorations */}
+                                        <div className="absolute top-2 left-2 w-2 h-2 border-t border-l border-accent/20 group-hover:border-accent/80 transition-colors duration-300" />
+                                        <div className="absolute top-2 right-2 w-2 h-2 border-t border-r border-accent/20 group-hover:border-accent/80 transition-colors duration-300" />
+                                        <div className="absolute bottom-2 left-2 w-2 h-2 border-b border-l border-accent/20 group-hover:border-accent/80 transition-colors duration-300" />
+                                        <div className="absolute bottom-2 right-2 w-2 h-2 border-b border-r border-accent/20 group-hover:border-accent/80 transition-colors duration-300" />
+
+                                        {/* Sweep hover effect */}
+                                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.02] dark:via-white/[0.04] to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none" />
+
                                         <div>
-                                            <span className="text-[8px] font-black tracking-[0.2em] text-accent uppercase block mb-1.5">
+                                            <span className={`text-[8.5px] font-black tracking-[0.18em] uppercase px-2.5 py-0.5 rounded-full border ${getClientTaglineStyle(item.tagline)} inline-block mb-3.5 shadow-sm`}>
                                                 {item.tagline}
                                             </span>
-                                            <div className="flex items-center gap-3.5 mb-3">
-                                                <div className="h-10 w-10 flex items-center justify-center shrink-0 bg-background/50 rounded-xl p-1 border border-border/20 group-hover:border-accent/20 transition-colors">
+                                            <div className="flex items-center gap-4 mb-4">
+                                                <div className="h-12 w-12 flex items-center justify-center shrink-0 bg-background/80 dark:bg-zinc-900/60 rounded-xl p-2 border border-border/40 group-hover:border-accent/30 dark:group-hover:border-accent/20 transition-all duration-300 shadow-sm group-hover:scale-105">
                                                     <img
                                                         src={item.logo}
                                                         alt={item.name}
-                                                        className="max-h-full max-w-full object-contain opacity-95 group-hover:scale-105 transition-all duration-300 drop-shadow-sm"
+                                                        className="max-h-full max-w-full object-contain opacity-95 group-hover:scale-105 transition-all duration-300 drop-shadow-sm filter dark:brightness-105"
                                                     />
                                                 </div>
                                                 <h3 className="text-xs md:text-sm font-space font-black text-foreground tracking-tight group-hover:text-accent transition-colors duration-300 uppercase leading-snug">
@@ -790,7 +831,7 @@ const Home = () => {
                                             </div>
                                         </div>
                                         {/* Description */}
-                                        <p className="text-[11px] md:text-xs text-muted-foreground font-light leading-relaxed">
+                                        <p className="text-[11px] md:text-xs text-muted-foreground font-light leading-relaxed group-hover:text-foreground/90 transition-colors duration-300">
                                             {item.description}
                                         </p>
                                     </div>

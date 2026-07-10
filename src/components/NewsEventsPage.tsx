@@ -10,15 +10,6 @@ const categories = ["All", "Event", "Visit", "Announcement", "Insights"];
 
 const NewsEventsPage = () => {
   const ensureUrrdaFirst = (list: any[]) => {
-    if (!Array.isArray(list)) return list;
-    const urrdaIndex = list.findIndex(item => item && item.title === "URRDA Empanelment");
-    if (urrdaIndex > 0) {
-      const urrdaItem = list[urrdaIndex];
-      const newList = [...list];
-      newList.splice(urrdaIndex, 1);
-      newList.unshift(urrdaItem);
-      return newList;
-    }
     return list;
   };
 
@@ -30,8 +21,9 @@ const NewsEventsPage = () => {
         if (Array.isArray(parsed) && parsed.length > 0) {
           const hasOldData = parsed.some(art => art && art.date && art.date.includes("2024"));
           const hasDifferentCount = parsed.length !== newsArticles.length;
+          const hasDifferentFirst = parsed[0]?.title !== newsArticles[0]?.title;
           const hasUrrda = parsed.some(art => art && art.title === "URRDA Empanelment");
-          if (!hasOldData && !hasDifferentCount && hasUrrda) {
+          if (!hasOldData && !hasDifferentCount && !hasDifferentFirst && hasUrrda) {
             return ensureUrrdaFirst(parsed);
           }
         }
@@ -69,6 +61,15 @@ const NewsEventsPage = () => {
     return () => window.removeEventListener("urbanbuild-news-updated", handleUpdate);
   }, []);
 
+  // Force sync cache on mount or state changes if the first item differs
+  useEffect(() => {
+    if (newsArticlesState[0]?.title !== newsArticles[0]?.title) {
+      const initialArticles = ensureUrrdaFirst(newsArticles);
+      localStorage.setItem("urbanbuild_news_feed", JSON.stringify(initialArticles));
+      setNewsArticles(initialArticles);
+    }
+  }, [newsArticlesState]);
+
   // Filter list based on search query
   const filteredArticles = (newsArticlesState || []).filter((article) => {
     if (!article) return false;
@@ -83,7 +84,7 @@ const NewsEventsPage = () => {
     <div className="min-h-screen bg-background text-foreground pt-32 pb-16 transition-colors duration-300">
       
       {/* Container */}
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="w-full max-w-7xl mx-auto px-6 md:px-12">
         
         {/* Simple Page Header */}
         <div className="border-b border-border/60 pb-8 mb-12">
@@ -130,14 +131,14 @@ const NewsEventsPage = () => {
                 const artDate = article.date || "Recent";
                 const artReadTime = article.readTime || "2 min read";
                 const artSummary = article.summary || artTitle;
-                const isHighlighted = artTitle === "URRDA Empanelment";
+                const isHighlighted = article.id === newsArticlesState[0]?.id;
                 
                 return (
                   <motion.div
                     key={artId}
                     layoutId={`card-${artId}`}
                     onClick={() => setActiveArticle(article)}
-                    className={`group w-full md:w-[90%] mx-auto py-8 transition-all duration-300 cursor-pointer flex flex-col justify-between relative ${
+                    className={`group w-full py-8 transition-all duration-300 cursor-pointer flex flex-col justify-between relative ${
                       isHighlighted 
                         ? "border-2 border-accent/60 bg-accent/[0.03] px-6 md:px-8 rounded-2xl shadow-[0_0_20px_rgba(212,175,55,0.1)] hover:border-accent hover:shadow-[0_0_25px_rgba(212,175,55,0.18)] my-4" 
                         : "border-t border-b border-border/60 hover:bg-[#0c1631]/[0.01] dark:hover:bg-[#060c1d]/10"

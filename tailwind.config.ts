@@ -115,6 +115,10 @@ export default {
         "shimmer": {
           "100%": { transform: "translateX(100%)" },
         },
+        "marquee": {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -125,6 +129,7 @@ export default {
         "slide-in-left": "slide-in-left 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards",
         "slide-in-right": "slide-in-right 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards",
         "shimmer": "shimmer 2s infinite",
+        "marquee": "marquee 25s linear infinite",
       },
     },
   },

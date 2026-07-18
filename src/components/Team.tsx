@@ -150,6 +150,27 @@ const teamMembers = [
         icon: Compass,
         color: "from-blue-400 to-indigo-600",
     },
+    {
+        name: "Er. Harshit Kumar",
+        role: "Estimator",
+        description: "Involved in quantity estimation, costing, and understanding of construction drawings.",
+        icon: Scale,
+        color: "from-teal-500 to-cyan-600",
+    },
+    {
+        name: "Er. Himanshu Pokhriyal",
+        role: "Highway Engineer",
+        description: "Associated with consultancy services for highway and road infrastructure projects. Assisted in the preparation of DPRs, technical reports, drawings, and BOQs in accordance with IRC and MoRTH guidelines.",
+        icon: MapPin,
+        color: "from-emerald-400 to-green-600",
+    },
+    {
+        name: "Er. Jitendra Singh Chauhan",
+        role: "Bridge Engineer",
+        description: "Assisting in bridge inspections, condition assessments, site visits, and preparation of technical reports.",
+        icon: Building2,
+        color: "from-blue-500 to-indigo-600",
+    },
 ];
 
 const MemberCard = ({ member, index }: { member: typeof teamMembers[0], index: number }) => {

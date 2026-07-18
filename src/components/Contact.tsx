@@ -7,7 +7,7 @@ const Contact = () => {
     const [formState, setFormState] = useState({
         name: "",
         email: "",
-        subject: "",
+        mobile: "",
         message: "",
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -22,7 +22,7 @@ const Contact = () => {
         if (hasSuccess) {
             setIsSent(true);
             toast.success("Transmission complete! Message delivered to consultancy@urbanbuild.co.in.");
-            
+
             // Clean browser address bar parameters
             const cleanUrl = window.location.href
                 .replace("?success=true", "")
@@ -73,8 +73,44 @@ const Contact = () => {
         },
     ];
 
-    const handleSubmit = () => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
         setIsSubmitting(true);
+
+        try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    // Replace this with the actual access key you receive from Web3Forms
+                    access_key: "70544821-eb13-4298-a7fb-a18701ae620f",
+                    name: formState.name,
+                    email: formState.email,
+                    mobile: formState.mobile,
+                    message: formState.message,
+                    from_name: "UrbanBuild Contact Form",
+                })
+            });
+
+            const json = await response.json();
+
+            if (response.ok && json.success) {
+                setIsSent(true);
+                toast.success("Transmission complete! Message delivered to consultancy@urbanbuild.co.in.");
+                setFormState({ name: "", email: "", mobile: "", message: "" });
+                setTimeout(() => setIsSent(false), 6000);
+            } else {
+                toast.error("Failed to send message. Please verify your Web3Forms access key.");
+                console.error("Web3Forms Error:", json);
+            }
+        } catch (error) {
+            toast.error("An error occurred. Please try again later.");
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -114,7 +150,7 @@ const Contact = () => {
                     transition={{ duration: 0.6 }}
                     className="flex flex-col items-center text-center mb-12 md:mb-16"
                 >
-                    <span 
+                    <span
                         className="text-accent text-3xl lg:text-4xl mb-1 block"
                         style={{ fontFamily: "'Great Vibes', cursive" }}
                     >
@@ -125,14 +161,14 @@ const Contact = () => {
                     </h2>
                     <div className="h-1 w-20 bg-accent rounded-full shadow-[0_0_10px_rgba(212,175,55,0.4)] mb-4" />
                     <p className="text-xs md:text-sm text-muted-foreground font-light leading-relaxed max-w-xl">
-                        Have an infrastructure project, inquiry, or partnership opportunity? 
+                        Have an infrastructure project, inquiry, or partnership opportunity?
                         Send us a message or visit our corporate headquarters in Dehradun.
                     </p>
                 </motion.div>
 
                 {/* Main Grid Content */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-stretch">
-                    
+
                     {/* Left Column: Office details & map */}
                     <div className="lg:col-span-5 flex flex-col gap-6 md:gap-8 justify-between">
                         <div className="space-y-4">
@@ -140,7 +176,7 @@ const Contact = () => {
                                 <Building2 className="w-4 h-4 text-accent" />
                                 Contact Information
                             </h3>
-                            
+
                             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
                                 {contactDetails.map((detail, index) => {
                                     const Icon = detail.icon;
@@ -209,21 +245,15 @@ const Contact = () => {
                                 Send a Message
                             </h3>
 
-                            <form 
-                                action="https://formsubmit.co/consultancy@urbanbuild.co.in" 
-                                method="POST" 
-                                onSubmit={handleSubmit} 
+                            <form
+                                onSubmit={handleSubmit}
                                 className="flex-1 flex flex-col gap-5"
                             >
-                                {/* FormSubmit Configuration Fields */}
-                                <input type="hidden" name="_next" value={window.location.origin + "/#/contact?success=true"} />
-                                <input type="hidden" name="_subject" value="New UB™ Contact Form Inquiry" />
-                                <input type="hidden" name="_template" value="table" />
 
                                 {/* Name Input */}
                                 <div className="flex flex-col gap-1.5">
                                     <label htmlFor="name" className="text-[10px] font-bold tracking-widest text-muted-foreground uppercase">
-                                        Your Name <span className="text-accent">*</span>
+                                        Name <span className="text-accent">*</span>
                                     </label>
                                     <input
                                         type="text"
@@ -256,20 +286,20 @@ const Contact = () => {
                                     />
                                 </div>
 
-                                {/* Subject Input */}
+                                {/* Mobile No Input */}
                                 <div className="flex flex-col gap-1.5">
-                                    <label htmlFor="subject" className="text-[10px] font-bold tracking-widest text-muted-foreground uppercase">
-                                        Subject <span className="text-accent">*</span>
+                                    <label htmlFor="mobile" className="text-[10px] font-bold tracking-widest text-muted-foreground uppercase">
+                                        Mobile No <span className="text-accent">*</span>
                                     </label>
                                     <input
-                                        type="text"
-                                        id="subject"
-                                        name="subject"
+                                        type="tel"
+                                        id="mobile"
+                                        name="mobile"
                                         required
                                         disabled={isSubmitting || isSent}
-                                        value={formState.subject}
-                                        onChange={(e) => setFormState({ ...formState, subject: e.target.value })}
-                                        placeholder="Consultancy, Infrastructure inquiry, etc."
+                                        value={formState.mobile}
+                                        onChange={(e) => setFormState({ ...formState, mobile: e.target.value })}
+                                        placeholder="Enter your mobile number"
                                         className="w-full px-4 py-3 rounded-xl border border-border/60 bg-background text-sm font-light leading-relaxed placeholder:text-muted-foreground/50 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/30 transition-all duration-300 disabled:opacity-50"
                                     />
                                 </div>
@@ -301,22 +331,22 @@ const Contact = () => {
                                         : isSubmitting
                                             ? "bg-accent/80 text-background cursor-wait"
                                             : "bg-accent text-background hover:bg-background hover:text-accent border border-accent hover:border-accent shadow-accent/10"
-                                    }`}
+                                        }`}
                                 >
                                     {isSent ? (
                                         <>
                                             <CheckCircle2 className="w-4 h-4 animate-bounce" />
-                                            TRANSMITTED SUCCESSFULLY
+                                            SUBMIT
                                         </>
                                     ) : isSubmitting ? (
                                         <>
                                             <span className="h-4 w-4 border-2 border-background border-t-transparent rounded-full animate-spin shrink-0" />
-                                            TRANSMITTING DATA...
+                                            SUBMITTING...
                                         </>
                                     ) : (
                                         <>
                                             <Send className="w-4 h-4" />
-                                            TRANSMIT MESSAGE
+                                            SUBMIT
                                         </>
                                     )}
                                 </button>

@@ -5,6 +5,7 @@ import logo from "@/assets/logo-optimized.png";
 import { Menu, ChevronDown, Linkedin } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Link, useLocation } from "react-router-dom";
+import IndependenceDayBanner from "@/components/IndependenceDayBanner";
 
 const navLinks = [
     { href: "/home", label: "HOME" },
@@ -73,11 +74,14 @@ const StickyHeader = () => {
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 ${isScrolled
+            className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 flex flex-col ${isScrolled
                 ? "bg-white/90 dark:bg-[#060c1d]/90 backdrop-blur-md border-b border-gray-200 dark:border-[#1A7EFF]/15 shadow-sm"
                 : "bg-transparent border-transparent"
                 }`}
         >
+            {(isLandingPage || location.pathname === "/home") && (
+                <IndependenceDayBanner />
+            )}
             <div className="w-full px-6 md:px-12">
                 <div className="flex items-center justify-between h-16">
                     {/* Logo Section */}

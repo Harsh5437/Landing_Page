@@ -7,6 +7,11 @@ import newsFeedData from "../data/newsFeed.json";
 
 const carouselImages = [
     {
+        src: "/images/HomeMainCrousel/PMC.jpg",
+        title: "Site Visit",
+        desc: "Site visit at Beavers PMC, Roorkee with Er. Gulshan Kalra Sir, Senior Civil & Structural Engineering Expert."
+    },
+    {
         src: "/images/HomeMainCrousel/GEHU.jpeg",
         title: "UrbanBuild Signs MoU with Graphic Era Hill University",
         desc: "UrbanBuild™ and Graphic Era Hill University: Partnering to strengthen engineering through material testing, consultancy, research and industry–academia collaboration."

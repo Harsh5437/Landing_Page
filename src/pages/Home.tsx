@@ -7,7 +7,7 @@ import newsFeedData from "../data/newsFeed.json";
 
 const carouselImages = [
     {
-        src: "/images/HomeMainCrousel/PMC.jpg",
+        src: "/images/HomeMainCrousel/PMC.JPG",
         title: "Site Visit",
         desc: "Site visit at Beavers PMC, Roorkee with Er. Gulshan Kalra Sir, Senior Civil & Structural Engineering Expert."
     },
@@ -495,25 +495,22 @@ const Home = () => {
                                             return (
                                                 <div
                                                     key={idx}
-                                                    className={`group flex flex-col gap-2 p-3.5 rounded-xl border transition-all duration-300 shadow-sm ${
-                                                        isLatest 
-                                                        ? "border-accent bg-accent/10 shadow-[0_0_15px_rgba(212,175,55,0.2)] hover:bg-accent/20" 
-                                                        : "border-white/5 hover:border-accent/30 bg-white/[0.02] hover:bg-white/[0.04]"
-                                                    }`}
+                                                    className={`group flex flex-col gap-2 p-3.5 rounded-xl border transition-all duration-300 shadow-sm ${isLatest
+                                                            ? "border-accent bg-accent/10 shadow-[0_0_15px_rgba(212,175,55,0.2)] hover:bg-accent/20"
+                                                            : "border-white/5 hover:border-accent/30 bg-white/[0.02] hover:bg-white/[0.04]"
+                                                        }`}
                                                 >
                                                     <div className="flex items-center justify-between gap-2">
-                                                        <span className={`text-[9px] md:text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 rounded ${
-                                                            isLatest ? "bg-accent text-background animate-pulse shadow-[0_0_8px_rgba(212,175,55,0.3)]" : "bg-accent/10 text-accent"
-                                                        }`}>
+                                                        <span className={`text-[9px] md:text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 rounded ${isLatest ? "bg-accent text-background animate-pulse shadow-[0_0_8px_rgba(212,175,55,0.3)]" : "bg-accent/10 text-accent"
+                                                            }`}>
                                                             {artCategory}
                                                         </span>
                                                         <span className={`text-[10px] md:text-[11px] font-mono flex items-center gap-1 ${isLatest ? "text-accent/90" : "text-zinc-400"}`}>
                                                             <Calendar className={`w-2.5 h-2.5 ${isLatest ? "text-accent" : "text-accent/60"}`} /> {artDate}
                                                         </span>
                                                     </div>
-                                                    <h4 className={`text-[13px] md:text-[14px] font-space font-bold transition-colors duration-300 leading-normal line-clamp-2 ${
-                                                        isLatest ? "text-accent" : "text-white/95 group-hover:text-accent"
-                                                    }`}>
+                                                    <h4 className={`text-[13px] md:text-[14px] font-space font-bold transition-colors duration-300 leading-normal line-clamp-2 ${isLatest ? "text-accent" : "text-white/95 group-hover:text-accent"
+                                                        }`}>
                                                         {artTitle}
                                                     </h4>
                                                 </div>

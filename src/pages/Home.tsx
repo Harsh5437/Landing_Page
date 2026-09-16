@@ -7,6 +7,16 @@ import newsFeedData from "../data/newsFeed.json";
 
 const carouselImages = [
     {
+        src: "/images/HomeMainCrousel/P6.JPG",
+        title: "UrbanBuild Celebrates Engineers’ Day.",
+        desc: "Celebrating Engineers’ Day 2026 with Engineering Excellence Award 2026, honouring Er. Siddhant Raj."
+    },
+    {
+        src: "/images/HomeMainCrousel/ICI1.JPG",
+        title: "UrbanBuild participated in Concrete Day 2026",
+        desc: "ICI Ghaziabad & UltraTech Cement: Concrete Quality & IS 456:2025 Draft"
+    },
+    {
         src: "/images/HomeMainCrousel/PMC.JPG",
         title: "Site Visit",
         desc: "Site visit at Beavers PMC, Roorkee with Er. Gulshan Kalra Sir, Senior Civil & Structural Engineering Expert."
@@ -146,7 +156,7 @@ const ProjectCounter = () => {
                 <div className="absolute bottom-0.5 right-0.5 w-1.5 h-1.5 border-b border-r border-accent/75" />
 
                 <span className="text-[20px] md:text-[23px] lg:text-[25px] font-space font-black text-accent tracking-tighter leading-none drop-shadow-[0_0_5px_rgba(212,175,55,0.4)]">
-                    365+
+                    385+
                 </span>
                 <span className="text-[7.5px] md:text-[8.5px] lg:text-[9.5px] font-mono font-black text-white/90 tracking-[0.18em] leading-none uppercase">
                     Projects Handled
@@ -205,28 +215,7 @@ const Home = () => {
     };
 
     // Dynamic database-free states for News and Gallery
-    const [newsFeed, setNewsFeed] = useState<any[]>(() => {
-        const saved = localStorage.getItem("urbanbuild_news_feed");
-        if (saved) {
-            try {
-                const parsed = JSON.parse(saved);
-                if (Array.isArray(parsed) && parsed.length > 0) {
-                    const hasOldData = parsed.some(art => art && art.date && art.date.includes("2024"));
-                    const hasDifferentCount = parsed.length !== newsFeedData.length;
-                    const hasDifferentFirst = parsed[0]?.title !== newsFeedData[0]?.title;
-                    const hasUrrda = parsed.some(art => art && art.title === "URRDA Empanelment");
-                    if (!hasOldData && !hasDifferentCount && !hasDifferentFirst && hasUrrda) {
-                        return ensureUrrdaFirst(parsed);
-                    }
-                }
-            } catch (e) {
-                console.error("Failed to parse saved news feed", e);
-            }
-        }
-        const initialNews = ensureUrrdaFirst(newsFeedData);
-        localStorage.setItem("urbanbuild_news_feed", JSON.stringify(initialNews));
-        return initialNews;
-    });
+    const [newsFeed, setNewsFeed] = useState<any[]>(newsFeedData);
 
     const [galleryImages, setGalleryImages] = useState<any[]>(() => {
         const saved = localStorage.getItem("urbanbuild_gallery_images");
@@ -255,10 +244,10 @@ const Home = () => {
                 }
             } else {
                 setNewsFeed([
-                    { title: "URRDA Empanelment", category: "Announcement", date: "May 26, 2026", img: "/images/projects/road-section.jpg", summary: "UrbanBuild is proud to announce its empanelment with the Uttarakhand Rural Road Development Agency (URRDA)." },
-                    { title: "November in Review", category: "Event", date: "Nov 12, 2025", img: "/images/HomeMainCrousel/P5.JPG" },
-                    { title: "Er. G.K. Sahu Sir, Chief Project Coordinator (Bridges), Visited URBANBUILD™ Office", category: "Visit", date: "Aug 15, 2025", img: "/images/HomeMainCrousel/P3.jpeg" },
-                    { title: "Civil Structural Survey Completed for Bageshwar Circuit House", category: "Announcement", date: "Nov 20, 2025", img: "/images/projects/govt-building.jpg" },
+                    { title: "UrbanBuild Celebrates Engineers’ Day 2026", category: "Event", date: "Sep 15, 2026", img: "/images/HomeMainCrousel/P6.JPG", summary: "Celebrating Engineers’ Day 2026 with Engineering Excellence Award 2026, honouring Er. Siddhant Raj." },
+                    { title: "Concrete Day 2026 | ICI Ghaziabad & UltraTech Cement Ltd.", category: "Event", date: "Sep 12, 2026", img: "/images/HomeMainCrousel/ICI1.JPG", summary: "UrbanBuild participated in Concrete Day 2026, organized by the Indian Concrete Institute (ICI), Ghaziabad Centre, in association with UltraTech Cement Ltd." },
+                    { title: "Site Visit to Amrit Aarogyam Project by Er. Gulshan Kumar", category: "Visit", date: "Aug 19, 2026", img: "/images/HomeMainCrousel/PMC.JPG" },
+                    { title: "UrbanBuild Signs MoU with Graphic Era Hill University", category: "Announcement", date: "Jul 10, 2026", img: "/images/HomeMainCrousel/GEHU.jpeg" },
                 ]);
             }
         };
@@ -370,8 +359,8 @@ const Home = () => {
                                         className="w-full h-full object-cover opacity-100"
                                     />
 
-                                    {/* Overlay Content with localized protection gradient constrained to bottom 20% */}
-                                    <div className="absolute bottom-0 left-0 right-0 h-[20%] p-4 md:p-6 bg-gradient-to-t from-[#040814]/95 via-[#040814]/80 to-transparent flex items-center select-none">
+                                    {/* Overlay Content with localized protection gradient */}
+                                    <div className="absolute bottom-0 left-0 right-0 h-auto min-h-[30%] md:min-h-[25%] lg:min-h-[20%] pt-20 pb-4 px-4 md:p-6 bg-gradient-to-t from-[#040814]/95 via-[#040814]/80 to-transparent flex items-end md:items-center select-none">
                                         <div className="w-full">
                                             <motion.div
                                                 initial={{ opacity: 0, y: 15 }}
@@ -387,7 +376,7 @@ const Home = () => {
                                                 <h2 className="text-sm md:text-base lg:text-lg font-space font-black text-white tracking-tight leading-tight mb-1 uppercase">
                                                     {carouselImages[currentIndex].title}
                                                 </h2>
-                                                <p className="text-white/80 max-w-2xl text-[9px] md:text-[10px] lg:text-[11px] font-light leading-normal line-clamp-2">
+                                                <p className="text-white/80 max-w-2xl text-[9px] md:text-[10px] lg:text-[11px] font-light leading-relaxed line-clamp-3 md:line-clamp-2">
                                                     {carouselImages[currentIndex].desc}
                                                 </p>
                                             </motion.div>
@@ -496,8 +485,8 @@ const Home = () => {
                                                 <div
                                                     key={idx}
                                                     className={`group flex flex-col gap-2 p-3.5 rounded-xl border transition-all duration-300 shadow-sm ${isLatest
-                                                            ? "border-accent bg-accent/10 shadow-[0_0_15px_rgba(212,175,55,0.2)] hover:bg-accent/20"
-                                                            : "border-white/5 hover:border-accent/30 bg-white/[0.02] hover:bg-white/[0.04]"
+                                                        ? "border-accent bg-accent/10 shadow-[0_0_15px_rgba(212,175,55,0.2)] hover:bg-accent/20"
+                                                        : "border-white/5 hover:border-accent/30 bg-white/[0.02] hover:bg-white/[0.04]"
                                                         }`}
                                                 >
                                                     <div className="flex items-center justify-between gap-2">

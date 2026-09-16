@@ -386,19 +386,19 @@ const StickyHeader = () => {
                         <div className="animate-marquee-scroll hover:[animation-play-state:paused] flex items-center gap-12 font-sans font-medium text-[10.5px] text-zinc-300 dark:text-zinc-200">
                             <span>
                                 <span className="text-[#D4AF37] font-extrabold animate-pulse drop-shadow-[0_0_8px_rgba(212,175,55,0.8)] mr-2">NEW</span>
+                                UrbanBuild celebrated Engineers’ Day 2026, presenting the Engineering Excellence Award to Er. Siddhant Raj.
+                                &nbsp;&nbsp;&bull;&nbsp;&nbsp;
+                                UrbanBuild participated in Concrete Day 2026, organized by the Indian Concrete Institute (ICI), Ghaziabad Centre, in association with UltraTech Cement Ltd.
+                                &nbsp;&nbsp;&bull;&nbsp;&nbsp;
                                 UrbanBuild™ and Graphic Era Hill University: Partnering to strengthen engineering through material testing, consultancy, research and industry–academia collaboration.
-                                &nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                                The Indian Building Congress Uttarakhand Chapter, sponsored by Urbanbuild, organized a webinar on "Multi-Hazard Resistant Construction in Hilly Regions" delivered by Dr Ajay Chourasia, Chief Scientist CSIR-CBRI.
-                                &nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                                UrbanBuild is proud to announce its empanelment with the Uttarakhand Rural Road Development Agency (URRDA) — strengthening our commitment to delivering quality infrastructure consultancy across Uttarakhand.
                             </span>
                             <span>
                                 <span className="text-[#D4AF37] font-extrabold animate-pulse drop-shadow-[0_0_8px_rgba(212,175,55,0.8)] mr-2">NEW</span>
+                                UrbanBuild celebrated Engineers’ Day 2026, presenting the Engineering Excellence Award to Er. Siddhant Raj.
+                                &nbsp;&nbsp;&bull;&nbsp;&nbsp;
+                                UrbanBuild participated in Concrete Day 2026, organized by the Indian Concrete Institute (ICI), Ghaziabad Centre, in association with UltraTech Cement Ltd.
+                                &nbsp;&nbsp;&bull;&nbsp;&nbsp;
                                 UrbanBuild™ and Graphic Era Hill University: Partnering to strengthen engineering through material testing, consultancy, research and industry–academia collaboration.
-                                &nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                                The Indian Building Congress Uttarakhand Chapter, sponsored by Urbanbuild, organized a webinar on "Multi-Hazard Resistant Construction in Hilly Regions" delivered by Dr Ajay Chourasia, Chief Scientist CSIR-CBRI.
-                                &nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                                UrbanBuild is proud to announce its empanelment with the Uttarakhand Rural Road Development Agency (URRDA) — strengthening our commitment to delivering quality infrastructure consultancy across Uttarakhand.
                             </span>
                         </div>
                     </Link>

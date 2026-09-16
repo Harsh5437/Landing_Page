@@ -1,5 +1,25 @@
 [
   {
+    "id": 15,
+    "title": "UrbanBuild Celebrates Engineers’ Day 2026",
+    "category": "Event",
+    "date": "Sep 15, 2026",
+    "readTime": "3 min read",
+    "summary": "Celebrating Engineers’ Day 2026 with Engineering Excellence Award 2026, honouring Er. Siddhant Raj.",
+    "content": "UrbanBuild celebrated Engineers’ Day 2026 by honouring the spirit of engineering excellence, innovation, dedication, and technical contribution.\n\nOn this occasion, the Engineering Excellence Award 2026 was presented to Er. Siddhant Raj in recognition of his Outstanding Technical Contribution, Dedication & Engineering Excellence.\n\nThe celebration reflected UrbanBuild’s commitment to Engineering Progress with Precision and its continued pursuit of excellence in infrastructure, design, consultancy, and sustainable engineering solutions.",
+    "img": "/images/HomeMainCrousel/P6.JPG"
+  },
+  {
+    "id": 16,
+    "title": "Concrete Day 2026 | ICI Ghaziabad & UltraTech Cement Ltd.",
+    "category": "Event",
+    "date": "Sep 12, 2026",
+    "readTime": "3 min read",
+    "summary": "UrbanBuild participated in Concrete Day 2026, organized by the Indian Concrete Institute (ICI), Ghaziabad Centre, in association with UltraTech Cement Ltd.",
+    "content": "UrbanBuild participated in Concrete Day 2026, organized by the Indian Concrete Institute (ICI), Ghaziabad Centre, in association with UltraTech Cement Ltd., on September 12, 2026, at Radisson Blu, Kaushambi, Ghaziabad. The event brought together professionals, experts, and industry representatives to exchange knowledge on advancements in concrete technology and construction practices. The keynote session was delivered by Dr. Brijesh Singh, General Manager, National Council for Cement and Building Materials (NCCBM), Haryana, focusing on “Quality Control and Quality Assurance of Concrete Construction – Provisions as per IS 456:2025 (Draft).” The session provided valuable technical insights into quality assurance, evolving standards, and improved practices for durable and reliable concrete construction.",
+    "img": "/images/HomeMainCrousel/ICI1.JPG"
+  },
+  {
     "id": 14,
     "title": "Site Visit to Amrit Aarogyam Project by Er. Gulshan Kumar",
     "category": "Visit",
@@ -19,26 +39,7 @@
     "content": "UrbanBuild™ and Graphic Era Hill University have signed an MoU to jointly deliver material testing, quality assurance, and engineering consultancy services for infrastructure projects. The collaboration also promotes joint research, innovation, and industry-academia engagement, providing valuable practical exposure to students and professionals.",
     "img": "/images/HomeMainCrousel/GEHU.jpeg"
   },
-  {
-    "id": 12,
-    "title": "Webinar on Multi-Hazard Resistant Construction in Hilly Regions",
-    "category": "Event",
-    "date": "Jul 03, 2026",
-    "readTime": "3 min read",
-    "summary": "The Indian Building Congress Uttarakhand Chapter, sponsored by Urbanbuild, organized a webinar on \"Multi-Hazard Resistant Construction in Hilly Regions\" delivered by Dr Ajay Chourasia, Chief Scientist CSIR-CBRI.",
-    "content": "The Indian Building Congress Uttarakhand Chapter, sponsored by Urbanbuild, organized a webinar on \"Multi-Hazard Resistant Construction in Hilly Regions\" on 3rd July 2026. The insightful session was delivered by Dr Ajay Chourasia, Chief Scientist CSIR-CBRI. This webinar highlighted critical construction strategies for hilly terrains to ensure safety against multiple hazards.",
-    "img": "/images/projects/govt-building.jpg"
-  },
-  {
-    "id": 11,
-    "title": "URRDA Empanelment",
-    "category": "Announcement",
-    "date": "May 26, 2026",
-    "readTime": "2 min read",
-    "summary": "UrbanBuild is proud to announce its empanelment with the Uttarakhand Rural Road Development Agency (URRDA).",
-    "content": "UrbanBuild is proud to announce its empanelment with the Uttarakhand Rural Road Development Agency (URRDA). This milestone strengthens our commitment to delivering quality infrastructure consultancy and engineering services across Uttarakhand.",
-    "img": "/images/projects/road-section.jpg"
-  },
+
   {
     "id": 1,
     "title": "November in Review",

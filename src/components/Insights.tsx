@@ -79,8 +79,8 @@ const Insights = () => {
         {/* 1. Sleek HUD Statistics Panel */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 w-full max-w-5xl mx-auto mb-8">
           {[
-            { value: "381+", label: "Projects Handled", icon: BarChart3, color: "from-[#1A7EFF] to-[#1A7EFF]/60", bg: "rgba(26,126,255,0.03)", border: "border-[#1A7EFF]/25" },
-            { value: "7Cr+", label: "Total Consultancy Cost", icon: Award, color: "from-accent to-accent/60", bg: "rgba(212,175,55,0.03)", border: "border-accent/25" },
+            { value: "385+", label: "Projects Handled", icon: BarChart3, color: "from-[#1A7EFF] to-[#1A7EFF]/60", bg: "rgba(26,126,255,0.03)", border: "border-[#1A7EFF]/25" },
+            { value: "7.5Cr+", label: "Total Consultancy Cost", icon: Award, color: "from-accent to-accent/60", bg: "rgba(212,175,55,0.03)", border: "border-accent/25" },
             { value: "40+", label: "Expert Engineers", icon: Zap, color: "from-emerald-500 to-emerald-500/60", bg: "rgba(16,185,129,0.03)", border: "border-emerald-500/25" }
           ].map((stat, index) => {
             const Icon = stat.icon;

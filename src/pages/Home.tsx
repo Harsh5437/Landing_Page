@@ -7,6 +7,11 @@ import newsFeedData from "../data/newsFeed.json";
 
 const carouselImages = [
     {
+        src: "/images/HomeMainCrousel/P7.jpg",
+        title: "Birthday Greetings",
+        desc: "Assistant Director, URBANBUILD, extends birthday greetings to Hon’ble CM Shri Pushkar Singh Dhami Ji."
+    },
+    {
         src: "/images/HomeMainCrousel/P6.JPG",
         title: "UrbanBuild Celebrates Engineers’ Day.",
         desc: "Celebrating Engineers’ Day 2026 with Engineering Excellence Award 2026, honouring Er. Siddhant Raj."
@@ -17,7 +22,7 @@ const carouselImages = [
         desc: "ICI Ghaziabad & UltraTech Cement: Concrete Quality & IS 456:2025 Draft"
     },
     {
-        src: "/images/HomeMainCrousel/PMC.JPG",
+        src: "/images/HomeMainCrousel/pmc.jpg",
         title: "Site Visit",
         desc: "Site visit at Beavers PMC, Roorkee with Er. Gulshan Kalra Sir, Senior Civil & Structural Engineering Expert."
     },
@@ -34,16 +39,6 @@ const carouselImages = [
     {
         src: "/images/HomeMainCrousel/P1.JPG",
         title: "Team URBANBUILD™"
-    },
-    {
-        src: "/images/HomeMainCrousel/P3.jpeg",
-        title: "Er. G.K. Sahu Visit",
-        desc: "Retired Chief Scientist at CRRI (Central Road Research Institute) at our office."
-    },
-    {
-        src: "/images/HomeMainCrousel/P4.png",
-        title: "Dignitary Visit",
-        desc: "Honored to host Shri Kundan Singh (IES, Retd.), Advisor – Engineering (Uttarakhand), Former Jt. Director General, Ex-MD BRIDCUL"
     },
     {
         src: "/images/HomeMainCrousel/P5.JPG",

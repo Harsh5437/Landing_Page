@@ -8,7 +8,7 @@ import newsFeedData from "../data/newsFeed.json";
 const carouselImages = [
     {
         src: "/images/HomeMainCrousel/P7.jpg",
-        title: "Birthday Greetings",
+        title: "Hon’ble CM Birthday Greetings.",
         desc: "Assistant Director, URBANBUILD, extends birthday greetings to Hon’ble CM Shri Pushkar Singh Dhami Ji."
     },
     {

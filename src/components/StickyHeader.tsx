@@ -83,7 +83,7 @@ const StickyHeader = () => {
                 <IndependenceDayBanner />
             )}
             <div className="w-full px-6 md:px-12">
-                <div className="flex items-center justify-between h-16">
+                <div className="relative flex h-16 items-center justify-between">
                     {/* Logo Section */}
                     <Link
                         to="/"
@@ -110,7 +110,7 @@ const StickyHeader = () => {
 
                     {/* Desktop Navigation */}
                     {!isLandingPage && (
-                        <nav className="hidden md:flex items-center gap-8 h-full">
+                        <nav className="absolute left-1/2 hidden h-full -translate-x-1/2 items-center gap-8 md:flex">
                             {navLinks.map((link) => {
                                 const isActive = location.pathname === link.href;
 
@@ -220,7 +220,7 @@ const StickyHeader = () => {
                     )}
 
                     {/* Actions */}
-                    <div className="hidden md:flex items-center gap-4">
+                    <div className="ml-auto hidden items-center gap-4 md:flex">
                         <a
                             href="https://www.linkedin.com/company/urbanbuild%E2%84%A2/"
                             target="_blank"

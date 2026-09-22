@@ -2,7 +2,7 @@ import { FormEvent, useState } from "react";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 
-const defaultWebinarTitle = "Webinar on Multi-Hazard Resistant Construction in Hilly Regions";
+const defaultWebinarTitle = "Webinar: Quality Control and Quality Assurance of Concrete Constructions Provisions as per IS 456:2025 (Draft)";
 const googleFormSubmitUrl = "https://docs.google.com/forms/d/e/1FAIpQLSdjKcRm-Cr3vx-vQD7EumJIFJoAo3gVBRml4Fr751gqLQNoPg/formResponse";
 
 const WebinarRegistration = () => {

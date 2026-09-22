@@ -64,8 +64,8 @@ const getPortfolioGalleryImages = () => {
     // Add webinar to the small gallery at the top
     images.unshift({
         src: "/images/HomeMainCrousel/P1.jpeg",
-        title: "Webinar on Multi-Hazard Resistant Construction in Hilly Regions",
-        desc: "The Indian Building Congress Uttarakhand Chapter, sponsored by Urbanbuild, organized a webinar on \"Multi-Hazard Resistant Construction in Hilly Regions\" delivered by Dr Ajay Chourasia, Chief Scientist CSIR-CBRI."
+        title: "Webinar: Quality Control and Quality Assurance of Concrete Constructions Provisions as per IS 456:2025 (Draft)",
+        desc: "UrbanBuild participated in Concrete Day 2026, organized by ICI Ghaziabad and UltraTech Cement, featuring technical guidance on quality control and quality assurance of concrete construction as per IS 456:2025 (Draft)."
     });
     return images.length > 0 ? images : [
         { src: "/images/projects/highway-render.jpg", title: "National Highway Expansion", desc: "Premium highway engineering and corridor design." }
@@ -187,12 +187,12 @@ const Home = () => {
 
     const ensureWebinarInGallery = (list: any[]) => {
         if (!Array.isArray(list)) return list;
-        const webinarIndex = list.findIndex(item => item && item.title && item.title.includes("Multi-Hazard"));
+        const webinarIndex = list.findIndex(item => item && item.title && (item.title.includes("Multi-Hazard") || item.title.includes("Quality Control and Quality Assurance")));
 
         const webinarData = {
             src: "/images/ibc.jpeg",
-            title: "Webinar on Multi-Hazard Resistant Construction in Hilly Regions",
-            desc: "The Indian Building Congress Uttarakhand Chapter, sponsored by Urbanbuild, organized a webinar on \"Multi-Hazard Resistant Construction in Hilly Regions\" delivered by Dr Ajay Chourasia, Chief Scientist CSIR-CBRI."
+            title: "Webinar: Quality Control and Quality Assurance of Concrete Constructions Provisions as per IS 456:2025 (Draft)",
+            desc: "UrbanBuild participated in Concrete Day 2026, organized by ICI Ghaziabad and UltraTech Cement, featuring technical guidance on quality control and quality assurance of concrete construction as per IS 456:2025 (Draft)."
         };
 
         const newList = [...list];
@@ -572,16 +572,6 @@ const Home = () => {
                                             <p className="text-[10px] text-blue-200/70 font-light mt-0.5 line-clamp-1">
                                                 {galleryImages[miniIndex].desc}
                                             </p>
-                                            {galleryImages[miniIndex].title.includes("Webinar") && (
-                                                <Link
-                                                    to={`/webinar/register?title=${encodeURIComponent(galleryImages[miniIndex].title)}`}
-                                                    onClick={(event) => event.stopPropagation()}
-                                                    className="mt-2 inline-flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-widest text-accent hover:text-white"
-                                                >
-                                                    Register for webinar
-                                                    <ArrowRight className="h-3 w-3" />
-                                                </Link>
-                                            )}
                                         </div>
                                     </motion.div>
                                 </AnimatePresence>

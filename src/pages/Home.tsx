@@ -17,6 +17,7 @@ const carouselImages = [
         desc: "Celebrating Engineers’ Day 2026 with Engineering Excellence Award 2026, honouring Er. Siddhant Raj."
     },
     {
+    
         src: "/images/HomeMainCrousel/ICI1.JPG",
         title: "UrbanBuild participated in Concrete Day 2026",
         desc: "ICI Ghaziabad & UltraTech Cement: Concrete Quality & IS 456:2025 Draft"
@@ -571,6 +572,16 @@ const Home = () => {
                                             <p className="text-[10px] text-blue-200/70 font-light mt-0.5 line-clamp-1">
                                                 {galleryImages[miniIndex].desc}
                                             </p>
+                                            {galleryImages[miniIndex].title.includes("Webinar") && (
+                                                <Link
+                                                    to={`/webinar/register?title=${encodeURIComponent(galleryImages[miniIndex].title)}`}
+                                                    onClick={(event) => event.stopPropagation()}
+                                                    className="mt-2 inline-flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-widest text-accent hover:text-white"
+                                                >
+                                                    Register for webinar
+                                                    <ArrowRight className="h-3 w-3" />
+                                                </Link>
+                                            )}
                                         </div>
                                     </motion.div>
                                 </AnimatePresence>

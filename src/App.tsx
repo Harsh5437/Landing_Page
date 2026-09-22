@@ -9,6 +9,7 @@ import NotFound from "./pages/NotFound";
 import { lazy, Suspense } from "react";
 import Landing from "./pages/Landing";
 import Home from "./pages/Home";
+import WebinarRegistration from "./pages/WebinarRegistration";
 import MainLayout from "./layouts/MainLayout";
 import { Skeleton } from "@/components/ui/skeleton";
 
@@ -53,6 +54,7 @@ const App = () => {
           {/* Main Layout containing persistent Header and Footer */}
           <Route element={<MainLayout />}>
             <Route path="/home" element={<Home />} />
+            <Route path="/webinar/register" element={<WebinarRegistration />} />
             <Route path="/about" element={
               <Suspense fallback={<SectionFallback />}><About /></Suspense>
             } />

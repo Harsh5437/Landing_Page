@@ -87,18 +87,18 @@ const StickyHeader = () => {
                     {/* Logo Section */}
                     <Link
                         to="/"
-                        className="flex items-center gap-3 bg-transparent border-none cursor-pointer group hover:scale-[1.02] active:scale-[0.98] transition-transform duration-200"
+                        className="flex min-w-0 flex-1 items-center gap-2 md:gap-3 bg-transparent border-none cursor-pointer group hover:scale-[1.02] active:scale-[0.98] transition-transform duration-200"
                     >
                         <img
                             src={logo}
                             alt="UrbanBuild"
                             className={`object-contain transition-all duration-300 ${isScrolled ? "h-10 w-10 brightness-0 dark:invert" : "h-12 w-12 brightness-0 invert"}`}
                         />
-                        <div className="flex flex-col items-start justify-center">
-                            <span className={`text-lg font-bold tracking-normal leading-none transition-colors ${isScrolled ? "text-charcoal dark:text-white" : "text-white"}`}>
+                        <div className="min-w-0 flex flex-col items-start justify-center">
+                            <span className={`shrink-0 whitespace-nowrap text-base font-bold tracking-normal leading-none transition-colors md:text-lg ${isScrolled ? "text-charcoal dark:text-white" : "text-white"}`}>
                                 URBANBUILD<sup className="relative top-[-6px] text-[1rem]">™</sup>
                             </span>
-                            <div className="text-[9px] md:text-[10px] font-semibold text-[#1A7EFF] mt-1.5 tracking-wider uppercase flex items-center gap-1.5 leading-none">
+                            <div className="flex max-w-full overflow-hidden text-[7px] font-semibold text-[#1A7EFF] mt-1.5 tracking-[0.08em] uppercase items-center gap-1 leading-none whitespace-nowrap md:text-[10px] md:tracking-wider md:gap-1.5">
                                 <span>DESIGN</span>
                                 <span className="w-1 h-1 rounded-full bg-[#1A7EFF] opacity-80 self-center" />
                                 <span>Consultancy</span>
@@ -247,7 +247,16 @@ const StickyHeader = () => {
 
                     {/* Mobile Menu Trigger */}
                     {!isLandingPage && (
-                        <div className="flex items-center gap-4 md:hidden">
+                        <div className="flex shrink-0 items-center gap-1 md:hidden">
+                            <a
+                                href="https://www.linkedin.com/company/urbanbuild%E2%84%A2/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={`p-2 transition-colors ${isScrolled ? "text-charcoal dark:text-white" : "text-white"}`}
+                                aria-label="LinkedIn"
+                            >
+                                <Linkedin className="h-5 w-5" />
+                            </a>
                             <Sheet open={isOpen} onOpenChange={setIsOpen}>
                                 <SheetTrigger asChild>
                                     <button className={`p-2 transition-colors ${isScrolled ? "text-charcoal dark:text-white" : "text-white"}`}>

@@ -1,8 +1,8 @@
 import { motion, useScroll, useMotionValueEvent, AnimatePresence } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { ModeToggle } from "@/components/mode-toggle";
 import logo from "@/assets/logo-optimized.png";
-import { Menu, ChevronDown, Linkedin } from "lucide-react";
+import { Menu, ChevronDown, Linkedin, Youtube } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Link, useLocation } from "react-router-dom";
 import IndependenceDayBanner from "@/components/IndependenceDayBanner";
@@ -50,6 +50,8 @@ const StickyHeader = () => {
     const { scrollY } = useScroll();
     const [isOpen, setIsOpen] = useState(false);
     const [expandedMenus, setExpandedMenus] = useState<Record<string, boolean>>({});
+    const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+    const dropdownCloseTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
     const location = useLocation();
 
     const isLandingPage = location.pathname === "/";
@@ -110,7 +112,7 @@ const StickyHeader = () => {
 
                     {/* Desktop Navigation */}
                     {!isLandingPage && (
-                        <nav className="absolute left-1/2 hidden h-full -translate-x-1/2 items-center gap-8 md:flex">
+                        <nav className="absolute left-1/2 z-[60] hidden h-full -translate-x-1/2 items-center gap-8 md:flex">
                             {navLinks.map((link) => {
                                 const isActive = location.pathname === link.href;
 
@@ -119,6 +121,17 @@ const StickyHeader = () => {
                                         <div
                                             key={link.href}
                                             className="relative group flex items-center h-16"
+                                            onMouseEnter={() => {
+                                                if (dropdownCloseTimeout.current) {
+                                                    clearTimeout(dropdownCloseTimeout.current);
+                                                }
+                                                setOpenDropdown(link.href);
+                                            }}
+                                            onMouseLeave={() => {
+                                                dropdownCloseTimeout.current = setTimeout(() => {
+                                                    setOpenDropdown(null);
+                                                }, 150);
+                                            }}
                                         >
                                             <Link
                                                 to={link.href}
@@ -151,7 +164,10 @@ const StickyHeader = () => {
                                             </Link>
 
                                             {/* Premium Hover Dropdown Container (Invisible Bridge) */}
-                                            <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-max min-w-[280px] opacity-0 pointer-events-none translate-y-2 group-hover:opacity-100 group-hover:pointer-events-auto group-hover:translate-y-0 transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] z-50">
+                                            <div className={`absolute top-full left-1/2 -translate-x-1/2 pt-2 w-max min-w-[280px] transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)] z-[70] ${openDropdown === link.href
+                                                ? "opacity-100 pointer-events-auto translate-y-0"
+                                                : "opacity-0 pointer-events-none translate-y-2"
+                                                }`}>
                                                 
                                                 {/* Visible Dropdown Box */}
                                                 <div className="rounded-2xl bg-white/95 dark:bg-[#060c1d]/95 backdrop-blur-2xl border border-gray-200/50 dark:border-[#1A7EFF]/20 p-2.5 shadow-2xl shadow-black/10 dark:shadow-[0_20px_50px_rgba(26,126,255,0.15)]">
@@ -227,12 +243,25 @@ const StickyHeader = () => {
                             rel="noopener noreferrer"
                             className={`p-1.5 rounded-full transition-all duration-300 hover:scale-[1.05] active:scale-[0.95] border flex items-center justify-center ${
                                 isScrolled
-                                    ? "border-gray-200 dark:border-[#1A7EFF]/15 text-charcoal dark:text-white hover:text-accent dark:hover:text-accent hover:bg-gray-50 dark:hover:bg-white/[0.04]"
-                                    : "border-white/20 text-white hover:bg-white/10 backdrop-blur-sm"
+                                    ? "border-[#0A66C2]/30 text-[#0A66C2] hover:border-[#0A66C2] hover:bg-[#0A66C2]/10"
+                                    : "border-[#0A66C2]/50 text-[#4EA1E8] hover:bg-[#0A66C2]/20 backdrop-blur-sm"
                             }`}
                             aria-label="LinkedIn"
                         >
                             <Linkedin className="w-3.5 h-3.5" />
+                        </a>
+                        <a
+                            href="https://www.youtube.com/@Quest-by-Urbanbuild"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={`p-1.5 rounded-full transition-all duration-300 hover:scale-[1.05] active:scale-[0.95] border flex items-center justify-center ${
+                                isScrolled
+                                    ? "border-[#FF0000]/30 text-[#FF0000] hover:border-[#FF0000] hover:bg-[#FF0000]/10"
+                                    : "border-[#FF0000]/50 text-[#FF4D4D] hover:bg-[#FF0000]/20 backdrop-blur-sm"
+                            }`}
+                            aria-label="YouTube"
+                        >
+                            <Youtube className="w-3.5 h-3.5" />
                         </a>
                         <Link
                             to="/contact"
@@ -252,10 +281,19 @@ const StickyHeader = () => {
                                 href="https://www.linkedin.com/company/urbanbuild%E2%84%A2/"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className={`p-2 transition-colors ${isScrolled ? "text-charcoal dark:text-white" : "text-white"}`}
+                                className={`p-2 transition-colors ${isScrolled ? "text-[#0A66C2] hover:text-[#084F91]" : "text-[#4EA1E8] hover:text-[#7DBCF0]"}`}
                                 aria-label="LinkedIn"
                             >
                                 <Linkedin className="h-5 w-5" />
+                            </a>
+                            <a
+                                href="https://www.youtube.com/@Quest-by-Urbanbuild"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={`p-2 transition-colors ${isScrolled ? "text-[#FF0000] hover:text-[#CC0000]" : "text-[#FF4D4D] hover:text-[#FF8080]"}`}
+                                aria-label="YouTube"
+                            >
+                                <Youtube className="h-5 w-5" />
                             </a>
                             <Sheet open={isOpen} onOpenChange={setIsOpen}>
                                 <SheetTrigger asChild>
@@ -359,7 +397,7 @@ const StickyHeader = () => {
             
             {/* Full-width Running Announcement Strip (Hidden on Landing page to prevent overlap) */}
             {!isLandingPage && (
-                <div className="w-full bg-gradient-to-r from-[#060c1d] via-[#0a122c] to-[#060c1d] dark:from-[#02050c] dark:via-[#060c1d] dark:to-[#02050c] border-t border-b border-accent/20 py-1.5 px-4 flex items-center justify-between text-xs overflow-hidden relative select-none shadow-[inset_0_0_20px_rgba(0,0,0,0.5)]">
+                <div className="relative z-10 w-full bg-gradient-to-r from-[#060c1d] via-[#0a122c] to-[#060c1d] dark:from-[#02050c] dark:via-[#060c1d] dark:to-[#02050c] border-t border-b border-accent/20 py-1.5 px-4 flex items-center justify-between text-xs overflow-hidden select-none shadow-[inset_0_0_20px_rgba(0,0,0,0.5)]">
                     <style>{`
                         @keyframes marquee-scroll {
                             0% { transform: translateX(0); }
@@ -395,19 +433,19 @@ const StickyHeader = () => {
                         <div className="animate-marquee-scroll hover:[animation-play-state:paused] flex items-center gap-12 font-sans font-medium text-[10.5px] text-zinc-300 dark:text-zinc-200">
                             <span>
                                 <span className="text-[#D4AF37] font-extrabold animate-pulse drop-shadow-[0_0_8px_rgba(212,175,55,0.8)] mr-2">NEW</span>
-                                UrbanBuild celebrated Engineers’ Day 2026, presenting the Engineering Excellence Award to Er. Siddhant Raj.
+                                TECHNICAL WEBINAR | URBANBUILD: In association with Indian Buildings Congress (IBC) - Uttarakhand Chapter.
                                 &nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                                UrbanBuild participated in Concrete Day 2026, organized by the Indian Concrete Institute (ICI), Ghaziabad Centre, in association with UltraTech Cement Ltd.
+                                Quality Control &amp; Quality Assurance of Concrete Constructions - Provisions as per IS 456:2025 (Draft).
                                 &nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                                UrbanBuild™ and Graphic Era Hill University: Partnering to strengthen engineering through material testing, consultancy, research and industry–academia collaboration.
+                                Resource Person: Dr. Brijesh Singh, General Manager, NCCBM. 25 September 2026 | Friday | 7:00 PM onwards | Online.
                             </span>
                             <span>
                                 <span className="text-[#D4AF37] font-extrabold animate-pulse drop-shadow-[0_0_8px_rgba(212,175,55,0.8)] mr-2">NEW</span>
-                                UrbanBuild celebrated Engineers’ Day 2026, presenting the Engineering Excellence Award to Er. Siddhant Raj.
+                                TECHNICAL WEBINAR | UB QUEST: In association with Indian Buildings Congress (IBC) - Uttarakhand Chapter.
                                 &nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                                UrbanBuild participated in Concrete Day 2026, organized by the Indian Concrete Institute (ICI), Ghaziabad Centre, in association with UltraTech Cement Ltd.
+                                Quality Control &amp; Quality Assurance of Concrete Constructions - Provisions as per IS 456:2025 (Draft).
                                 &nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                                UrbanBuild™ and Graphic Era Hill University: Partnering to strengthen engineering through material testing, consultancy, research and industry–academia collaboration.
+                                Resource Person: Dr. Brijesh Singh, General Manager, NCCBM. 25 September 2026 | Friday | 7:00 PM onwards | Online.
                             </span>
                         </div>
                     </Link>

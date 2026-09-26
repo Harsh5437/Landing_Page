@@ -47,6 +47,19 @@ const carouselImages = [
         desc: " Mr. Ayaz Ahmed,Retired Engineer-in-Chief (EnC), PWD Uttarakhand"
     }
 ];
+const webinarGalleryItem = {
+    src: "/images/linkedin.jpeg",
+    title: "Technical Webinar | UrbanBuild",
+    desc: "UrbanBuild, in association with Indian Buildings Congress (IBC) – Uttarakhand Chapter, presents a technical session on Quality Control & Quality Assurance of Concrete Constructions as per IS 456:2025 (Draft)."
+};
+
+const isWebinarImage = (item: { src?: string; title?: string } | null | undefined) => {
+    if (!item) return false;
+    const src = (item.src || "").toLowerCase();
+    const title = (item.title || "").toLowerCase();
+    return src.includes("linkedin") || src.includes("ibc") || title.includes("quality control") || title.includes("technical webinar");
+};
+
 const getPortfolioGalleryImages = () => {
     const images: any[] = [];
     sectorsData.forEach((sector) => {
@@ -61,12 +74,10 @@ const getPortfolioGalleryImages = () => {
         }
     });
 
-    // Add webinar to the small gallery at the top
-    images.unshift({
-        src: "/images/HomeMainCrousel/P1.jpeg",
-        title: "Webinar: Quality Control and Quality Assurance of Concrete Constructions Provisions as per IS 456:2025 (Draft)",
-        desc: "UrbanBuild participated in Concrete Day 2026, organized by ICI Ghaziabad and UltraTech Cement, featuring technical guidance on quality control and quality assurance of concrete construction as per IS 456:2025 (Draft)."
-    });
+    if (!images.some(isWebinarImage)) {
+        images.unshift(webinarGalleryItem);
+    }
+
     return images.length > 0 ? images : [
         { src: "/images/projects/highway-render.jpg", title: "National Highway Expansion", desc: "Premium highway engineering and corridor design." }
     ];
@@ -187,27 +198,15 @@ const Home = () => {
 
     const ensureWebinarInGallery = (list: any[]) => {
         if (!Array.isArray(list)) return list;
-        const webinarIndex = list.findIndex(item => item && item.title && (item.title.includes("Multi-Hazard") || item.title.includes("Quality Control and Quality Assurance")));
 
-        const webinarData = {
-            src: "/images/ibc.jpeg",
-            title: "Webinar: Quality Control and Quality Assurance of Concrete Constructions Provisions as per IS 456:2025 (Draft)",
-            desc: "UrbanBuild participated in Concrete Day 2026, organized by ICI Ghaziabad and UltraTech Cement, featuring technical guidance on quality control and quality assurance of concrete construction as per IS 456:2025 (Draft)."
-        };
+        const filteredList = list.filter(item => !isWebinarImage(item));
+        const normalizedWebinar = { ...webinarGalleryItem, ...(list.find(isWebinarImage) || {}) };
+        const newList = [
+            { ...normalizedWebinar, ...webinarGalleryItem },
+            ...filteredList,
+        ];
 
-        const newList = [...list];
-
-        if (webinarIndex >= 0) {
-            newList[webinarIndex] = { ...newList[webinarIndex], ...webinarData };
-            if (webinarIndex > 0) {
-                const webinarItem = newList.splice(webinarIndex, 1)[0];
-                newList.unshift(webinarItem);
-            }
-            return newList;
-        } else {
-            newList.unshift(webinarData);
-            return newList;
-        }
+        return newList;
     };
 
     // Dynamic database-free states for News and Gallery

@@ -12,21 +12,21 @@ const carouselImages = [
         desc: "Assistant Director, URBANBUILD, extends birthday greetings to Hon’ble CM Shri Pushkar Singh Dhami Ji."
     },
     {
+        src: "/images/HomeMainCrousel/guru.png",
+        title: "Swami Mahendra Das Ji Maharaj Visits Urbanbuild.",
+        desc: "SRI's Founder Chairman 2nd Uttaradhikari nritya gopal Das ji maharaja, maniramdas chhavni shares a profound spiritual legacy."
+    },
+    {
         src: "/images/HomeMainCrousel/P6.JPG",
         title: "UrbanBuild Celebrates Engineers’ Day.",
         desc: "Celebrating Engineers’ Day 2026 with Engineering Excellence Award 2026, honouring Er. Siddhant Raj."
     },
     {
-    
         src: "/images/HomeMainCrousel/ICI1.JPG",
         title: "UrbanBuild participated in Concrete Day 2026",
         desc: "ICI Ghaziabad & UltraTech Cement: Concrete Quality & IS 456:2025 Draft"
     },
-    {
-        src: "/images/HomeMainCrousel/pmc.jpg",
-        title: "Site Visit",
-        desc: "Site visit at Beavers PMC, Roorkee with Er. Gulshan Kalra Sir, Senior Civil & Structural Engineering Expert."
-    },
+
     {
         src: "/images/HomeMainCrousel/GEHU.jpeg",
         title: "UrbanBuild Signs MoU with Graphic Era Hill University",

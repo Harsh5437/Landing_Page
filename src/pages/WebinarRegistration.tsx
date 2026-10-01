@@ -1,6 +1,7 @@
 import { FormEvent, useState } from "react";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { useNavigate, useSearchParams } from "react-router-dom";
+import { track } from "@vercel/analytics";
 
 const defaultWebinarTitle = "Webinar: Quality Control and Quality Assurance of Concrete Constructions Provisions as per IS 456:2025 (Draft)";
 const googleFormSubmitUrl = "https://docs.google.com/forms/d/e/1FAIpQLSdjKcRm-Cr3vx-vQD7EumJIFJoAo3gVBRml4Fr751gqLQNoPg/formResponse";
@@ -40,6 +41,10 @@ const WebinarRegistration = () => {
                     "entry.2118865532": designation,
                     "entry.1935531442": mobile,
                 }),
+            });
+            track('webinar_registered', {
+                title: webinarTitle,
+                organization: organization,
             });
             setIsSubmitted(true);
             window.setTimeout(() => navigate("/home"), 1400);

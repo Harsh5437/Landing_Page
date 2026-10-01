@@ -2,6 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle2, Building2, Globe } from "lucide-react";
 import { toast } from "sonner";
+import { track } from "@vercel/analytics";
 
 const Contact = () => {
     const [formState, setFormState] = useState({
@@ -98,6 +99,9 @@ const Contact = () => {
             const json = await response.json();
 
             if (response.ok && json.success) {
+                track('contact_form_submitted', {
+                    name: formState.name,
+                });
                 setIsSent(true);
                 toast.success("Transmission complete! Message delivered to consultancy@urbanbuild.co.in.");
                 setFormState({ name: "", email: "", mobile: "", message: "" });

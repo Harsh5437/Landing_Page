@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { RefreshCw, ExternalLink } from "lucide-react";
 
@@ -24,7 +23,7 @@ const StaffLogin = () => {
                 </div>
                 <div className="flex items-center gap-3">
                     <a
-                        href="https://urbanbuildmis.netlify.app"
+                        href="https://ubmis.netlify.app"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center gap-1.5 text-[10px] font-bold tracking-widest text-accent hover:underline uppercase transition-all"
@@ -45,13 +44,30 @@ const StaffLogin = () => {
                         </span>
                     </div>
                 )}
+
+                {/* Transparent Click Overlay to redirect to ubmis.netlify.app on any interaction */}
+                {!isLoading && (
+                    <a
+                        href="https://ubmis.netlify.app"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="absolute inset-0 z-10 cursor-pointer group"
+                        title="Click to launch UrbanBuild MIS Portal"
+                    >
+                        <span className="sr-only">Click to open UrbanBuild MIS Portal</span>
+                        <div className="absolute top-4 right-4 z-20 opacity-0 group-hover:opacity-100 transition-opacity bg-black/80 text-white text-xs px-3 py-1.5 rounded-lg border border-accent/40 backdrop-blur-sm flex items-center gap-2 shadow-lg">
+                            <span>Open MIS Portal</span>
+                            <ExternalLink className="w-3.5 h-3.5 text-accent" />
+                        </div>
+                    </a>
+                )}
                 
                 <iframe
-                    src="https://urbanbuildmis.netlify.app"
+                    src="https://ubmis.netlify.app"
                     title="UrbanBuild MIS Portal"
                     className="w-full h-full border-none bg-white dark:bg-[#0c0c0e]"
                     allow="geolocation; microphone; camera; midi; encrypted-media;"
-                    sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+                    sandbox="allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation allow-presentation allow-same-origin allow-scripts"
                 />
             </div>
         </div>

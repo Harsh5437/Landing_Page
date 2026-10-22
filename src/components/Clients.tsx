@@ -44,7 +44,7 @@ const clients = [
         color: "#059669",
     },
     {
-        name: "RWD Details",
+        name: "Rural Works Department (RWD)",
         logo: "/images/clients/RWD_logo.jpeg",
         color: "#1e40af",
     },

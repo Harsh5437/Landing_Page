@@ -131,6 +131,12 @@ const clients = [
         logo: "/images/clients/URRDA_Logo.jpeg",
         tagline: "RURAL ROADS",
         description: "Uttarakhand Rural Road Development Agency, executing major connectivity networks."
+    },
+    {
+        name: "Rural Works Department (RWD)",
+        logo: "/images/clients/RWD_logo.jpeg",
+        tagline: "GOVERNMENT DEPT",
+        description: "Empanelled for comprehensive Road, Bridge, and Building engineering consultancy works."
     }
 ];
 
@@ -238,12 +244,7 @@ const Home = () => {
                     console.error(e);
                 }
             } else {
-                setNewsFeed([
-                    { title: "UrbanBuild Celebrates Engineers’ Day 2026", category: "Event", date: "Sep 15, 2026", img: "/images/HomeMainCrousel/P6.JPG", summary: "Celebrating Engineers’ Day 2026 with Engineering Excellence Award 2026, honouring Er. Siddhant Raj." },
-                    { title: "Concrete Day 2026 | ICI Ghaziabad & UltraTech Cement Ltd.", category: "Event", date: "Sep 12, 2026", img: "/images/HomeMainCrousel/ICI1.JPG", summary: "UrbanBuild participated in Concrete Day 2026, organized by the Indian Concrete Institute (ICI), Ghaziabad Centre, in association with UltraTech Cement Ltd." },
-                    { title: "Site Visit to Amrit Aarogyam Project by Er. Gulshan Kumar", category: "Visit", date: "Aug 19, 2026", img: "/images/HomeMainCrousel/PMC.JPG" },
-                    { title: "UrbanBuild Signs MoU with Graphic Era Hill University", category: "Announcement", date: "Jul 10, 2026", img: "/images/HomeMainCrousel/GEHU.jpeg" },
-                ]);
+                setNewsFeed(ensureUrrdaFirst(newsFeedData));
             }
         };
 

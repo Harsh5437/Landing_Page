@@ -433,11 +433,19 @@ const StickyHeader = () => {
                         <div className="animate-marquee-scroll hover:[animation-play-state:paused] flex items-center gap-12 font-sans font-medium text-[10.5px] text-zinc-300 dark:text-zinc-200">
                             <span>
                                 <span className="text-[#D4AF37] font-extrabold animate-pulse drop-shadow-[0_0_8px_rgba(212,175,55,0.8)] mr-2">NEW</span>
+                                <span className="font-bold text-[#D4AF37] tracking-wider uppercase">EMPANELMENT:</span> UrbanBuild is proudly empanelled with Rural Works Department (RWD) in ROAD, Bridge &amp; Building sectors.
+                            </span>
+                            <span>
+                                <span className="text-[#D4AF37] font-extrabold animate-pulse drop-shadow-[0_0_8px_rgba(212,175,55,0.8)] mr-2">NEW</span>
                                 TECHNICAL WEBINAR | URBANBUILD: In association with Indian Buildings Congress (IBC) - Uttarakhand Chapter.
                                 &nbsp;&nbsp;&bull;&nbsp;&nbsp;
                                 Quality Control &amp; Quality Assurance of Concrete Constructions - Provisions as per IS 456:2025 (Draft).
                                 &nbsp;&nbsp;&bull;&nbsp;&nbsp;
                                 Resource Person: Dr. Brijesh Singh, General Manager, NCCBM. 25 September 2026 | Friday | 7:00 PM onwards | Online.
+                            </span>
+                            <span>
+                                <span className="text-[#D4AF37] font-extrabold animate-pulse drop-shadow-[0_0_8px_rgba(212,175,55,0.8)] mr-2">NEW</span>
+                                <span className="font-bold text-[#D4AF37] tracking-wider uppercase">EMPANELMENT:</span> UrbanBuild is proudly empanelled with Rural Works Department (RWD) in ROAD, Bridge &amp; Building sectors.
                             </span>
                             <span>
                                 <span className="text-[#D4AF37] font-extrabold animate-pulse drop-shadow-[0_0_8px_rgba(212,175,55,0.8)] mr-2">NEW</span>

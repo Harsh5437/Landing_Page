@@ -22,8 +22,7 @@ const NewsEventsPage = () => {
           const hasOldData = parsed.some(art => art && art.date && art.date.includes("2024"));
           const hasDifferentCount = parsed.length !== newsArticles.length;
           const hasDifferentFirst = parsed[0]?.title !== newsArticles[0]?.title;
-          const hasUrrda = parsed.some(art => art && art.title === "URRDA Empanelment");
-          if (!hasOldData && !hasDifferentCount && !hasDifferentFirst && hasUrrda) {
+          if (!hasOldData && !hasDifferentCount && !hasDifferentFirst) {
             return ensureUrrdaFirst(parsed);
           }
         }

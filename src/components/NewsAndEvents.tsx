@@ -5,6 +5,12 @@ import { Link } from "react-router-dom";
 
 const newsItems = [
     {
+        id: 17,
+        title: "UrbanBuild Empanelled with Rural Works Department (RWD) in Road, Bridge and Building",
+        category: "Announcement",
+        date: "Oct 2026",
+    },
+    {
         id: 4,
         title: "UrbanBuild Signs MoU with Graphic Era Hill University",
         category: "Announcement",

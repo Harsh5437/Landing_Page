@@ -49,15 +49,15 @@ const carouselImages = [
 ];
 const webinarGalleryItem = {
     src: "/images/linkedin.jpeg",
-    title: "Technical Webinar | UrbanBuild",
-    desc: "UrbanBuild, in association with Indian Buildings Congress (IBC) – Uttarakhand Chapter, presents a technical session on Quality Control & Quality Assurance of Concrete Constructions as per IS 456:2025 (Draft)."
+    title: "Technical Webinar | UrbanBuild & IBC Uttarakhand Chapter",
+    desc: "UrbanBuild, in association with Indian Buildings Congress (IBC) – Uttarakhand Chapter, presents a lecture on Inspection, Condition Assessment and Rehabilitation Measures for Bridges by Er. Ganesh Kumar Sahu, Advisor, CSIR-CRRI. Queries: consultancy@urbanbuild.co.in."
 };
 
 const isWebinarImage = (item: { src?: string; title?: string } | null | undefined) => {
     if (!item) return false;
     const src = (item.src || "").toLowerCase();
     const title = (item.title || "").toLowerCase();
-    return src.includes("linkedin") || src.includes("ibc") || title.includes("quality control") || title.includes("technical webinar");
+    return src.includes("linkedin") || src.includes("ibc") || title.includes("quality control") || title.includes("technical webinar") || title.includes("condition assessment") || title.includes("bridges");
 };
 
 const getPortfolioGalleryImages = () => {

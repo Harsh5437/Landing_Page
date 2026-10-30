@@ -439,9 +439,11 @@ const StickyHeader = () => {
                                 <span className="text-[#D4AF37] font-extrabold animate-pulse drop-shadow-[0_0_8px_rgba(212,175,55,0.8)] mr-2">NEW</span>
                                 TECHNICAL WEBINAR | URBANBUILD: In association with Indian Buildings Congress (IBC) - Uttarakhand Chapter.
                                 &nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                                Quality Control &amp; Quality Assurance of Concrete Constructions - Provisions as per IS 456:2025 (Draft).
+                                Inspection, Condition Assessment and Rehabilitation Measures for Bridges.
                                 &nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                                Resource Person: Dr. Brijesh Singh, General Manager, NCCBM. 25 September 2026 | Friday | 7:00 PM onwards | Online.
+                                Speaker: Er. Ganesh Kumar Sahu, Advisor, CSIR-CRRI.
+                                &nbsp;&nbsp;&bull;&nbsp;&nbsp;
+                                Thursday, 27 August 2026 | 05:00 PM (IST) | Queries: consultancy@urbanbuild.co.in
                             </span>
                             <span>
                                 <span className="text-[#D4AF37] font-extrabold animate-pulse drop-shadow-[0_0_8px_rgba(212,175,55,0.8)] mr-2">NEW</span>
@@ -449,11 +451,13 @@ const StickyHeader = () => {
                             </span>
                             <span>
                                 <span className="text-[#D4AF37] font-extrabold animate-pulse drop-shadow-[0_0_8px_rgba(212,175,55,0.8)] mr-2">NEW</span>
-                                TECHNICAL WEBINAR | UB QUEST: In association with Indian Buildings Congress (IBC) - Uttarakhand Chapter.
+                                TECHNICAL WEBINAR | URBANBUILD: In association with Indian Buildings Congress (IBC) - Uttarakhand Chapter.
                                 &nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                                Quality Control &amp; Quality Assurance of Concrete Constructions - Provisions as per IS 456:2025 (Draft).
+                                Inspection, Condition Assessment and Rehabilitation Measures for Bridges.
                                 &nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                                Resource Person: Dr. Brijesh Singh, General Manager, NCCBM. 25 September 2026 | Friday | 7:00 PM onwards | Online.
+                                Speaker: Er. Ganesh Kumar Sahu, Advisor, CSIR-CRRI.
+                                &nbsp;&nbsp;&bull;&nbsp;&nbsp;
+                                Thursday, 27 August 2026 | 05:00 PM (IST) | Free Registration Open.
                             </span>
                         </div>
                     </Link>

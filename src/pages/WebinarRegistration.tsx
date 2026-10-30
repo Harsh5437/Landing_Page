@@ -133,7 +133,7 @@ const WebinarRegistration = () => {
                                 <Calendar className="h-4 w-4" />
                                 <span>DATE</span>
                             </div>
-                            <p className="font-space font-bold text-sm text-foreground">Thursday, 27 Aug 2026</p>
+                            <p className="font-space font-bold text-sm text-foreground">Friday, 6 Nov 2026</p>
                         </div>
                         <div className="p-4 border border-border/60 bg-card/40 rounded-sm">
                             <div className="flex items-center gap-2 text-accent text-xs font-mono mb-1">

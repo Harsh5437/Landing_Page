@@ -2,7 +2,7 @@ import { motion, useScroll, useMotionValueEvent, AnimatePresence } from "framer-
 import { useState, useEffect, useRef } from "react";
 import { ModeToggle } from "@/components/mode-toggle";
 import logo from "@/assets/logo-optimized.png";
-import { Menu, ChevronDown, Linkedin, Youtube } from "lucide-react";
+import { Menu, ChevronDown, Linkedin, Youtube, ArrowRight } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Link, useLocation } from "react-router-dom";
 import IndependenceDayBanner from "@/components/IndependenceDayBanner";
@@ -303,6 +303,20 @@ const StickyHeader = () => {
                                 </SheetTrigger>
                                 <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-[#0c1631] dark:bg-[#060c1d] border-l border-[#1A7EFF]/20 text-white dark:text-white overflow-y-auto h-full max-h-screen pr-4 scrollbar-thin">
                                     <nav className="mt-8 flex flex-col gap-6 pb-12">
+                                        {/* Mobile Projects Handled Stat Badge */}
+                                        <Link
+                                            to="/projects"
+                                            onClick={() => setIsOpen(false)}
+                                            className="p-3.5 rounded-lg bg-gradient-to-r from-[#D4AF37]/15 via-[#D4AF37]/5 to-transparent border border-[#D4AF37]/35 flex items-center justify-between group hover:border-[#D4AF37] transition-all duration-300 shadow-sm"
+                                        >
+                                            <span className="text-xs font-bold text-white uppercase tracking-wider group-hover:text-[#D4AF37] transition-colors">
+                                                Projects Handled
+                                            </span>
+                                            <div className="flex items-center gap-1.5 bg-[#D4AF37]/20 px-2.5 py-1.5 rounded border border-[#D4AF37]/40">
+                                                <span className="text-sm font-space font-black text-[#D4AF37] tracking-tight">381+</span>
+                                                <ArrowRight className="w-3.5 h-3.5 text-[#D4AF37] group-hover:translate-x-1 transition-transform" />
+                                            </div>
+                                        </Link>
                                         {navLinks.map((link) => {
                                             const isActive = location.pathname === link.href;
                                             return (
@@ -416,8 +430,8 @@ const StickyHeader = () => {
                             animation: text-blink 1s infinite ease-in-out;
                         }
                     `}</style>
-                    {/* Blinking Head */}
-                    <div className="z-10 bg-[#060c1d] dark:bg-[#02050c] pr-4 flex items-center gap-2 font-bold uppercase tracking-wider text-accent shrink-0 relative shadow-[10px_0_15px_-5px_rgba(6,12,29,1)] dark:shadow-[10px_0_15px_-5px_rgba(2,5,12,1)]">
+                    {/* Blinking Head - Hidden on mobile for maximum ticker width */}
+                    <div className="hidden sm:flex z-10 bg-[#060c1d] dark:bg-[#02050c] pr-4 items-center gap-2 font-bold uppercase tracking-wider text-accent shrink-0 relative shadow-[10px_0_15px_-5px_rgba(6,12,29,1)] dark:shadow-[10px_0_15px_-5px_rgba(2,5,12,1)]">
                         <span className="relative flex h-2 w-2">
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
                             <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
@@ -443,7 +457,7 @@ const StickyHeader = () => {
                                 &nbsp;&nbsp;&bull;&nbsp;&nbsp;
                                 Speaker: Er. Ganesh Kumar Sahu, Advisor, CSIR-CRRI.
                                 &nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                                Thursday, 27 August 2026 | 05:00 PM (IST) | Queries: consultancy@urbanbuild.co.in
+                                Friday, 6 November 2026 | 05:00 PM (IST) | Queries: consultancy@urbanbuild.co.in
                             </span>
                             <span>
                                 <span className="text-[#D4AF37] font-extrabold animate-pulse drop-shadow-[0_0_8px_rgba(212,175,55,0.8)] mr-2">NEW</span>
@@ -457,13 +471,13 @@ const StickyHeader = () => {
                                 &nbsp;&nbsp;&bull;&nbsp;&nbsp;
                                 Speaker: Er. Ganesh Kumar Sahu, Advisor, CSIR-CRRI.
                                 &nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                                Thursday, 27 August 2026 | 05:00 PM (IST) | Free Registration Open.
+                                Friday, 6 November 2026 | 05:00 PM (IST) | Free Registration Open.
                             </span>
                         </div>
                     </Link>
 
-                    {/* Right Side static projects badge */}
-                    <Link to="/projects" className="z-10 bg-[#060c1d] dark:bg-[#02050c] pl-4 flex items-center gap-2 font-bold uppercase tracking-wider text-accent shrink-0 hover:text-white transition-colors duration-300 shadow-[-10px_0_15px_-5px_rgba(6,12,29,1)] dark:shadow-[-10px_0_15px_-5px_rgba(2,5,12,1)]">
+                    {/* Right Side static projects badge - Hidden on mobile for maximum ticker width */}
+                    <Link to="/projects" className="hidden sm:flex z-10 bg-[#060c1d] dark:bg-[#02050c] pl-4 items-center gap-2 font-bold uppercase tracking-wider text-accent shrink-0 hover:text-white transition-colors duration-300 shadow-[-10px_0_15px_-5px_rgba(6,12,29,1)] dark:shadow-[-10px_0_15px_-5px_rgba(2,5,12,1)]">
                         <span className="text-[10px] md:text-[11.5px] font-space font-black text-[#D4AF37] tracking-tight">381+</span>
                         <span className="text-[7.5px] md:text-[8.5px] font-mono text-zinc-300 tracking-wider">Projects Handled</span>
                     </Link>

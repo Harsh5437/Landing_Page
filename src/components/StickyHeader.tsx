@@ -451,27 +451,7 @@ const StickyHeader = () => {
                             </span>
                             <span>
                                 <span className="text-[#D4AF37] font-extrabold animate-pulse drop-shadow-[0_0_8px_rgba(212,175,55,0.8)] mr-2">NEW</span>
-                                TECHNICAL WEBINAR | URBANBUILD: In association with Indian Buildings Congress (IBC) - Uttarakhand Chapter.
-                                &nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                                Inspection, Condition Assessment and Rehabilitation Measures for Bridges.
-                                &nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                                Speaker: Er. Ganesh Kumar Sahu, Advisor, CSIR-CRRI.
-                                &nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                                Friday, 6 November 2026 | 05:00 PM (IST) | Queries: consultancy@urbanbuild.co.in
-                            </span>
-                            <span>
-                                <span className="text-[#D4AF37] font-extrabold animate-pulse drop-shadow-[0_0_8px_rgba(212,175,55,0.8)] mr-2">NEW</span>
                                 <span className="font-bold text-[#D4AF37] tracking-wider uppercase">EMPANELMENT:</span> UrbanBuild is proudly empanelled with Rural Works Department (RWD) in ROAD, Bridge &amp; Building sectors.
-                            </span>
-                            <span>
-                                <span className="text-[#D4AF37] font-extrabold animate-pulse drop-shadow-[0_0_8px_rgba(212,175,55,0.8)] mr-2">NEW</span>
-                                TECHNICAL WEBINAR | URBANBUILD: In association with Indian Buildings Congress (IBC) - Uttarakhand Chapter.
-                                &nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                                Inspection, Condition Assessment and Rehabilitation Measures for Bridges.
-                                &nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                                Speaker: Er. Ganesh Kumar Sahu, Advisor, CSIR-CRRI.
-                                &nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                                Friday, 6 November 2026 | 05:00 PM (IST) | Free Registration Open.
                             </span>
                         </div>
                     </Link>

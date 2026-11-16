@@ -79,8 +79,8 @@ const Insights = () => {
         {/* 1. Sleek HUD Statistics Panel */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 w-full max-w-5xl mx-auto mb-8">
           {[
-            { value: "385+", label: "Projects Handled", icon: BarChart3, color: "from-[#1A7EFF] to-[#1A7EFF]/60", bg: "rgba(26,126,255,0.03)", border: "border-[#1A7EFF]/25" },
-            { value: "7.5Cr+", label: "Total Consultancy Cost", icon: Award, color: "from-accent to-accent/60", bg: "rgba(212,175,55,0.03)", border: "border-accent/25" },
+            { value: "351", label: "Projects Handled", icon: BarChart3, color: "from-[#1A7EFF] to-[#1A7EFF]/60", bg: "rgba(26,126,255,0.03)", border: "border-[#1A7EFF]/25" },
+            { value: "8.2Cr+", label: "Total Consultancy Cost", icon: Award, color: "from-accent to-accent/60", bg: "rgba(212,175,55,0.03)", border: "border-accent/25" },
             { value: "40+", label: "Expert Engineers", icon: Zap, color: "from-emerald-500 to-emerald-500/60", bg: "rgba(16,185,129,0.03)", border: "border-emerald-500/25" }
           ].map((stat, index) => {
             const Icon = stat.icon;
@@ -133,7 +133,7 @@ const Insights = () => {
               <div className="relative w-44 h-44 flex items-center justify-center">
                 {/* SVG Donut Chart for Lifecycle */}
                 <svg width="170" height="170" viewBox="0 0 100 100" className="transform -rotate-90">
-                  {/* Outer circle: Completed (69%) */}
+                  {/* Outer circle: Completed (60%) */}
                   <circle
                     cx="50"
                     cy="50"
@@ -142,7 +142,7 @@ const Insights = () => {
                     stroke="#10B981"
                     strokeWidth="8"
                     strokeDasharray="251.2"
-                    strokeDashoffset={251.2 - (251.2 * 0.69)}
+                    strokeDashoffset={251.2 - (251.2 * 0.60)}
                     className="opacity-15"
                   />
                   <circle
@@ -153,10 +153,10 @@ const Insights = () => {
                     stroke="#10B981"
                     strokeWidth="8"
                     strokeDasharray="251.2"
-                    strokeDashoffset={251.2 - (251.2 * 0.69)}
+                    strokeDashoffset={251.2 - (251.2 * 0.60)}
                     className="filter drop-shadow-[0_0_6px_rgba(16,185,129,0.5)] transition-all duration-500"
                   />
-                  {/* Middle circle: Running (23%) */}
+                  {/* Middle circle: Running (27%) */}
                   <circle
                     cx="50"
                     cy="50"
@@ -165,7 +165,7 @@ const Insights = () => {
                     stroke="#1A7EFF"
                     strokeWidth="7"
                     strokeDasharray="188.4"
-                    strokeDashoffset={188.4 - (188.4 * 0.23)}
+                    strokeDashoffset={188.4 - (188.4 * 0.27)}
                     className="opacity-15"
                   />
                   <circle
@@ -176,10 +176,10 @@ const Insights = () => {
                     stroke="#1A7EFF"
                     strokeWidth="7"
                     strokeDasharray="188.4"
-                    strokeDashoffset={188.4 - (188.4 * 0.23)}
+                    strokeDashoffset={188.4 - (188.4 * 0.27)}
                     className="filter drop-shadow-[0_0_4px_rgba(26,126,255,0.5)] transition-all duration-500"
                   />
-                  {/* Inner circle: Pipeline (8%) */}
+                  {/* Inner circle: Pipeline (12%) */}
                   <circle
                     cx="50"
                     cy="50"
@@ -188,7 +188,7 @@ const Insights = () => {
                     stroke="#D4AF37"
                     strokeWidth="6"
                     strokeDasharray="131.9"
-                    strokeDashoffset={131.9 - (131.9 * 0.08)}
+                    strokeDashoffset={131.9 - (131.9 * 0.12)}
                     className="opacity-15"
                   />
                   <circle
@@ -199,14 +199,14 @@ const Insights = () => {
                     stroke="#D4AF37"
                     strokeWidth="6"
                     strokeDasharray="131.9"
-                    strokeDashoffset={131.9 - (131.9 * 0.08)}
+                    strokeDashoffset={131.9 - (131.9 * 0.12)}
                     className="filter drop-shadow-[0_0_3px_rgba(212,175,55,0.5)] transition-all duration-500"
                   />
                 </svg>
 
                 {/* Central Stats readout */}
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none">
-                  <span className="text-2xl font-space font-black text-foreground leading-none">381</span>
+                  <span className="text-2xl font-space font-black text-foreground leading-none">351</span>
                   <span className="text-[7.5px] font-mono tracking-widest text-muted-foreground uppercase mt-1">TOTAL WORKS</span>
                 </div>
               </div>
@@ -223,14 +223,14 @@ const Insights = () => {
                     <span className="font-space font-bold uppercase tracking-wider">Completed</span>
                   </div>
                   <div className="font-mono font-bold">
-                    <span className="text-foreground">252 Works</span>
-                    <span className="text-emerald-500 ml-2">69%</span>
+                    <span className="text-foreground">212 Works</span>
+                    <span className="text-emerald-500 ml-2">60%</span>
                   </div>
                 </div>
                 <div className="w-full h-2 bg-gray-200 dark:bg-gray-800 rounded-full overflow-hidden">
                   <motion.div
                     initial={{ width: 0 }}
-                    animate={{ width: "69%" }}
+                    animate={{ width: "60%" }}
                     transition={{ duration: 1, ease: "easeOut" }}
                     className="h-full bg-emerald-500 rounded-full shadow-[0_0_8px_rgba(16,185,129,0.5)]"
                   />
@@ -245,14 +245,14 @@ const Insights = () => {
                     <span className="font-space font-bold uppercase tracking-wider">Running</span>
                   </div>
                   <div className="font-mono font-bold">
-                    <span className="text-foreground">85 Works</span>
-                    <span className="text-[#1A7EFF] ml-2">23%</span>
+                    <span className="text-foreground">96 Works</span>
+                    <span className="text-[#1A7EFF] ml-2">27%</span>
                   </div>
                 </div>
                 <div className="w-full h-2 bg-gray-200 dark:bg-gray-800 rounded-full overflow-hidden">
                   <motion.div
                     initial={{ width: 0 }}
-                    animate={{ width: "23%" }}
+                    animate={{ width: "27%" }}
                     transition={{ duration: 1, ease: "easeOut", delay: 0.15 }}
                     className="h-full bg-[#1A7EFF] rounded-full shadow-[0_0_8px_rgba(26,126,255,0.5)]"
                   />
@@ -267,14 +267,14 @@ const Insights = () => {
                     <span className="font-space font-bold uppercase tracking-wider">Pipeline</span>
                   </div>
                   <div className="font-mono font-bold">
-                    <span className="text-foreground">34 Works</span>
-                    <span className="text-[#D4AF37] ml-2">8%</span>
+                    <span className="text-foreground">43 Works</span>
+                    <span className="text-[#D4AF37] ml-2">12%</span>
                   </div>
                 </div>
                 <div className="w-full h-2 bg-gray-200 dark:bg-gray-800 rounded-full overflow-hidden">
                   <motion.div
                     initial={{ width: 0 }}
-                    animate={{ width: "8%" }}
+                    animate={{ width: "12%" }}
                     transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
                     className="h-full bg-[#D4AF37] rounded-full shadow-[0_0_8px_rgba(212,175,55,0.5)]"
                   />

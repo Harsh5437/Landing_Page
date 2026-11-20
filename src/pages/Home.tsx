@@ -7,6 +7,11 @@ import newsFeedData from "../data/newsFeed.json";
 
 const carouselImages = [
     {
+        src: "/images/HomeMainCrousel/Pangty.jpeg",
+        badge: "Appointment",
+        desc: "We are proud to announce that Er. Anil Pangti (Retd. Superintending Engineer, PWD Uttarakhand) has been conferred the role of Executive Director at Urbanbuild by our Managing Director."
+    },
+    {
         src: "/images/HomeMainCrousel/P7.jpg",
         title: "Hon’ble CM Birthday Greetings.",
         desc: "Assistant Director, URBANBUILD, extends birthday greetings to Hon’ble CM Shri Pushkar Singh Dhami Ji."
@@ -354,7 +359,7 @@ const Home = () => {
                                             >
                                                 <div className="flex items-center gap-2 mb-1">
                                                     <span className="px-2 py-0.5 rounded bg-accent text-background text-[7px] md:text-[8px] font-bold tracking-[0.15em] uppercase">
-                                                        Highlights
+                                                        {carouselImages[currentIndex].badge || "Highlights"}
                                                     </span>
                                                 </div>
                                                 <h2 className="text-sm md:text-base lg:text-lg font-space font-black text-white tracking-tight leading-tight mb-1 uppercase">

@@ -447,7 +447,15 @@ const StickyHeader = () => {
                         <div className="animate-marquee-scroll hover:[animation-play-state:paused] flex items-center gap-12 font-sans font-medium text-[10.5px] text-zinc-300 dark:text-zinc-200">
                             <span>
                                 <span className="text-[#D4AF37] font-extrabold animate-pulse drop-shadow-[0_0_8px_rgba(212,175,55,0.8)] mr-2">NEW</span>
+                                <span className="font-bold text-[#D4AF37] tracking-wider uppercase">APPOINTMENT:</span> We are proud to announce that Er. Anil Pangti (Retd. Superintending Engineer, PWD Uttarakhand) has been conferred the role of Executive Director at Urbanbuild by our Managing Director.
+                            </span>
+                            <span>
+                                <span className="text-[#D4AF37] font-extrabold animate-pulse drop-shadow-[0_0_8px_rgba(212,175,55,0.8)] mr-2">NEW</span>
                                 <span className="font-bold text-[#D4AF37] tracking-wider uppercase">EMPANELMENT:</span> UrbanBuild is proudly empanelled with Rural Works Department (RWD) in ROAD, Bridge &amp; Building sectors.
+                            </span>
+                            <span>
+                                <span className="text-[#D4AF37] font-extrabold animate-pulse drop-shadow-[0_0_8px_rgba(212,175,55,0.8)] mr-2">NEW</span>
+                                <span className="font-bold text-[#D4AF37] tracking-wider uppercase">APPOINTMENT:</span> We are proud to announce that Er. Anil Pangti (Retd. Superintending Engineer, PWD Uttarakhand) has been conferred the role of Executive Director at Urbanbuild by our Managing Director.
                             </span>
                             <span>
                                 <span className="text-[#D4AF37] font-extrabold animate-pulse drop-shadow-[0_0_8px_rgba(212,175,55,0.8)] mr-2">NEW</span>

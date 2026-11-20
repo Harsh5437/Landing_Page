@@ -7,9 +7,9 @@ import newsFeedData from "../data/newsFeed.json";
 
 const carouselImages = [
     {
-        src: "/images/HomeMainCrousel/Pangty.jpeg",
+        src: "/images/HomeMainCrousel/Pangty.jpg",
         badge: "Appointment",
-        desc: "We are proud to announce that Er. Anil Pangti (Retd. Superintending Engineer, PWD Uttarakhand) has been conferred the role of Executive Director at Urbanbuild by our Managing Director."
+        desc: "We are proud to announce that Er. Anil Pangty (Retd. Superintending Engineer, PWD Uttarakhand) has been conferred the role of Executive Director at Urbanbuild by our Managing Director."
     },
     {
         src: "/images/HomeMainCrousel/P7.jpg",
